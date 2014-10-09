@@ -1,14 +1,14 @@
-﻿namespace Hugo.Engine
+﻿namespace Hugo.Helpers
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
-    using GameObjects;
+    using Players;
 
-    public interface IObjectFactory
+    public interface IEffect
     {
-        IEnemy CreateEnemy();
+        void Apply(IPlayer player);
     }
 }

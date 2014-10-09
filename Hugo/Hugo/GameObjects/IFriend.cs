@@ -1,12 +1,13 @@
-﻿namespace Hugo.Helpers
+﻿namespace Hugo.GameObjects
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
+    using Helpers;
 
-    public interface IDamage
+    public interface IFriend : IGameObject
     {
     }
 }

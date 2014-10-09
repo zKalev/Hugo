@@ -12,8 +12,9 @@
     {
         // TODO: Implement as Singleton
 
-        IList<IPlayer> players = new List<IPlayer>();
+        IList<IPlayer> Players = new List<IPlayer>();
 
-        IList<IGameObject> gameObjects = new List<IGameObject>();
+        IList<IGameObject> GameObjects = new List<IGameObject>();
+
     }
 }

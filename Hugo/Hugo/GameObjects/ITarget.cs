@@ -1,16 +1,12 @@
-﻿namespace Hugo.Players
+﻿namespace Hugo.GameObjects
 {
-    using Helpers;
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
 
-    public interface IPlayer
+    public interface ITarget : IGameObject
     {
-        char[] Shape { get; set; }
-
-        Coord Location { get; set; }
     }
 }

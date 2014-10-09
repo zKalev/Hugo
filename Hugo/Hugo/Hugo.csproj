@@ -41,10 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Engine\IObjectFacory.cs" />
+    <Compile Include="Engine\IObjectFactory.cs" />
     <Compile Include="GameObjects\IEnemy.cs" />
+    <Compile Include="GameObjects\IFriend.cs" />
     <Compile Include="GameObjects\IGameObject.cs" />
-    <Compile Include="Helpers\IDamage.cs" />
+    <Compile Include="GameObjects\ITarget.cs" />
+    <Compile Include="Helpers\IEffect.cs" />
     <Compile Include="Helpers\Coord.cs" />
     <Compile Include="Engine\Engine.cs" />
     <Compile Include="Engine\IEngine.cs" />

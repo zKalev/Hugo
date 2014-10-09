@@ -6,12 +6,13 @@
     using System.Text;
     using System.Threading.Tasks;
     using GameObjects;
-    using Players;
 
-    public interface IEngine
+    public interface IObjectFactory
     {
-        IList<IPlayer> Players { get; set; }
+        IEnemy CreateObstacle();
 
-        IList<IGameObject> GameObjects { get; set; }
+        IEnemy CreateRepulser();
+
+        IFriend CreateApproacher();
     }
 }

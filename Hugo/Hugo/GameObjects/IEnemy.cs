@@ -9,6 +9,5 @@
 
     public interface IEnemy : IGameObject
     {
-        IDamage Damage { get; set; }
     }
 }
