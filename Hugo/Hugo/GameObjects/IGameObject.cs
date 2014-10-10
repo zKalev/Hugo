@@ -14,5 +14,7 @@
         Coord Location { get; set; }
 
         IList<IEffect> Effects { get; set; }
+
+        bool isVisible { get; set; }
     }
 }

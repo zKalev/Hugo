@@ -14,5 +14,7 @@
         IEnemy CreateRepulser();
 
         IFriend CreateApproacher();
+
+        ITarget CreateTarget();
     }
 }

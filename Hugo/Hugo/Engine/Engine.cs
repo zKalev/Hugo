@@ -7,14 +7,16 @@
     using System.Threading.Tasks;
     using Players;
     using GameObjects;
+    using UI;
 
     public class Engine : IEngine
     {
         // TODO: Implement as Singleton
 
-        IList<IPlayer> Players = new List<IPlayer>();
+        IList<IPlayer> players;
 
-        IList<IGameObject> GameObjects = new List<IGameObject>();
+        IList<IGameObject> gameObjects;
 
+        IDrawingEngine drawingEngine;
     }
 }
