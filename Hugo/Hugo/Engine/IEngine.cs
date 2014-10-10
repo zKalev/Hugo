@@ -16,5 +16,9 @@
         IList<IGameObject> GameObjects { get; set; }
 
         IDrawingEngine DrawingEngine { get; set; }
+
+        void StartGame();
+
+        void CreatePlayer(string name, string gender);
     }
 }

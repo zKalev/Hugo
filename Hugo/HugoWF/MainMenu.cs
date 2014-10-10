@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hugo.Engine;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,6 +19,22 @@ namespace HugoWF
         }
 
         private void MainMenu_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void start_Click(object sender, EventArgs e)
+        {
+            Engine engine = Engine.GetInstance();
+            engine.StartGame();
+        }
+
+        private void Create_Click(object sender, EventArgs e)
         {
 
         }

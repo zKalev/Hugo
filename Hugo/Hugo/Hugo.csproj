@@ -42,8 +42,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Engine\IObjectFactory.cs" />
-    <Compile Include="GameObjects\IEnemy.cs" />
-    <Compile Include="GameObjects\IFriend.cs" />
+    <Compile Include="Exceptions\UnvalidNameException.cs" />
+    <Compile Include="GameObjects\AbstractGameObject.cs" />
+    <Compile Include="GameObjects\Enemies\AbstractEnemy.cs" />
+    <Compile Include="GameObjects\Enemies\IEnemy.cs" />
+    <Compile Include="GameObjects\Friends\AbstractFriend.cs" />
+    <Compile Include="GameObjects\Friends\IFriend.cs" />
     <Compile Include="GameObjects\IGameObject.cs" />
     <Compile Include="GameObjects\ITarget.cs" />
     <Compile Include="Helpers\IEffect.cs" />
@@ -52,12 +56,15 @@
     <Compile Include="Engine\IEngine.cs" />
     <Compile Include="Hugo.cs" />
     <Compile Include="Players\IPlayer.cs" />
+    <Compile Include="Players\Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UI\ConsoleDrawingEngine.cs" />
     <Compile Include="UI\IDrawingEngine.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="HugoClassDiagram.cd" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

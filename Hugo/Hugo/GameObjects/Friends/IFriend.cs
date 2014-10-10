@@ -8,7 +8,7 @@
     using Helpers;
     using GameObjects;
 
-    public interface IFriend : IGameObject
+    public interface IFriend : IGameObject,IEffect
     {
     }
 }

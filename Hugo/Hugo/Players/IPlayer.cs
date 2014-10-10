@@ -12,5 +12,13 @@
         char[] Shape { get; set; }
 
         Coord Location { get; set; }
+
+        string Name { get; set; }
+
+        string Gender { get; set; }
+
+        int Points { get; set; }
+
+        LinkedList<Coord> Path { get; set; }
     }
 }
