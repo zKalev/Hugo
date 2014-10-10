@@ -11,12 +11,73 @@
 
     public class Engine : IEngine
     {
-        // TODO: Implement as Singleton
+        private static Engine engine;
 
-        IList<IPlayer> players;
+        private IList<IPlayer> players;
 
-        IList<IGameObject> gameObjects;
+        private IList<IGameObject> gameObjects;
 
-        IDrawingEngine drawingEngine;
+        private IDrawingEngine drawingEngine;
+
+        private Engine()
+        {
+        }
+
+        public static Engine GetInstance()
+        {
+            if (engine == null)
+            {
+                engine = new Engine();
+            }
+            return engine;
+        }
+
+        public void StartGame()
+        {
+
+        }
+
+
+        public void CreatePlayer(string name, string gender)
+        {
+
+        }
+
+
+        public IList<IPlayer> Players
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public IList<IGameObject> GameObjects
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public IDrawingEngine DrawingEngine
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
     }
 }
