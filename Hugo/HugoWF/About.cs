@@ -16,5 +16,10 @@ namespace HugoWF
         {
             InitializeComponent();
         }
+
+		private void BackButton_Click(object sender, EventArgs e)
+		{
+			this.DialogResult = DialogResult.OK;
+		}
     }
 }

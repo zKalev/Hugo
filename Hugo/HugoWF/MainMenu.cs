@@ -23,11 +23,6 @@ namespace HugoWF
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Start_Click(object sender, EventArgs e)
         {
             Engine engine = Engine.GetInstance();
