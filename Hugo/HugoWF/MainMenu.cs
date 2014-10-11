@@ -52,5 +52,10 @@ namespace HugoWF
             About about = new About();
             about.Show();
         }
+
+		private void ExitGame_Click(object sender, EventArgs e)
+		{
+			this.Close();
+		}
     }
 }
