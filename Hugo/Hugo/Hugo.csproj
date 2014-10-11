@@ -55,6 +55,7 @@
     <Compile Include="Engine\Engine.cs" />
     <Compile Include="Engine\IEngine.cs" />
     <Compile Include="Hugo.cs" />
+    <Compile Include="Players\Gender.cs" />
     <Compile Include="Players\IPlayer.cs" />
     <Compile Include="Players\Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

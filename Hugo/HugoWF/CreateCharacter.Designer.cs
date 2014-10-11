@@ -32,8 +32,8 @@
             this.nameTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.genderGroupBox = new System.Windows.Forms.GroupBox();
-            this.maleRadioButton = new System.Windows.Forms.RadioButton();
             this.FemaleRadioButton = new System.Windows.Forms.RadioButton();
+            this.maleRadioButton = new System.Windows.Forms.RadioButton();
             this.genderGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,6 +53,7 @@
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.Size = new System.Drawing.Size(143, 20);
             this.nameTextBox.TabIndex = 1;
+            this.nameTextBox.TextChanged += new System.EventHandler(this.nameTextBox_TextChanged);
             // 
             // label1
             // 
@@ -75,17 +76,6 @@
             this.genderGroupBox.TabStop = false;
             this.genderGroupBox.Text = "Gender";
             // 
-            // maleRadioButton
-            // 
-            this.maleRadioButton.AutoSize = true;
-            this.maleRadioButton.Location = new System.Drawing.Point(6, 19);
-            this.maleRadioButton.Name = "maleRadioButton";
-            this.maleRadioButton.Size = new System.Drawing.Size(48, 17);
-            this.maleRadioButton.TabIndex = 0;
-            this.maleRadioButton.TabStop = true;
-            this.maleRadioButton.Text = "Male";
-            this.maleRadioButton.UseVisualStyleBackColor = true;
-            // 
             // FemaleRadioButton
             // 
             this.FemaleRadioButton.AutoSize = true;
@@ -96,6 +86,17 @@
             this.FemaleRadioButton.TabStop = true;
             this.FemaleRadioButton.Text = "Female";
             this.FemaleRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // maleRadioButton
+            // 
+            this.maleRadioButton.AutoSize = true;
+            this.maleRadioButton.Location = new System.Drawing.Point(6, 19);
+            this.maleRadioButton.Name = "maleRadioButton";
+            this.maleRadioButton.Size = new System.Drawing.Size(48, 17);
+            this.maleRadioButton.TabIndex = 0;
+            this.maleRadioButton.TabStop = true;
+            this.maleRadioButton.Text = "Male";
+            this.maleRadioButton.UseVisualStyleBackColor = true;
             // 
             // CreateCharacter
             // 

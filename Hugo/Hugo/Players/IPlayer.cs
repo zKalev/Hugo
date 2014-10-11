@@ -15,7 +15,7 @@
 
         string Name { get; set; }
 
-        string Gender { get; set; }
+        Gender Gender { get; set; }
 
         int Points { get; set; }
 

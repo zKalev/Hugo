@@ -1,4 +1,5 @@
 ﻿using Hugo.Engine;
+using Hugo.Players;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -31,11 +32,17 @@ namespace HugoWF
         private void SaveCharacterButton_Click(object sender, EventArgs e)
         {
             Engine engine = Engine.GetInstance();
-           
             string playerName=nameTextBox.Text;
-            string playerGender=maleRadioButton.Checked?"Male":"Female";
+            Gender playerGender = maleRadioButton.Checked ? Gender.Male : Gender.Female;
             MessageBox.Show(playerName + "----" + playerGender);
             engine.CreatePlayer(playerName, playerGender);
+            base.Close();
         }
+
+        private void nameTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

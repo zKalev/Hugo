@@ -19,6 +19,6 @@
 
         void StartGame();
 
-        void CreatePlayer(string name, string gender);
+        void CreatePlayer(string name, Gender gender);
     }
 }

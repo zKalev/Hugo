@@ -19,8 +19,12 @@
 
         private IDrawingEngine drawingEngine;
 
+        private const string DefaultPlayerNameOne="player 1";
+        private const string DefaultPlayerNameTwo="player 2";
+
         private Engine()
         {
+            this.Players = new List<IPlayer>();
         }
 
         public static Engine GetInstance()
@@ -34,25 +38,30 @@
 
         public void StartGame()
         {
+            if (this.Players.Count == 0)
+            {
+                this.Players.Add(new Player(DefaultPlayerNameOne,Gender.Male));
+                this.Players.Add(new Player(DefaultPlayerNameTwo,Gender.Female));
+            }
+
 
         }
 
 
-        public void CreatePlayer(string name, string gender)
+        public void CreatePlayer(string name, Gender gender)
         {
 
         }
-
 
         public IList<IPlayer> Players
         {
             get
             {
-                throw new NotImplementedException();
+                return this.players;
             }
             set
             {
-                throw new NotImplementedException();
+                this.players = value;
             }
         }
 

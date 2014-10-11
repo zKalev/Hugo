@@ -1,4 +1,5 @@
-﻿using Hugo.Helpers;
+﻿using Hugo.Exceptions;
+using Hugo.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,12 +11,18 @@ namespace Hugo.Players
     class Player : IPlayer
     {
         private char[] shape;
-        private Coord coord;
+        private Coord location;
         private string name;
-        private string gender;
+        private Gender gender;
         private int points;
+        private LinkedList<Coord> path;
 
-
+        public Player(string name, Gender gender)
+        {
+            this.Path = new LinkedList<Coord> ();
+            this.Name = name;
+            this.Gender = gender;
+        }
 
         public char[] Shape
         {
@@ -33,11 +40,11 @@ namespace Hugo.Players
         {
             get
             {
-                throw new NotImplementedException();
+                return this.location;
             }
             set
             {
-                throw new NotImplementedException();
+                this.location = value;
             }
         }
 
@@ -45,23 +52,26 @@ namespace Hugo.Players
         {
             get
             {
-                throw new NotImplementedException();
+                return this.Name;
             }
             set
             {
-                throw new NotImplementedException();
+                if (String.IsNullOrEmpty(value) || String.IsNullOrWhiteSpace(value))
+                {
+                    throw new UnvalidNameException();
+                }
             }
         }
 
-        public string Gender
+        public Gender Gender
         {
             get
             {
-                throw new NotImplementedException();
+                return this.gender;
             }
             set
             {
-                throw new NotImplementedException();
+                this.gender = value;
             }
         }
 
@@ -69,11 +79,11 @@ namespace Hugo.Players
         {
             get
             {
-                throw new NotImplementedException();
+                return this.Points;
             }
             set
             {
-                throw new NotImplementedException();
+                this.Points = value;
             }
         }
 
@@ -81,11 +91,11 @@ namespace Hugo.Players
         {
             get
             {
-                throw new NotImplementedException();
+                return this.path;
             }
             set
             {
-                throw new NotImplementedException();
+                this.path = value;
             }
         }
     }

@@ -3,10 +3,9 @@
   <Class Name="Hugo.Engine.Engine" Collapsed="true">
     <Position X="4.5" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAIAAEEAAAABAAAAAAAAAAgBAAgAAAAIAAAAAQACAA=</HashCode>
+      <HashCode>AAgIAAEEAAAABAAAAAAAQAAgBAAgAAAAIAAAAAQACAA=</HashCode>
       <FileName>Engine\Engine.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" />
   </Class>
   <Class Name="Hugo.Exceptions.UnvalidNameException" Collapsed="true">
     <Position X="6.5" Y="1.25" Width="1.5" />
@@ -34,13 +33,13 @@
   <Class Name="Hugo.Players.Player" Collapsed="true" BaseTypeListCollapsed="true">
     <Position X="5" Y="4.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAEAACAAAAAgAKAAAIAgAQAAABEAAAAAAAAAAAABAA=</HashCode>
+      <HashCode>AAAEAACAAAAAgAKAAAICgAQCAAAEAAAAAAAAAAAABAA=</HashCode>
       <FileName>Players\Player.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.319" Collapsed="true" />
   </Class>
   <Struct Name="Hugo.Helpers.Coord" Collapsed="true">
-    <Position X="6.75" Y="4" Width="1.5" />
+    <Position X="6.75" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYAA=</HashCode>
       <FileName>Helpers\Coord.cs</FileName>
@@ -85,7 +84,8 @@
     <Position X="5.75" Y="7.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>GameObjects\friends\IFriend.cs</FileName>
+      <FileName>GameObjects\Friends\IFriend.cs</FileName>
+      <NewMemberFileName>GameObjects\friends\IFriend.cs</NewMemberFileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Hugo.Players.IPlayer" Collapsed="true">
