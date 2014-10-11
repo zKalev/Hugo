@@ -29,38 +29,68 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenu));
-            this.startGame = new System.Windows.Forms.Button();
-            this.Create = new System.Windows.Forms.Button();
+            this.StartGame = new System.Windows.Forms.Button();
+            this.CreateNewCharacter = new System.Windows.Forms.Button();
+            this.HowToPlay = new System.Windows.Forms.Button();
+            this.About = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // startGame
+            // StartGame
             // 
-            this.startGame.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.startGame.BackColor = System.Drawing.Color.Silver;
-            this.startGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.startGame.ForeColor = System.Drawing.Color.OrangeRed;
-            this.startGame.Location = new System.Drawing.Point(464, 226);
-            this.startGame.Name = "startGame";
-            this.startGame.Size = new System.Drawing.Size(294, 67);
-            this.startGame.TabIndex = 0;
-            this.startGame.Text = "Start";
-            this.startGame.UseCompatibleTextRendering = true;
-            this.startGame.UseVisualStyleBackColor = false;
-            this.startGame.Click += new System.EventHandler(this.start_Click);
+            this.StartGame.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.StartGame.BackColor = System.Drawing.Color.Silver;
+            this.StartGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StartGame.ForeColor = System.Drawing.Color.OrangeRed;
+            this.StartGame.Location = new System.Drawing.Point(464, 230);
+            this.StartGame.Name = "StartGame";
+            this.StartGame.Size = new System.Drawing.Size(294, 47);
+            this.StartGame.TabIndex = 0;
+            this.StartGame.Text = "Start";
+            this.StartGame.UseCompatibleTextRendering = true;
+            this.StartGame.UseVisualStyleBackColor = false;
+            this.StartGame.Click += new System.EventHandler(this.Start_Click);
             // 
-            // Create
+            // CreateNewCharacter
             // 
-            this.Create.BackColor = System.Drawing.Color.Silver;
-            this.Create.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Create.ForeColor = System.Drawing.Color.OrangeRed;
-            this.Create.Location = new System.Drawing.Point(464, 299);
-            this.Create.Name = "Create";
-            this.Create.Size = new System.Drawing.Size(294, 62);
-            this.Create.TabIndex = 1;
-            this.Create.Text = "Create Character";
-            this.Create.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.Create.UseVisualStyleBackColor = false;
-            this.Create.Click += new System.EventHandler(this.Create_Click);
+            this.CreateNewCharacter.BackColor = System.Drawing.Color.Silver;
+            this.CreateNewCharacter.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CreateNewCharacter.ForeColor = System.Drawing.Color.OrangeRed;
+            this.CreateNewCharacter.Location = new System.Drawing.Point(464, 283);
+            this.CreateNewCharacter.Name = "CreateNewCharacter";
+            this.CreateNewCharacter.Size = new System.Drawing.Size(294, 48);
+            this.CreateNewCharacter.TabIndex = 1;
+            this.CreateNewCharacter.Text = "Create Character";
+            this.CreateNewCharacter.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.CreateNewCharacter.UseVisualStyleBackColor = false;
+            this.CreateNewCharacter.Click += new System.EventHandler(this.Create_Click);
+            // 
+            // HowToPlay
+            // 
+            this.HowToPlay.BackColor = System.Drawing.Color.Silver;
+            this.HowToPlay.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HowToPlay.ForeColor = System.Drawing.Color.OrangeRed;
+            this.HowToPlay.Location = new System.Drawing.Point(464, 337);
+            this.HowToPlay.Name = "HowToPlay";
+            this.HowToPlay.Size = new System.Drawing.Size(294, 48);
+            this.HowToPlay.TabIndex = 2;
+            this.HowToPlay.Text = "How To Play\r\n";
+            this.HowToPlay.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.HowToPlay.UseVisualStyleBackColor = false;
+            this.HowToPlay.Click += new System.EventHandler(this.HowToPlay_Click);
+            // 
+            // About
+            // 
+            this.About.BackColor = System.Drawing.Color.Silver;
+            this.About.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.About.ForeColor = System.Drawing.Color.OrangeRed;
+            this.About.Location = new System.Drawing.Point(464, 391);
+            this.About.Name = "About";
+            this.About.Size = new System.Drawing.Size(294, 48);
+            this.About.TabIndex = 3;
+            this.About.Text = "About";
+            this.About.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.About.UseVisualStyleBackColor = false;
+            this.About.Click += new System.EventHandler(this.About_Click);
             // 
             // MainMenu
             // 
@@ -70,8 +100,10 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(818, 451);
-            this.Controls.Add(this.Create);
-            this.Controls.Add(this.startGame);
+            this.Controls.Add(this.About);
+            this.Controls.Add(this.HowToPlay);
+            this.Controls.Add(this.CreateNewCharacter);
+            this.Controls.Add(this.StartGame);
             this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.Color.Lime;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -89,8 +121,10 @@
 
         #endregion
 
-        private System.Windows.Forms.Button startGame;
-        private System.Windows.Forms.Button Create;
+        private System.Windows.Forms.Button StartGame;
+        private System.Windows.Forms.Button CreateNewCharacter;
+        private System.Windows.Forms.Button HowToPlay;
+        private System.Windows.Forms.Button About;
 
 
     }
