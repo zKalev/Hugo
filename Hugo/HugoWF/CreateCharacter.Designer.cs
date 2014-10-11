@@ -35,6 +35,7 @@
 			this.femaleRadioButton = new System.Windows.Forms.RadioButton();
 			this.maleRadioButton = new System.Windows.Forms.RadioButton();
 			this.lableTitleCreateCharacter = new System.Windows.Forms.Label();
+			this.BackButton = new System.Windows.Forms.Button();
 			this.genderGroupBox.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -50,7 +51,7 @@
 			// 
 			// nameTextBox
 			// 
-			this.nameTextBox.Location = new System.Drawing.Point(100, 77);
+			this.nameTextBox.Location = new System.Drawing.Point(100, 74);
 			this.nameTextBox.Name = "nameTextBox";
 			this.nameTextBox.Size = new System.Drawing.Size(143, 20);
 			this.nameTextBox.TabIndex = 1;
@@ -59,7 +60,7 @@
 			// characterName
 			// 
 			this.characterName.AutoSize = true;
-			this.characterName.Location = new System.Drawing.Point(50, 80);
+			this.characterName.Location = new System.Drawing.Point(51, 77);
 			this.characterName.Name = "characterName";
 			this.characterName.Size = new System.Drawing.Size(35, 13);
 			this.characterName.TabIndex = 2;
@@ -102,20 +103,31 @@
 			// lableTitleCreateCharacter
 			// 
 			this.lableTitleCreateCharacter.AutoSize = true;
-			this.lableTitleCreateCharacter.Font = new System.Drawing.Font("MS Reference Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lableTitleCreateCharacter.Location = new System.Drawing.Point(51, 31);
+			this.lableTitleCreateCharacter.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lableTitleCreateCharacter.Location = new System.Drawing.Point(45, 38);
 			this.lableTitleCreateCharacter.Name = "lableTitleCreateCharacter";
-			this.lableTitleCreateCharacter.Size = new System.Drawing.Size(171, 18);
+			this.lableTitleCreateCharacter.Size = new System.Drawing.Size(143, 16);
 			this.lableTitleCreateCharacter.TabIndex = 4;
 			this.lableTitleCreateCharacter.Text = "Create Your Character:";
 			this.lableTitleCreateCharacter.TextAlign = System.Drawing.ContentAlignment.TopCenter;
 			this.lableTitleCreateCharacter.Click += new System.EventHandler(this.label2_Click);
+			// 
+			// BackButton
+			// 
+			this.BackButton.Location = new System.Drawing.Point(48, 215);
+			this.BackButton.Name = "BackButton";
+			this.BackButton.Size = new System.Drawing.Size(195, 29);
+			this.BackButton.TabIndex = 5;
+			this.BackButton.Text = "Back";
+			this.BackButton.UseVisualStyleBackColor = true;
+			this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
 			// 
 			// CreateCharacter
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(284, 261);
+			this.Controls.Add(this.BackButton);
 			this.Controls.Add(this.lableTitleCreateCharacter);
 			this.Controls.Add(this.genderGroupBox);
 			this.Controls.Add(this.characterName);
@@ -140,5 +152,6 @@
         private System.Windows.Forms.RadioButton femaleRadioButton;
         private System.Windows.Forms.RadioButton maleRadioButton;
 		private System.Windows.Forms.Label lableTitleCreateCharacter;
+		private System.Windows.Forms.Button BackButton;
     }
 }
