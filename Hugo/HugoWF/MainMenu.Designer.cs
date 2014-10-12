@@ -128,7 +128,6 @@
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Hugo";
 			this.TransparencyKey = System.Drawing.Color.Black;
-			this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
 			this.Load += new System.EventHandler(this.MainMenu_Load);
 			this.ResumeLayout(false);
 

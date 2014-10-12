@@ -39,15 +39,12 @@ namespace HugoWF
 			{
 				engine.CreatePlayer(playerName, playerGender);
 				MessageBox.Show(playerName + "----" + playerGender);
+				base.Close();
 			}
 			catch (UnvalidNameException ex)
 			{
-				MessageBox.Show(ex.ToString());
+				MessageBox.Show(ex.Message);
 			}
-			finally
-			{
-				base.Close();
-			}    
         }
 
         private void nameTextBox_TextChanged(object sender, EventArgs e)

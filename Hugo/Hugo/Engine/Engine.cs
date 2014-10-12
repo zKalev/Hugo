@@ -50,7 +50,7 @@
 
         public void CreatePlayer(string name, Gender gender)
         {
-
+			this.Players.Add(new Player(name, gender));
         }
 
         public IList<IPlayer> Players
