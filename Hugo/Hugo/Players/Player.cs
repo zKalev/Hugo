@@ -52,7 +52,7 @@ namespace Hugo.Players
         {
             get
             {
-                return this.Name;
+                return this.name;
             }
             set
             {
@@ -60,6 +60,7 @@ namespace Hugo.Players
                 {
                     throw new UnvalidNameException();
                 }
+				this.name = value;
             }
         }
 
@@ -79,11 +80,11 @@ namespace Hugo.Players
         {
             get
             {
-                return this.Points;
+                return this.points;
             }
             set
             {
-                this.Points = value;
+                this.points = value;
             }
         }
 

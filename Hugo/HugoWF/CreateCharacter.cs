@@ -34,17 +34,20 @@ namespace HugoWF
         {
             Engine engine = Engine.GetInstance();
             string playerName=nameTextBox.Text;
-            Gender playerGender = maleRadioButton.Checked ? Gender.Male : Gender.Female;
-            MessageBox.Show(playerName + "----" + playerGender);
+            Gender playerGender = maleRadioButton.Checked ? Gender.Male : Gender.Female;           
 			try
 			{
 				engine.CreatePlayer(playerName, playerGender);
+				MessageBox.Show(playerName + "----" + playerGender);
 			}
 			catch (UnvalidNameException ex)
 			{
 				MessageBox.Show(ex.ToString());
 			}
-            base.Close();
+			finally
+			{
+				base.Close();
+			}    
         }
 
         private void nameTextBox_TextChanged(object sender, EventArgs e)
