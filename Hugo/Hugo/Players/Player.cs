@@ -58,7 +58,7 @@ namespace Hugo.Players
             {
                 if (String.IsNullOrEmpty(value) || String.IsNullOrWhiteSpace(value))
                 {
-                    throw new UnvalidNameException();
+                    throw new InvalidNameException();
                 }
 				this.name = value;
             }

@@ -41,7 +41,7 @@ namespace HugoWF
 				MessageBox.Show(playerName + "----" + playerGender);
 				base.Close();
 			}
-			catch (UnvalidNameException ex)
+			catch (InvalidNameException ex)
 			{
 				MessageBox.Show(ex.Message);
 			}

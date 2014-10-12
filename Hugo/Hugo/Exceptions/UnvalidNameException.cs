@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Hugo.Exceptions
 {
-    public class UnvalidNameException : Exception
+    public class InvalidNameException : Exception
     {
-		public UnvalidNameException()
+		public InvalidNameException()
 			: base("The name you have entered is not valid. You should enter a name!")
 		{
 		}
