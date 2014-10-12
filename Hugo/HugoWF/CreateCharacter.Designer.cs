@@ -88,10 +88,12 @@
 			this.femaleRadioButton.TabStop = true;
 			this.femaleRadioButton.Text = "Female";
 			this.femaleRadioButton.UseVisualStyleBackColor = true;
+			this.femaleRadioButton.CheckedChanged += new System.EventHandler(this.femaleRadioButton_CheckedChanged);
 			// 
 			// maleRadioButton
 			// 
 			this.maleRadioButton.AutoSize = true;
+			this.maleRadioButton.Checked = true;
 			this.maleRadioButton.Location = new System.Drawing.Point(6, 19);
 			this.maleRadioButton.Name = "maleRadioButton";
 			this.maleRadioButton.Size = new System.Drawing.Size(48, 17);
@@ -99,6 +101,7 @@
 			this.maleRadioButton.TabStop = true;
 			this.maleRadioButton.Text = "Male";
 			this.maleRadioButton.UseVisualStyleBackColor = true;
+			this.maleRadioButton.CheckedChanged += new System.EventHandler(this.maleRadioButton_CheckedChanged);
 			// 
 			// lableTitleCreateCharacter
 			// 

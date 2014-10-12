@@ -8,18 +8,9 @@ namespace Hugo.Exceptions
 {
     class UnvalidNameException : Exception
     {
-        public UnvalidNameException()
-        {
-        }
-
-        public UnvalidNameException(string message)
-            : base(message)
-        {
-        }
-
-        public UnvalidNameException(string message, Exception inner)
-            : base(message, inner)
-        {
-        }
+		public UnvalidNameException()
+			: base("The name you have entered is not valid. You should enter a name different than \"\" and \" \"!")
+		{
+		}
     }
 }
