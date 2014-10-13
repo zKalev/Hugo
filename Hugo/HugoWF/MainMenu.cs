@@ -26,11 +26,6 @@ namespace HugoWF
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Start_Click(object sender, EventArgs e)
         {
             soundPlayer.Stop();
@@ -60,5 +55,10 @@ namespace HugoWF
             About about = new About();
             about.Show();
         }
+
+		private void ExitGame_Click(object sender, EventArgs e)
+		{
+			this.Close();
+		}
     }
 }

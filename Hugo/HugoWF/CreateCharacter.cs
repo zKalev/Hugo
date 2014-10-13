@@ -1,5 +1,6 @@
 ﻿using Hugo.Engine;
 using Hugo.Players;
+using Hugo.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -33,16 +34,43 @@ namespace HugoWF
         {
             Engine engine = Engine.GetInstance();
             string playerName=nameTextBox.Text;
-            Gender playerGender = maleRadioButton.Checked ? Gender.Male : Gender.Female;
-            MessageBox.Show(playerName + "----" + playerGender);
-            engine.CreatePlayer(playerName, playerGender);
-            base.Close();
+            Gender playerGender = maleRadioButton.Checked ? Gender.Male : Gender.Female;           
+			try
+			{
+				engine.CreatePlayer(playerName, playerGender);
+				MessageBox.Show(playerName + "----" + playerGender);
+				base.Close();
+			}
+			catch (InvalidNameException ex)
+			{
+				MessageBox.Show(ex.Message);
+			}
         }
 
         private void nameTextBox_TextChanged(object sender, EventArgs e)
         {
 
         }
+
+		private void label2_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void BackButton_Click(object sender, EventArgs e)
+		{
+			this.Hide();
+		}
+
+		private void maleRadioButton_CheckedChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void femaleRadioButton_CheckedChanged(object sender, EventArgs e)
+		{
+
+		}
 
     }
 }
