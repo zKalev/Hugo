@@ -8,13 +8,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Media;
 namespace HugoWF
 {
     public partial class MainMenu : Form
     {
+        private SoundPlayer soundPlayer;
         public MainMenu()
         {
+            soundPlayer = new SoundPlayer("barebear.wav");
+            soundPlayer.Play();
             InitializeComponent();
         }
 
@@ -30,8 +33,13 @@ namespace HugoWF
 
         private void Start_Click(object sender, EventArgs e)
         {
+            soundPlayer.Stop();
+            
             Engine engine = Engine.GetInstance();
             engine.StartGame();
+            
+            GameField gf = new GameField();
+            gf.Show();
         }
 
         private void Create_Click(object sender, EventArgs e)

@@ -56,6 +56,12 @@
     <Compile Include="CreateCharacter.Designer.cs">
       <DependentUpon>CreateCharacter.cs</DependentUpon>
     </Compile>
+    <Compile Include="GameField.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GameField.Designer.cs">
+      <DependentUpon>GameField.cs</DependentUpon>
+    </Compile>
     <Compile Include="HowToPlay.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,13 +74,18 @@
     <Compile Include="MainMenu.Designer.cs">
       <DependentUpon>MainMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="Program.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="About.resx">
       <DependentUpon>About.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CreateCharacter.resx">
       <DependentUpon>CreateCharacter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GameField.resx">
+      <DependentUpon>GameField.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HowToPlay.resx">
       <DependentUpon>HowToPlay.cs</DependentUpon>
@@ -109,6 +120,11 @@
       <Project>{20084e17-0ed6-40df-9bb9-81bb03f91e3e}</Project>
       <Name>Hugo</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="barebear.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

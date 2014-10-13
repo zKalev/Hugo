@@ -15,7 +15,7 @@
 
         private IList<IPlayer> players;
 
-        private IList<IGameObject> gameObjects;
+        private  IList<IGameObject> gameObjects;
 
         private IDrawingEngine drawingEngine;
 
@@ -44,13 +44,11 @@
                 this.Players.Add(new Player(DefaultPlayerNameTwo,Gender.Female));
             }
 
-
         }
-
 
         public void CreatePlayer(string name, Gender gender)
         {
-
+            this.Players.Add(new Player(name, gender));
         }
 
         public IList<IPlayer> Players
