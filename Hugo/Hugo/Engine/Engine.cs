@@ -8,12 +8,13 @@
     using Players;
     using GameObjects;
     using UI;
+    using Helpers;
 
     public class Engine : IEngine
     {
         private static Engine engine;
 
-        private IList<IPlayer> players;
+        private LinkedList<IPlayer> players;
 
         private IList<IGameObject> gameObjects;
 
@@ -22,11 +23,12 @@
         private const string DefaultPlayerNameOne = "player1";
         private const string DefaultPlayerNameTwo = "player2";
 
+        private const int MovingUnit = 25;
         private  IList<Colors> colors;
 
         private Engine()
         {
-            this.Players = new List<IPlayer>();
+            this.Players = new LinkedList<IPlayer>();
             this.colors = new List<Colors>();
         }
 
@@ -39,12 +41,38 @@
             return engine;
         }
 
+        public IPlayer GetCurrentPlayer()
+        {
+            return this.Players.First.Value;
+        }
+
+        public void ChangeTurn()
+        {
+            IPlayer holder = this.Players.First.Value;
+            this.Players.RemoveFirst();
+            this.Players.AddLast(holder);
+        }
+
+        public void SetStartPositionForPlayers()
+        {
+            float xFieldPlayeresDrawing = 8 * MovingUnit + 1;
+            float yFieldPlayersDrawing = 23 * MovingUnit  + 1;
+
+            foreach (IPlayer p in this.Players)
+            {
+                xFieldPlayeresDrawing = xFieldPlayeresDrawing + MovingUnit;
+                Coord startLocation = new Coord(xFieldPlayeresDrawing, yFieldPlayersDrawing);
+                p.Path.AddLast(startLocation);
+                p.Location = startLocation;
+            }
+        }
+
         public void StartGame()
         {
             if (this.Players.Count == 0)
             {
-                this.Players.Add(new Player(DefaultPlayerNameOne, Gender.Male, Colors.Red));
-                this.Players.Add(new Player(DefaultPlayerNameTwo, Gender.Female, Colors.Blue));
+                this.Players.AddLast(new Player(DefaultPlayerNameOne, Gender.Male, Colors.Red));
+                this.Players.AddLast(new Player(DefaultPlayerNameTwo, Gender.Female, Colors.Blue));
             }
         }
 
@@ -59,11 +87,11 @@
         public void CreatePlayer(string name, Gender gender, Colors color)
         {
 
-            this.Players.Add(new Player(name, gender, color));
+            this.Players.AddLast(new Player(name, gender, color));
 
         }
 
-        public IList<IPlayer> Players
+        public LinkedList<IPlayer> Players
         {
             get
             {

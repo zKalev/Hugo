@@ -39,6 +39,7 @@
             this.Name = "GameField";
             this.Text = "GameField";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.GameField_Paint);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NavigationKey);
             this.ResumeLayout(false);
 
         }

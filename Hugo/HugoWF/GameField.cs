@@ -18,6 +18,7 @@ namespace HugoWF
 
         private const float ElementSize = 50;
         private const float PlayerSize = ElementSize / 2;
+        private const float MovingUnit = ElementSize / 2;
 
         private const int XStartDrawingPoint = 5;
         private const int XEndDrawingPoint = 25;
@@ -27,21 +28,25 @@ namespace HugoWF
 
         private const int FontSize = 15;
 
+        private const char StraightButtonChar = 'w';
+        private const char LeftButtonChar = 'a';
+        private const char RigthButtonChar = 'd';
+
+
         private Dictionary<Colors, Brush> colors;
 
         public GameField()
         {
-            InitializeComponent();
             LoadColors();
-            SetStartPositionForPlayers();
-            
-
+            //SetStartPositionForPlayers();
+            InitializeComponent();
         }
 
         private void GameField_Paint(object sender, PaintEventArgs e)
         {
             DrawField(e.Graphics);
-            DrawPlayers(e.Graphics);
+            Engine.GetInstance().SetStartPositionForPlayers();
+            DrawPlayersOnStartPosition(e.Graphics);
         }
 
         private void DrawField(Graphics g)
@@ -59,43 +64,31 @@ namespace HugoWF
                 }
             }
         }
-        private void DrawPlayers(Graphics g)
+        private void DrawPlayersOnStartPosition(Graphics g)
         {
             Engine engine = Engine.GetInstance();
-            IList<IPlayer> players = engine.Players;
-            
+            LinkedList<IPlayer> players = engine.Players;
+
             for (int player = 0; player < players.Count; player++)
             {
-                 IPlayer currentPlayer = players.ElementAt(player);
-                 Brush currentPlayerColor = colors[currentPlayer.Color];
+                IPlayer currentPlayer = players.ElementAt(player);
+                Brush currentPlayerColor = colors[currentPlayer.Color];
 
                 float x = 28 * ElementSize / 2 + 1;
-                float y = 4 * ElementSize / 2 + 1 + 35 * (player);
+                float y = 4 * ElementSize / 2 + 1 + 35 * player;
 
                 g.FillRectangle(currentPlayerColor, x, y, PlayerSize, PlayerSize);
 
                 float xStartPointForPrintingName = x + 40;
                 PointF playerNamePrintStartPoint = new PointF(xStartPointForPrintingName, y);
                 Font playerNameFont = new Font(String.Empty, FontSize);
-               
+
                 g.DrawString(currentPlayer.Name + " : " + currentPlayer.Points, playerNameFont, Brushes.Black, playerNamePrintStartPoint);
 
                 //draw player on the field
                 g.FillRectangle(currentPlayerColor, currentPlayer.Location.X, currentPlayer.Location.Y, PlayerSize, PlayerSize);
             }
 
-        }
-
-        private void SetStartPositionForPlayers()
-        {
-            float xFieldPlayeresDrawing = 8 * ElementSize / 2 + 1;
-            float yFieldPlayersDrawing = 23 * ElementSize / 2 + 1;
-
-            foreach (IPlayer p in Engine.GetInstance().Players)
-            {
-                xFieldPlayeresDrawing=xFieldPlayeresDrawing+(ElementSize)/2;
-                p.Location = new Coord(xFieldPlayeresDrawing, yFieldPlayersDrawing);
-            }
         }
 
         private void LoadColors()
@@ -107,6 +100,69 @@ namespace HugoWF
             colors.Add(Colors.Orange, Brushes.Orange);
             colors.Add(Colors.Red, Brushes.Red);
             colors.Add(Colors.White, Brushes.White);
+        }
+
+        private void NavigationKey(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == StraightButtonChar)
+            {
+                MoveStraight();
+            }
+            else if (e.KeyChar == LeftButtonChar)
+            {
+                MoveLeft();
+            }
+            else if (e.KeyChar == RigthButtonChar)
+            {
+                MoveRigth();
+            }
+            else
+            {
+                MessageBox.Show("Unvalid key!");
+            }
+        }
+
+        private void MoveStraight()
+        {
+            IPlayer currentPlayer = Engine.GetInstance().Players.First.Value;
+            Coord currLocationOfCurrPlayer = currentPlayer.Location;
+            currLocationOfCurrPlayer.Y = currLocationOfCurrPlayer.Y - 25;
+            currentPlayer.Location = currLocationOfCurrPlayer;
+            currentPlayer.Path.AddLast(currLocationOfCurrPlayer);
+            DrawNewStep(currentPlayer.Color, currLocationOfCurrPlayer.X, currLocationOfCurrPlayer.Y);
+            Engine.GetInstance().ChangeTurn();
+        }
+
+        private void MoveLeft()
+        {
+            IPlayer currentPlayer = Engine.GetInstance().Players.First.Value;
+            Coord currLocationOfCurrPlayer = currentPlayer.Location;
+            currLocationOfCurrPlayer.X = currLocationOfCurrPlayer.X - 25;
+            currentPlayer.Location = currLocationOfCurrPlayer;
+            currentPlayer.Path.AddLast(currLocationOfCurrPlayer);
+            DrawNewStep(currentPlayer.Color, currLocationOfCurrPlayer.X, currLocationOfCurrPlayer.Y);
+            Engine.GetInstance().ChangeTurn();
+        }
+
+        private void MoveRigth()
+        {
+            IPlayer currentPlayer = Engine.GetInstance().Players.First.Value;
+            Coord currLocationOfCurrPlayer = currentPlayer.Location;
+            currLocationOfCurrPlayer.X = currLocationOfCurrPlayer.X + 25;
+            currentPlayer.Location = currLocationOfCurrPlayer;
+            currentPlayer.Path.AddLast(currLocationOfCurrPlayer);
+            DrawNewStep(currentPlayer.Color, currLocationOfCurrPlayer.X, currLocationOfCurrPlayer.Y);
+            Engine.GetInstance().ChangeTurn();
+        }
+
+
+
+        private void DrawNewStep(Colors color, float x, float y)
+        {
+            Brush curentColor = colors[color];
+            Graphics g = this.CreateGraphics();
+
+            g.FillRectangle(curentColor, x, y, PlayerSize, PlayerSize);
         }
 
     }

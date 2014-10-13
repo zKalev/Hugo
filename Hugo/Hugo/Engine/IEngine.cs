@@ -21,6 +21,10 @@
 
         void StartGame();
 
+        IPlayer GetCurrentPlayer();
+
+        void ChangeTurn();
+
         void CreatePlayer(string name, Gender gender,Colors color);
 
 

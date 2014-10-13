@@ -14,7 +14,7 @@ namespace Hugo.Players
         private Coord location;
         private string name;
         private Gender gender;
-        private int points;
+        private int points = 20;
         private LinkedList<Coord> path;
         private Colors color;
 
