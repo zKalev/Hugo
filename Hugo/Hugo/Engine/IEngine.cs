@@ -11,7 +11,7 @@
 
     public interface IEngine
     {
-        IList<IPlayer> Players { get; set; }
+        LinkedList<IPlayer> Players { get; set; }
 
         IList<IGameObject> GameObjects { get; set; }
 

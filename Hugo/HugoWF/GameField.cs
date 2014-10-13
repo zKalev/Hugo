@@ -38,7 +38,6 @@ namespace HugoWF
         public GameField()
         {
             LoadColors();
-            //SetStartPositionForPlayers();
             InitializeComponent();
         }
 
@@ -55,11 +54,11 @@ namespace HugoWF
             {
                 for (int y = YStartDrawingPoint; y <= YEndDrawingPoint; y++)
                 {
-                    g.DrawRectangle(new Pen(Brushes.Brown), x * ElementSize / 2, y * ElementSize / 2, ElementSize, ElementSize);
+                    g.DrawRectangle(new Pen(Brushes.Brown), x * MovingUnit, y * MovingUnit, ElementSize, ElementSize);
 
                     if ((x != XEndDrawingPoint && y != YEndDrawingPoint) && (x != XStartDrawingPoint && y != YStartDrawingPoint))
                     {
-                        g.FillRectangle(Brushes.Chocolate, x * ElementSize / 2 + 1, y * ElementSize / 2 + 1, ElementSize, ElementSize);
+                        g.FillRectangle(Brushes.Chocolate, x * MovingUnit + 1, y * MovingUnit + 1, ElementSize, ElementSize);
                     }
                 }
             }
@@ -74,8 +73,8 @@ namespace HugoWF
                 IPlayer currentPlayer = players.ElementAt(player);
                 Brush currentPlayerColor = colors[currentPlayer.Color];
 
-                float x = 28 * ElementSize / 2 + 1;
-                float y = 4 * ElementSize / 2 + 1 + 35 * player;
+                float x = 28 * MovingUnit + 1;
+                float y = 4 * MovingUnit + 1 + 35 * player;
 
                 g.FillRectangle(currentPlayerColor, x, y, PlayerSize, PlayerSize);
 
@@ -126,7 +125,7 @@ namespace HugoWF
         {
             IPlayer currentPlayer = Engine.GetInstance().Players.First.Value;
             Coord currLocationOfCurrPlayer = currentPlayer.Location;
-            currLocationOfCurrPlayer.Y = currLocationOfCurrPlayer.Y - 25;
+            currLocationOfCurrPlayer.Y = currLocationOfCurrPlayer.Y - MovingUnit;
             currentPlayer.Location = currLocationOfCurrPlayer;
             currentPlayer.Path.AddLast(currLocationOfCurrPlayer);
             DrawNewStep(currentPlayer.Color, currLocationOfCurrPlayer.X, currLocationOfCurrPlayer.Y);
@@ -137,7 +136,7 @@ namespace HugoWF
         {
             IPlayer currentPlayer = Engine.GetInstance().Players.First.Value;
             Coord currLocationOfCurrPlayer = currentPlayer.Location;
-            currLocationOfCurrPlayer.X = currLocationOfCurrPlayer.X - 25;
+            currLocationOfCurrPlayer.X = currLocationOfCurrPlayer.X - MovingUnit;
             currentPlayer.Location = currLocationOfCurrPlayer;
             currentPlayer.Path.AddLast(currLocationOfCurrPlayer);
             DrawNewStep(currentPlayer.Color, currLocationOfCurrPlayer.X, currLocationOfCurrPlayer.Y);
@@ -148,14 +147,12 @@ namespace HugoWF
         {
             IPlayer currentPlayer = Engine.GetInstance().Players.First.Value;
             Coord currLocationOfCurrPlayer = currentPlayer.Location;
-            currLocationOfCurrPlayer.X = currLocationOfCurrPlayer.X + 25;
+            currLocationOfCurrPlayer.X = currLocationOfCurrPlayer.X + MovingUnit;
             currentPlayer.Location = currLocationOfCurrPlayer;
             currentPlayer.Path.AddLast(currLocationOfCurrPlayer);
             DrawNewStep(currentPlayer.Color, currLocationOfCurrPlayer.X, currLocationOfCurrPlayer.Y);
             Engine.GetInstance().ChangeTurn();
         }
-
-
 
         private void DrawNewStep(Colors color, float x, float y)
         {

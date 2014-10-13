@@ -86,9 +86,7 @@
 
         public void CreatePlayer(string name, Gender gender, Colors color)
         {
-
             this.Players.AddLast(new Player(name, gender, color));
-
         }
 
         public LinkedList<IPlayer> Players
@@ -102,43 +100,7 @@
                 this.players = value;
             }
         }
-
-        public IList<IGameObject> GameObjects
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public IDrawingEngine DrawingEngine
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        IList<IPlayer> IEngine.Players
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
+        
         IList<IGameObject> IEngine.GameObjects
         {
             get
@@ -161,11 +123,6 @@
             {
                 throw new NotImplementedException();
             }
-        }
-
-        void IEngine.StartGame()
-        {
-            throw new NotImplementedException();
         }
     }
 }
