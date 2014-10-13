@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Hugo.Players
 {
-    class Player : IPlayer
+   public class Player : IPlayer
     {
         private char[] shape;
         private Coord location;
@@ -16,24 +16,14 @@ namespace Hugo.Players
         private Gender gender;
         private int points;
         private LinkedList<Coord> path;
+        private Colors color;
 
-        public Player(string name, Gender gender)
+        public Player(string name, Gender gender,Colors color)
         {
-            this.Path = new LinkedList<Coord> ();
+            this.Path = new LinkedList<Coord>();
             this.Name = name;
             this.Gender = gender;
-        }
-
-        public char[] Shape
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            set
-            {
-                throw new NotImplementedException();
-            }
+            this.Color = color;
         }
 
         public Coord Location
@@ -88,7 +78,7 @@ namespace Hugo.Players
             }
         }
 
-        public LinkedList<Coord> Path
+         public LinkedList<Coord> Path
         {
             get
             {
@@ -97,6 +87,42 @@ namespace Hugo.Players
             set
             {
                 this.path = value;
+            }
+        }
+
+        char[] IPlayer.Shape
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+          Coord IPlayer.Location
+        {
+            get
+            {
+                return this.location;
+            }
+            set
+            {
+                this.location = value;
+            }
+        }
+
+       public  Colors Color
+        {
+            get
+            {
+                return this.color;
+            }
+            set
+            {
+                this.color = value;
             }
         }
     }

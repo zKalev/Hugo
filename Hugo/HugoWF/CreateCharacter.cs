@@ -33,18 +33,27 @@ namespace HugoWF
         private void SaveCharacterButton_Click(object sender, EventArgs e)
         {
             Engine engine = Engine.GetInstance();
-            string playerName=nameTextBox.Text;
-            Gender playerGender = maleRadioButton.Checked ? Gender.Male : Gender.Female;           
-			try
-			{
-				engine.CreatePlayer(playerName, playerGender);
-				MessageBox.Show(playerName + "----" + playerGender);
-				base.Close();
-			}
-			catch (InvalidNameException ex)
-			{
-				MessageBox.Show(ex.Message);
-			}
+            string playerName = nameTextBox.Text;
+            Gender playerGender = maleRadioButton.Checked ? Gender.Male : Gender.Female;
+            Colors color = (Colors)ColorComboBox.SelectedIndex;
+
+            if (engine.ExistingColors.Contains(color))
+            {
+                MessageBox.Show("Player with " + color.ToString() + " color already exists! Please choose other color!");
+                return;
+            }
+
+            engine.ExistingColors.Add(color);
+
+            try
+            {
+                engine.CreatePlayer(playerName, playerGender, color);
+                base.Close();
+            }
+            catch (InvalidNameException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void nameTextBox_TextChanged(object sender, EventArgs e)
@@ -52,25 +61,25 @@ namespace HugoWF
 
         }
 
-		private void label2_Click(object sender, EventArgs e)
-		{
+        private void label2_Click(object sender, EventArgs e)
+        {
 
-		}
+        }
 
-		private void BackButton_Click(object sender, EventArgs e)
-		{
-			this.Hide();
-		}
+        private void BackButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
 
-		private void maleRadioButton_CheckedChanged(object sender, EventArgs e)
-		{
+        private void maleRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
 
-		}
+        }
 
-		private void femaleRadioButton_CheckedChanged(object sender, EventArgs e)
-		{
+        private void femaleRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
 
-		}
+        }
 
     }
 }

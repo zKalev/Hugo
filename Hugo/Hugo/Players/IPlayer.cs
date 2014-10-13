@@ -20,5 +20,7 @@
         int Points { get; set; }
 
         LinkedList<Coord> Path { get; set; }
+
+        Colors Color { get; set; }
     }
 }

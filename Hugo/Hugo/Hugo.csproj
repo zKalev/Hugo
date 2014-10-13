@@ -42,7 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Engine\IObjectFactory.cs" />
-    <Compile Include="Exceptions\UnvalidNameException.cs" />
+    <Compile Include="Exceptions\InvalidNameException.cs" />
     <Compile Include="GameObjects\AbstractGameObject.cs" />
     <Compile Include="GameObjects\Enemies\AbstractEnemy.cs" />
     <Compile Include="GameObjects\Enemies\IEnemy.cs" />
@@ -55,6 +55,7 @@
     <Compile Include="Engine\Engine.cs" />
     <Compile Include="Engine\IEngine.cs" />
     <Compile Include="Hugo.cs" />
+    <Compile Include="Players\Colors.cs" />
     <Compile Include="Players\Gender.cs" />
     <Compile Include="Players\IPlayer.cs" />
     <Compile Include="Players\Player.cs" />

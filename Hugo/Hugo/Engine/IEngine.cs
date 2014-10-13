@@ -17,8 +17,12 @@
 
         IDrawingEngine DrawingEngine { get; set; }
 
+        IList<Colors> ExistingColors { get; }
+
         void StartGame();
 
-        void CreatePlayer(string name, Gender gender);
+        void CreatePlayer(string name, Gender gender,Colors color);
+
+
     }
 }

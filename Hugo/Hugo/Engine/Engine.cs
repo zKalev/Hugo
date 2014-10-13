@@ -15,16 +15,19 @@
 
         private IList<IPlayer> players;
 
-        private  IList<IGameObject> gameObjects;
+        private IList<IGameObject> gameObjects;
 
         private IDrawingEngine drawingEngine;
 
-        private const string DefaultPlayerNameOne="player 1";
-        private const string DefaultPlayerNameTwo="player 2";
+        private const string DefaultPlayerNameOne = "player1";
+        private const string DefaultPlayerNameTwo = "player2";
+
+        private  IList<Colors> colors;
 
         private Engine()
         {
             this.Players = new List<IPlayer>();
+            this.colors = new List<Colors>();
         }
 
         public static Engine GetInstance()
@@ -40,18 +43,24 @@
         {
             if (this.Players.Count == 0)
             {
-                this.Players.Add(new Player(DefaultPlayerNameOne,Gender.Male));
-                this.Players.Add(new Player(DefaultPlayerNameTwo,Gender.Female));
+                this.Players.Add(new Player(DefaultPlayerNameOne, Gender.Male, Colors.Red));
+                this.Players.Add(new Player(DefaultPlayerNameTwo, Gender.Female, Colors.Blue));
             }
-
         }
 
-        public void CreatePlayer(string name, Gender gender)
+        public IList<Colors> ExistingColors
+        {
+            get
+            {
+                return this.colors;
+            }
+        }
+
+        public void CreatePlayer(string name, Gender gender, Colors color)
         {
 
-            this.Players.Add(new Player(name, gender));
+            this.Players.Add(new Player(name, gender, color));
 
-			this.Players.Add(new Player(name, gender));
         }
 
         public IList<IPlayer> Players
@@ -88,6 +97,47 @@
             {
                 throw new NotImplementedException();
             }
+        }
+
+        IList<IPlayer> IEngine.Players
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        IList<IGameObject> IEngine.GameObjects
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        IDrawingEngine IEngine.DrawingEngine
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        void IEngine.StartGame()
+        {
+            throw new NotImplementedException();
         }
     }
 }
