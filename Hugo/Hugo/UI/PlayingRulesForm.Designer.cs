@@ -1,6 +1,6 @@
 ﻿namespace HugoWF
 {
-    partial class HowToPlay
+    partial class PlayingRulesForm
     {
         /// <summary>
         /// Required designer variable.

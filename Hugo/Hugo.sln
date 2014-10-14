@@ -1,11 +1,16 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30723.0
+VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hugo", "Hugo\Hugo.csproj", "{20084E17-0ED6-40DF-9BB9-81BB03F91E3E}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Quizes", "Quizes", "{A9BCF693-4A7F-4240-8889-9B703EBBB366}"
+	ProjectSection(SolutionItems) = preProject
+		C:\Users\TECHNO~1\AppData\Local\Temp\7zE1C3A.tmp\10_Questions_HTMLCSS.txt = C:\Users\TECHNO~1\AppData\Local\Temp\7zE1C3A.tmp\10_Questions_HTMLCSS.txt
+		C:\Users\TECHNO~1\AppData\Local\Temp\7zE1C3A.tmp\30_Questions_HTML5.txt = C:\Users\TECHNO~1\AppData\Local\Temp\7zE1C3A.tmp\30_Questions_HTML5.txt
+		C:\Users\TECHNO~1\AppData\Local\Temp\7zE1C3A.tmp\40_Questions_HTML5.txt = C:\Users\TECHNO~1\AppData\Local\Temp\7zE1C3A.tmp\40_Questions_HTML5.txt
+		C:\Users\TECHNO~1\AppData\Local\Temp\7zE1C3A.tmp\Questions.txt = C:\Users\TECHNO~1\AppData\Local\Temp\7zE1C3A.tmp\Questions.txt
+		C:\Users\TECHNO~1\AppData\Local\Temp\7zE1C3A.tmp\Questions_HTML.txt = C:\Users\TECHNO~1\AppData\Local\Temp\7zE1C3A.tmp\Questions_HTML.txt
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HugoWF", "HugoWF\HugoWF.csproj", "{3F177CB9-20C7-4FCE-AE5C-62CB3FA57082}"
 EndProject
@@ -15,10 +20,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{20084E17-0ED6-40DF-9BB9-81BB03F91E3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{20084E17-0ED6-40DF-9BB9-81BB03F91E3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{20084E17-0ED6-40DF-9BB9-81BB03F91E3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{20084E17-0ED6-40DF-9BB9-81BB03F91E3E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3F177CB9-20C7-4FCE-AE5C-62CB3FA57082}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3F177CB9-20C7-4FCE-AE5C-62CB3FA57082}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3F177CB9-20C7-4FCE-AE5C-62CB3FA57082}.Release|Any CPU.ActiveCfg = Release|Any CPU

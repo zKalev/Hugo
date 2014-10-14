@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace HugoWF
 {
-    public partial class GameField : Form
+    public partial class GameFieldForm : Form
     {
 
         private const float ElementSize = 50;
@@ -23,8 +23,8 @@ namespace HugoWF
         private const int XStartDrawingPoint = 5;
         private const int XEndDrawingPoint = 25;
 
-        private const int YStartDrawingPoint = 2;
         private const int YEndDrawingPoint = 23;
+        private const int YStartDrawingPoint = 2;
 
         private const int FontSize = 15;
 
@@ -32,9 +32,10 @@ namespace HugoWF
         private const char LeftButtonChar = 'a';
         private const char RigthButtonChar = 'd';
 
+
         private Dictionary<Colors, Brush> colors;
 
-        public GameField()
+        public GameFieldForm()
         {
             LoadColors();
             InitializeComponent();
@@ -46,10 +47,7 @@ namespace HugoWF
             Engine.GetInstance().SetStartPositionForPlayers();
             DrawPlayersOnStartPosition(e.Graphics);
         }
-        /// <summary>
-        /// This method dwraw the field starts from x=5 y=2 and ends to x=25 y=23
-        /// </summary>
-        /// <param name="g"></param>
+
         private void DrawField(Graphics g)
         {
             for (int x = XStartDrawingPoint; x <= XEndDrawingPoint; x++)
@@ -65,10 +63,6 @@ namespace HugoWF
                 }
             }
         }
-        /// <summary>
-        /// This method draw players on the field and players name and resuld right from the field
-        /// </summary>
-        /// <param name="g"></param>
         private void DrawPlayersOnStartPosition(Graphics g)
         {
             Engine engine = Engine.GetInstance();
@@ -84,7 +78,6 @@ namespace HugoWF
 
                 g.FillRectangle(currentPlayerColor, x, y, PlayerSize, PlayerSize);
 
-                //draw player's name and result
                 float xStartPointForPrintingName = x + 40;
                 PointF playerNamePrintStartPoint = new PointF(xStartPointForPrintingName, y);
                 Font playerNameFont = new Font(String.Empty, FontSize);
@@ -94,12 +87,9 @@ namespace HugoWF
                 //draw player on the field
                 g.FillRectangle(currentPlayerColor, currentPlayer.Location.X, currentPlayer.Location.Y, PlayerSize, PlayerSize);
             }
+
         }
 
-        /// 
-        /// <summary>
-        /// Loads colors in hashMap it's a mapper between Hugo.Colors and Brush 
-        /// </summary>
         private void LoadColors()
         {
             colors = new Dictionary<Colors, Brush>();
@@ -130,10 +120,7 @@ namespace HugoWF
                 MessageBox.Show("Unvalid key!");
             }
         }
-        
-        /// <summary>
-        /// Move straight this method is almost the same as MoveLeft and MoveRight it needs refactoring
-        /// </summary>
+
         private void MoveStraight()
         {
             IPlayer currentPlayer = Engine.GetInstance().Players.First.Value;
@@ -144,7 +131,7 @@ namespace HugoWF
             DrawNewStep(currentPlayer.Color, currLocationOfCurrPlayer.X, currLocationOfCurrPlayer.Y);
             Engine.GetInstance().ChangeTurn();
         }
-        
+
         private void MoveLeft()
         {
             IPlayer currentPlayer = Engine.GetInstance().Players.First.Value;

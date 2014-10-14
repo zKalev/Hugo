@@ -1,6 +1,6 @@
 ﻿namespace HugoWF
 {
-    partial class CreateCharacter
+    partial class CreateCharacterForm
     {
         /// <summary>
         /// Required designer variable.
@@ -57,7 +57,6 @@
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.Size = new System.Drawing.Size(143, 20);
             this.nameTextBox.TabIndex = 1;
-            this.nameTextBox.TextChanged += new System.EventHandler(this.nameTextBox_TextChanged);
             // 
             // characterName
             // 
@@ -90,7 +89,6 @@
             this.femaleRadioButton.TabStop = true;
             this.femaleRadioButton.Text = "Female";
             this.femaleRadioButton.UseVisualStyleBackColor = true;
-            this.femaleRadioButton.CheckedChanged += new System.EventHandler(this.femaleRadioButton_CheckedChanged);
             // 
             // maleRadioButton
             // 
@@ -103,7 +101,7 @@
             this.maleRadioButton.TabStop = true;
             this.maleRadioButton.Text = "Male";
             this.maleRadioButton.UseVisualStyleBackColor = true;
-            this.maleRadioButton.CheckedChanged += new System.EventHandler(this.maleRadioButton_CheckedChanged);
+            
             // 
             // lableTitleCreateCharacter
             // 
@@ -115,8 +113,7 @@
             this.lableTitleCreateCharacter.TabIndex = 4;
             this.lableTitleCreateCharacter.Text = "Create Your Character:";
             this.lableTitleCreateCharacter.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lableTitleCreateCharacter.Click += new System.EventHandler(this.label2_Click);
-            // 
+
             // BackButton
             // 
             this.BackButton.Location = new System.Drawing.Point(48, 246);

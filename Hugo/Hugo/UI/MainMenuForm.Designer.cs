@@ -1,6 +1,6 @@
 ﻿namespace HugoWF
 {
-    partial class MainMenu
+    partial class MainMenuForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenu));
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenuForm));
 			this.StartGame = new System.Windows.Forms.Button();
 			this.CreateNewCharacter = new System.Windows.Forms.Button();
 			this.HowToPlay = new System.Windows.Forms.Button();

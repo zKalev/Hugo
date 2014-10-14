@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace HugoWF
 {
-    public partial class HowToPlay : Form
+    public partial class PlayingRulesForm : Form
     {
-        public HowToPlay()
+        public PlayingRulesForm()
         {
             InitializeComponent();
         }

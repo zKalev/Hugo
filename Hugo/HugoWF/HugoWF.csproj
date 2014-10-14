@@ -7,7 +7,7 @@
     <ProjectGuid>{3F177CB9-20C7-4FCE-AE5C-62CB3FA57082}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>HugoWF</RootNamespace>
+    <RootNamespace>Hugo</RootNamespace>
     <AssemblyName>HugoWF</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -44,54 +44,72 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="About.cs">
+    <Compile Include="UI\AboutForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="About.Designer.cs">
-      <DependentUpon>About.cs</DependentUpon>
+    <Compile Include="UI\AboutForm.Designer.cs">
+      <DependentUpon>AboutForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="CreateCharacter.cs">
+    <Compile Include="UI\CreateCharacterForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CreateCharacter.Designer.cs">
-      <DependentUpon>CreateCharacter.cs</DependentUpon>
+    <Compile Include="UI\CreateCharacterForm.Designer.cs">
+      <DependentUpon>CreateCharacterForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GameField.cs">
+    <Compile Include="Engine\Engine.cs" />
+    <Compile Include="Engine\IEngine.cs" />
+    <Compile Include="Engine\IObjectFactory.cs" />
+    <Compile Include="Exceptions\InvalidNameException.cs" />
+    <Compile Include="UI\GameFieldForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GameField.Designer.cs">
-      <DependentUpon>GameField.cs</DependentUpon>
+    <Compile Include="UI\GameFieldForm.Designer.cs">
+      <DependentUpon>GameFieldForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="HowToPlay.cs">
+    <Compile Include="GameObjects\GameObject.cs" />
+    <Compile Include="GameObjects\Enemy.cs" />
+    <Compile Include="GameObjects\IEnemy.cs" />
+    <Compile Include="GameObjects\Friend.cs" />
+    <Compile Include="GameObjects\IFriend.cs" />
+    <Compile Include="GameObjects\IGameObject.cs" />
+    <Compile Include="GameObjects\ITarget.cs" />
+    <Compile Include="Helpers\Coord.cs" />
+    <Compile Include="Helpers\IEffect.cs" />
+    <Compile Include="Helpers\Colors.cs" />
+    <Compile Include="Helpers\Gender.cs" />
+    <Compile Include="Players\IPlayer.cs" />
+    <Compile Include="Players\Player.cs" />
+    <Compile Include="UI\PlayingRulesForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HowToPlay.Designer.cs">
-      <DependentUpon>HowToPlay.cs</DependentUpon>
+    <Compile Include="UI\PlayingRulesForm.Designer.cs">
+      <DependentUpon>PlayingRulesForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainMenu.cs">
+    <Compile Include="UI\MainMenuForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainMenu.Designer.cs">
-      <DependentUpon>MainMenu.cs</DependentUpon>
+    <Compile Include="UI\MainMenuForm.Designer.cs">
+      <DependentUpon>MainMenuForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs">
+    <Compile Include="HugoGame.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="About.resx">
-      <DependentUpon>About.cs</DependentUpon>
+    <Compile Include="UI\IDrawingEngine.cs" />
+    <EmbeddedResource Include="UI\AboutForm.resx">
+      <DependentUpon>AboutForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CreateCharacter.resx">
-      <DependentUpon>CreateCharacter.cs</DependentUpon>
+    <EmbeddedResource Include="UI\CreateCharacterForm.resx">
+      <DependentUpon>CreateCharacterForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GameField.resx">
-      <DependentUpon>GameField.cs</DependentUpon>
+    <EmbeddedResource Include="UI\GameFieldForm.resx">
+      <DependentUpon>GameFieldForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HowToPlay.resx">
-      <DependentUpon>HowToPlay.cs</DependentUpon>
+    <EmbeddedResource Include="UI\PlayingRulesForm.resx">
+      <DependentUpon>PlayingRulesForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainMenu.resx">
-      <DependentUpon>MainMenu.cs</DependentUpon>
+    <EmbeddedResource Include="UI\MainMenuForm.resx">
+      <DependentUpon>MainMenuForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -101,6 +119,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -114,12 +133,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Hugo\Hugo.csproj">
-      <Project>{20084e17-0ed6-40df-9bb9-81bb03f91e3e}</Project>
-      <Name>Hugo</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="barebear.wav">

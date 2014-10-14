@@ -13,9 +13,9 @@ using System.Windows.Forms;
 
 namespace HugoWF
 {
-    public partial class CreateCharacter : Form
+    public partial class CreateCharacterForm : Form
     {
-        public CreateCharacter()
+        public CreateCharacterForm()
         {
             InitializeComponent();
         }
@@ -56,30 +56,11 @@ namespace HugoWF
             }
         }
 
-        private void nameTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void BackButton_Click(object sender, EventArgs e)
         {
             this.Hide();
         }
 
-        private void maleRadioButton_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void femaleRadioButton_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
+      
     }
 }

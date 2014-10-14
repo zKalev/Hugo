@@ -21,12 +21,51 @@
         private const string DefaultPlayerNameTwo = "player2";
 
         private const int MovingUnit = 25;
-        private  IList<Colors> colors;
+        private IList<Colors> colors;
 
         private Engine()
         {
             this.Players = new LinkedList<IPlayer>();
             this.colors = new List<Colors>();
+        }
+
+        public LinkedList<IPlayer> Players
+        {
+            get
+            {
+                return this.players;
+            }
+
+            set
+            {
+                this.players = value;
+            }
+        }
+
+        IList<IGameObject> IEngine.GameObjects
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        IDrawingEngine IEngine.DrawingEngine
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+
+            set
+            {
+                throw new NotImplementedException();
+            }
         }
 
         public static Engine GetInstance()
@@ -35,6 +74,7 @@
             {
                 engine = new Engine();
             }
+
             return engine;
         }
 
@@ -53,7 +93,7 @@
         public void SetStartPositionForPlayers()
         {
             float xFieldPlayeresDrawing = 8 * MovingUnit + 1;
-            float yFieldPlayersDrawing = 23 * MovingUnit  + 1;
+            float yFieldPlayersDrawing = 23 * MovingUnit + 1;
 
             foreach (IPlayer p in this.Players)
             {
@@ -61,6 +101,14 @@
                 Coord startLocation = new Coord(xFieldPlayeresDrawing, yFieldPlayersDrawing);
                 p.Path.AddLast(startLocation);
                 p.Location = startLocation;
+            }
+        }
+
+        public IList<Colors> ExistingColors
+        {
+            get
+            {
+                return this.colors;
             }
         }
 
@@ -75,16 +123,8 @@
 
         public void Run()
         {
-            GameField gf = new GameField();
+            GameFieldForm gf = new GameFieldForm();
             gf.Show();
-        }
-
-        public IList<Colors> ExistingColors
-        {
-            get
-            {
-                return this.colors;
-            }
         }
 
         public void CreatePlayer(string name, Gender gender, Colors color)
@@ -92,40 +132,6 @@
             this.Players.AddLast(new Player(name, gender, color));
         }
 
-        public LinkedList<IPlayer> Players
-        {
-            get
-            {
-                return this.players;
-            }
-            set
-            {
-                this.players = value;
-            }
-        }
-        
-        IList<IGameObject> IEngine.GameObjects
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
 
-        IDrawingEngine IEngine.DrawingEngine
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
     }
 }
