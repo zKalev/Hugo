@@ -16,7 +16,11 @@
 
         string UIContent { get; set; }
 
-        void DrawPlayers(IList<IPlayer> players);
+        IDrawingEngine GetDrawingEngine();
+
+        void DrawBoardFields();
+
+        void DrawPlayers(IEnumerable<IPlayer> players);
 
         void DrawObjects(IList<IGameObject> gameObjects);
 

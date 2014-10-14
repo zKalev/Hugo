@@ -39,26 +39,27 @@
 
         private void GameField_Paint(object sender, PaintEventArgs e)
         {
-            DrawField(e.Graphics);
+           // DrawField(e.Graphics);
+            Engine.GetInstance().DrawingEngine.DrawBoardFields();
             Engine.GetInstance().SetStartPositionForPlayers();
             DrawPlayersOnStartPosition(e.Graphics);
         }
 
-        private void DrawField(Graphics g)
-        {
-            for (int x = XStartDrawingPoint; x <= XEndDrawingPoint; x++)
-            {
-                for (int y = YStartDrawingPoint; y <= YEndDrawingPoint; y++)
-                {
-                    g.DrawRectangle(new Pen(Brushes.Brown), x * MovingUnit, y * MovingUnit, ElementSize, ElementSize);
+        //private void DrawField(Graphics g)
+        //{
+        //    for (int x = XStartDrawingPoint; x <= XEndDrawingPoint; x++)
+        //    {
+        //        for (int y = YStartDrawingPoint; y <= YEndDrawingPoint; y++)
+        //        {
+        //            g.DrawRectangle(new Pen(Brushes.Brown), x * MovingUnit, y * MovingUnit, ElementSize, ElementSize);
 
-                    if ((x != XEndDrawingPoint && y != YEndDrawingPoint) && (x != XStartDrawingPoint && y != YStartDrawingPoint))
-                    {
-                        g.FillRectangle(Brushes.Chocolate, x * MovingUnit + 1, y * MovingUnit + 1, ElementSize, ElementSize);
-                    }
-                }
-            }
-        }
+        //            if ((x != XEndDrawingPoint && y != YEndDrawingPoint) && (x != XStartDrawingPoint && y != YStartDrawingPoint))
+        //            {
+        //                g.FillRectangle(Brushes.Chocolate, x * MovingUnit + 1, y * MovingUnit + 1, ElementSize, ElementSize);
+        //            }
+        //        }
+        //    }
+        //}
 
         private void DrawPlayersOnStartPosition(Graphics g)
         {

@@ -42,7 +42,7 @@
             }
         }
 
-        IList<IGameObject> IEngine.GameObjects
+        IList<IGameObject> GameObjects
         {
             get
             {
@@ -55,27 +55,23 @@
             }
         }
 
-        IDrawingEngine IEngine.DrawingEngine
+        public IDrawingEngine DrawingEngine
         {
             get
             {
-                throw new NotImplementedException();
+                return WFormDrawingEngine.GetDrawingEngine();
             }
 
-            set
-            {
-                throw new NotImplementedException();
-            }
         }
 
         public static Engine GetInstance()
         {
-            if (engine == null)
+            if (Engine.engine == null)
             {
-                engine = new Engine();
+                Engine.engine = new Engine();
             }
 
-            return engine;
+            return Engine.engine;
         }
 
         public IPlayer GetCurrentPlayer()
@@ -125,6 +121,9 @@
         {
             GameFieldForm gf = new GameFieldForm();
             gf.Show();
+            (DrawingEngine as WFormDrawingEngine).Form = gf;
+            DrawingEngine.DrawBoardFields();
+            DrawingEngine.DrawPlayers(this.Players);
         }
 
         public void CreatePlayer(string name, Gender gender, Colors color)
@@ -133,5 +132,30 @@
         }
 
 
+
+
+        IList<IGameObject> IEngine.GameObjects
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        IDrawingEngine IEngine.DrawingEngine
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
     }
 }

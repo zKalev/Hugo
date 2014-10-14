@@ -60,6 +60,7 @@
     <Compile Include="Engine\IEngine.cs" />
     <Compile Include="Engine\IObjectFactory.cs" />
     <Compile Include="Exceptions\InvalidNameException.cs" />
+    <Compile Include="UI\WFormDrawingEngine.cs" />
     <Compile Include="UI\GameFieldForm.cs">
       <SubType>Form</SubType>
     </Compile>
