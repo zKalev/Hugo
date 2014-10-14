@@ -5,16 +5,17 @@
     using System;
     using System.Collections.Generic;
     using System.Drawing;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
     using System.Windows.Forms;
 
     public class WFormDrawingEngine : IDrawingEngine
     {
         private static WFormDrawingEngine drawingEngine;
         private Form form;
-        private Dictionary<Colors, Brush> colors;
+        private readonly Coord topLeft = new Coord();
+        private readonly Coord bottomRight = new Coord(30, 29);
+        private float cellSize = 20;
+        private Dictionary<Color, Brush> colors = new Dictionary<Color, Brush>();
+
 
         public Form Form
         {
@@ -22,7 +23,23 @@
             set { this.form = value; }
         }
 
-        public static WFormDrawingEngine GetDrawingEngine()
+        public float CellSize
+        {
+            get { return this.cellSize; }
+            set { this.cellSize = value; }
+        }
+
+        public Coord TopLeft
+        {
+            get { return this.topLeft; }
+        }
+
+        public Coord BottomRight
+        {
+            get { return this.bottomRight; }
+        }
+
+        public static IDrawingEngine GetDrawingEngine()
         {
             if (null == WFormDrawingEngine.drawingEngine)
             {
@@ -32,73 +49,43 @@
             return WFormDrawingEngine.drawingEngine;
         }
 
-        private const float ElementSize = 50;
-        private const float PlayerSize = ElementSize / 2;
-        private const float MovingUnit = ElementSize / 2;
-
-        private const int XStartDrawingPoint = 5;
-        private const int XEndDrawingPoint = 25;
-
-        private const int YEndDrawingPoint = 23;
-        private const int YStartDrawingPoint = 2;
-
-        private const int FontSize = 15;
-
-
         public void DrawBoardFields()
         {
             Graphics g = form.CreateGraphics();
-            for (int x = XStartDrawingPoint; x <= XEndDrawingPoint; x++)
-            {
-                for (int y = YStartDrawingPoint; y <= YEndDrawingPoint; y++)
-                {
-                    g.DrawRectangle(new Pen(Brushes.Brown), x * MovingUnit, y * MovingUnit, ElementSize, ElementSize);
+            Coord startPos = this.TopLeft;
 
-                    if ((x != XEndDrawingPoint && y != YEndDrawingPoint) && (x != XStartDrawingPoint && y != YStartDrawingPoint))
+            for (int x = (int)this.TopLeft.X; x <= this.BottomRight.X; x++)
+            {
+                for (int y = (int)this.TopLeft.Y; y <= this.BottomRight.Y; y++)
+                {
+                    g.DrawRectangle(new Pen(Brushes.Brown), startPos.X, startPos.Y, cellSize, cellSize);
+
+                    if ((x != this.BottomRight.X && y != this.BottomRight.Y) && (x != (int)this.TopLeft.X && y != (int)this.TopLeft.Y))
                     {
-                        g.FillRectangle(Brushes.Chocolate, x * MovingUnit + 1, y * MovingUnit + 1, ElementSize, ElementSize);
+                        g.FillRectangle(Brushes.Chocolate, startPos.X + 1, startPos.Y + 1, cellSize, cellSize);
                     }
+
+                    startPos.ChangeToDown(cellSize);
                 }
+
+                startPos.Y = 0;
+                startPos.ChangeToRight(cellSize);
             }
         }
 
         public void DrawPlayers(IEnumerable<IPlayer> players)
         {
-            throw new NotImplementedException();
+            Graphics g = form.CreateGraphics();
+
+            foreach (var player in players)
+            {
+                g.FillRectangle(new SolidBrush(player.Color), player.Location.X * cellSize, player.Location.Y * cellSize, cellSize, cellSize);
+            }
         }
 
         public void DrawObjects(IList<GameObjects.IGameObject> gameObjects)
         {
             throw new NotImplementedException();
         }
-
-        public Helpers.Coord TopLeft
-        {
-            get { throw new NotImplementedException(); }
-        }
-
-        public Helpers.Coord BottomRight
-        {
-            get { throw new NotImplementedException(); }
-        }
-
-        public string UIContent
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        IDrawingEngine IDrawingEngine.GetDrawingEngine()
-        {
-            throw new NotImplementedException();
-        }
-
-        
     }
 }

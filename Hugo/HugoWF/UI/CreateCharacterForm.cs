@@ -5,6 +5,7 @@
     using System;
     using System.Windows.Forms;
     using Hugo.Helpers;
+    using System.Drawing;
 
     public partial class CreateCharacterForm : Form
     {
@@ -18,7 +19,7 @@
             Engine engine = Engine.GetInstance();
             string playerName = nameTextBox.Text;
             Gender playerGender = maleRadioButton.Checked ? Gender.Male : Gender.Female;
-            Colors color = (Colors)ColorComboBox.SelectedIndex;
+            Color color = ColorComboBox.BackColor;
 
             if (engine.ExistingColors.Contains(color))
             {
@@ -44,6 +45,10 @@
             this.Hide();
         }
 
-
+        private void ColorLabel_Click(object sender, EventArgs e)
+        {
+            DialogResult result = this.PlayerColorDialog.ShowDialog();
+            this.ColorComboBox.BackColor = this.PlayerColorDialog.Color;
+        }
     }
 }

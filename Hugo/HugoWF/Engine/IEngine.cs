@@ -9,6 +9,7 @@
     using Players;
     using UI;
     using Hugo.Helpers;
+    using System.Drawing;
 
     public interface IEngine
     {
@@ -16,9 +17,9 @@
 
         IList<IGameObject> GameObjects { get; set; }
 
-        IDrawingEngine DrawingEngine { get; set; }
+        IDrawingEngine DrawingEngine { get; }
 
-        IList<Colors> ExistingColors { get; }
+        IList<Color> ExistingColors { get; }
 
         void StartGame();
 
@@ -26,6 +27,6 @@
 
         void ChangeTurn();
 
-        void CreatePlayer(string name, Gender gender, Colors color);
+        void CreatePlayer(string name, Gender gender, Color color);
     }
 }

@@ -3,6 +3,7 @@
     using Helpers;
     using System;
     using System.Collections.Generic;
+    using System.Drawing;
     using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
@@ -21,6 +22,6 @@
 
         LinkedList<Coord> Path { get; set; }
 
-        Colors Color { get; set; }
+        Color Color { get; set; }
     }
 }

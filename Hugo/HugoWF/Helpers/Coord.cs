@@ -1,11 +1,5 @@
 ﻿namespace Hugo.Helpers
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-
     public struct Coord
     {
         public Coord(float x, float y)
@@ -18,5 +12,45 @@
         public float X { get; set; }
 
         public float Y { get; set; }
+
+        public static Coord operator +(Coord first, Coord second)
+        {
+            Coord sum = new Coord(first.X + second.X, first.Y + second.Y);
+            return sum;
+        }
+
+        public static Coord operator -(Coord first, Coord second)
+        {
+            Coord subtract = new Coord(first.X - second.X, first.Y - second.Y);
+            return subtract;
+        }
+
+        public void ChangeToLeft(float step)
+        {
+            this.X -= step;
+            if (this.X < 0)
+            {
+                this.X = 0;
+            }
+        }
+
+        public void ChangeToRight(float step)
+        {
+            this.X += step;
+        }
+
+        public void ChangeToDown(float step)
+        {
+            this.Y += step;
+        }
+
+        public void ChangeToUp(float step)
+        {
+            this.Y -= step;
+            if (this.Y < 0)
+            {
+                this.Y = 0;
+            }
+        }
     }
 }

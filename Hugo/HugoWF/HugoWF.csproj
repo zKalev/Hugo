@@ -76,7 +76,6 @@
     <Compile Include="GameObjects\ITarget.cs" />
     <Compile Include="Helpers\Coord.cs" />
     <Compile Include="Helpers\IEffect.cs" />
-    <Compile Include="Helpers\Colors.cs" />
     <Compile Include="Helpers\Gender.cs" />
     <Compile Include="Players\IPlayer.cs" />
     <Compile Include="Players\Player.cs" />

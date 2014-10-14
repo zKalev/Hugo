@@ -6,27 +6,24 @@
     using GameObjects;
     using UI;
     using Helpers;
+    using System.Drawing;
 
     public class Engine : IEngine
     {
         private static Engine engine;
 
         private LinkedList<IPlayer> players;
-
         private IList<IGameObject> gameObjects;
-
-        private IDrawingEngine drawingEngine;
 
         private const string DefaultPlayerNameOne = "player1";
         private const string DefaultPlayerNameTwo = "player2";
 
-        private const int MovingUnit = 25;
-        private IList<Colors> colors;
+        private IList<Color> existingColors;
 
         private Engine()
         {
             this.Players = new LinkedList<IPlayer>();
-            this.colors = new List<Colors>();
+            this.ExistingColors = new List<Color>();
         }
 
         public LinkedList<IPlayer> Players
@@ -88,32 +85,24 @@
 
         public void SetStartPositionForPlayers()
         {
-            float xFieldPlayeresDrawing = 8 * MovingUnit + 1;
-            float yFieldPlayersDrawing = 23 * MovingUnit + 1;
-
             foreach (IPlayer p in this.Players)
             {
-                xFieldPlayeresDrawing = xFieldPlayeresDrawing + MovingUnit;
-                Coord startLocation = new Coord(xFieldPlayeresDrawing, yFieldPlayersDrawing);
-                p.Path.AddLast(startLocation);
-                p.Location = startLocation;
+                p.Location = new Coord(5 * this.DrawingEngine.CellSize, 6 * this.DrawingEngine.CellSize);
             }
         }
 
-        public IList<Colors> ExistingColors
+        public IList<Color> ExistingColors
         {
-            get
-            {
-                return this.colors;
-            }
+            get { return this.existingColors; }
+            set { this.existingColors = value; }
         }
 
         public void StartGame()
         {
             if (this.Players.Count == 0)
             {
-                this.Players.AddLast(new Player(DefaultPlayerNameOne, Gender.Male, Colors.Red));
-                this.Players.AddLast(new Player(DefaultPlayerNameTwo, Gender.Female, Colors.Blue));
+                this.Players.AddLast(new Player(DefaultPlayerNameOne, this.DrawingEngine.TopLeft, Gender.Male, Color.Red));
+                this.Players.AddLast(new Player(DefaultPlayerNameTwo, this.DrawingEngine.BottomRight, Gender.Female, Color.Blue));
             }
         }
 
@@ -122,17 +111,15 @@
             GameFieldForm gf = new GameFieldForm();
             gf.Show();
             (DrawingEngine as WFormDrawingEngine).Form = gf;
+
             DrawingEngine.DrawBoardFields();
             DrawingEngine.DrawPlayers(this.Players);
         }
 
-        public void CreatePlayer(string name, Gender gender, Colors color)
+        public void CreatePlayer(string name, Gender gender, Color color)
         {
             this.Players.AddLast(new Player(name, gender, color));
         }
-
-
-
 
         IList<IGameObject> IEngine.GameObjects
         {
@@ -146,16 +133,6 @@
             }
         }
 
-        IDrawingEngine IEngine.DrawingEngine
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
+
     }
 }

@@ -4,6 +4,7 @@
     using Hugo.Helpers;
     using System;
     using System.Collections.Generic;
+    using System.Drawing;
     using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
@@ -16,14 +17,20 @@
         private Gender gender;
         private int points = 20;
         private LinkedList<Coord> path;
-        private Colors color;
+        private Color color;
 
-        public Player(string name, Gender gender, Colors color)
+        public Player(string name, Coord location, Gender gender, Color color)
         {
             this.Path = new LinkedList<Coord>();
             this.Name = name;
             this.Gender = gender;
             this.Color = color;
+            this.Location = location;
+        }
+
+        public Player(string name, Gender gender, Color color)
+            : this(name, new Coord(), gender, color)
+        {
         }
 
         public Coord Location
@@ -52,6 +59,7 @@
                 {
                     throw new InvalidNameException();
                 }
+
                 this.name = value;
             }
         }
@@ -98,6 +106,7 @@
             {
                 throw new NotImplementedException();
             }
+
             set
             {
                 throw new NotImplementedException();
@@ -110,18 +119,20 @@
             {
                 return this.location;
             }
+
             set
             {
                 this.location = value;
             }
         }
 
-        public Colors Color
+        public Color Color
         {
             get
             {
                 return this.color;
             }
+
             set
             {
                 this.color = value;

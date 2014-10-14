@@ -37,7 +37,8 @@
             this.lableTitleCreateCharacter = new System.Windows.Forms.Label();
             this.BackButton = new System.Windows.Forms.Button();
             this.ColorComboBox = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.ColorLabel = new System.Windows.Forms.Label();
+            this.PlayerColorDialog = new System.Windows.Forms.ColorDialog();
             this.genderGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -100,7 +101,6 @@
             this.maleRadioButton.TabStop = true;
             this.maleRadioButton.Text = "Male";
             this.maleRadioButton.UseVisualStyleBackColor = true;
-
             // 
             // lableTitleCreateCharacter
             // 
@@ -112,7 +112,7 @@
             this.lableTitleCreateCharacter.TabIndex = 4;
             this.lableTitleCreateCharacter.Text = "Create Your Character:";
             this.lableTitleCreateCharacter.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-
+            // 
             // BackButton
             // 
             this.BackButton.Location = new System.Drawing.Point(48, 246);
@@ -138,21 +138,22 @@
             this.ColorComboBox.Size = new System.Drawing.Size(143, 21);
             this.ColorComboBox.TabIndex = 6;
             // 
-            // label1
+            // ColorLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(51, 187);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(31, 13);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Color";
+            this.ColorLabel.AutoSize = true;
+            this.ColorLabel.Location = new System.Drawing.Point(51, 187);
+            this.ColorLabel.Name = "ColorLabel";
+            this.ColorLabel.Size = new System.Drawing.Size(31, 13);
+            this.ColorLabel.TabIndex = 7;
+            this.ColorLabel.Text = "Color";
+            this.ColorLabel.Click += new System.EventHandler(this.ColorLabel_Click);
             // 
-            // CreateCharacter
+            // CreateCharacterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 287);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.ColorLabel);
             this.Controls.Add(this.ColorComboBox);
             this.Controls.Add(this.BackButton);
             this.Controls.Add(this.lableTitleCreateCharacter);
@@ -160,7 +161,7 @@
             this.Controls.Add(this.characterName);
             this.Controls.Add(this.nameTextBox);
             this.Controls.Add(this.saveCharacterButton);
-            this.Name = "CreateCharacter";
+            this.Name = "CreateCharacterForm";
             this.Text = "CreateCharacter";
             this.genderGroupBox.ResumeLayout(false);
             this.genderGroupBox.PerformLayout();
@@ -180,6 +181,7 @@
         private System.Windows.Forms.Label lableTitleCreateCharacter;
         private System.Windows.Forms.Button BackButton;
         private System.Windows.Forms.ComboBox ColorComboBox;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label ColorLabel;
+        private System.Windows.Forms.ColorDialog PlayerColorDialog;
     }
 }
