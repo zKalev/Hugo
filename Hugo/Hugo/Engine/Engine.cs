@@ -41,11 +41,18 @@
             return engine;
         }
 
+        /// <summary>
+        /// Return current player which is the first in the players list
+        /// </summary>
+        /// <returns></returns>
         public IPlayer GetCurrentPlayer()
         {
             return this.Players.First.Value;
         }
 
+        /// <summary>
+        /// Change current player. Queue is used to set first player in the end. 
+        /// </summary>
         public void ChangeTurn()
         {
             IPlayer holder = this.Players.First.Value;
@@ -69,6 +76,7 @@
 
         public void StartGame()
         {
+            //if user does not ccreate players, load two default players
             if (this.Players.Count == 0)
             {
                 this.Players.AddLast(new Player(DefaultPlayerNameOne, Gender.Male, Colors.Red));
