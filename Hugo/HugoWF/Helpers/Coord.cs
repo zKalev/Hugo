@@ -25,6 +25,18 @@
             return subtract;
         }
 
+        public static Coord operator /(Coord first, int divisor)
+        {
+            Coord divisionResult = new Coord(first.X / divisor, first.Y / divisor);
+            return divisionResult;
+        }
+
+        public static Coord operator *(Coord first, int multiplier)
+        {
+            Coord multiplicationResult = new Coord(first.X * multiplier, first.Y * multiplier);
+            return multiplicationResult;
+        }
+
         public void ChangeToLeft(float step)
         {
             this.X -= step;

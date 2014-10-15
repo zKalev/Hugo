@@ -6,6 +6,7 @@
     using System.Text;
     using System.Threading.Tasks;
     using Helpers;
+    using System.Drawing;
 
     public class Target : GameObject, ITarget
     {
@@ -14,7 +15,12 @@
         {
             this.IsVisible = true;
             this.Location = location;
-            this.Effects = new List<IEffect>();
+        }
+
+        public Target(Coord location, Color objectColor)
+            : this(location)
+        {
+            this.ObjectColor = objectColor;
         }
     }
 }

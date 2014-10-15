@@ -94,7 +94,22 @@
 
         public void DrawObjects(IList<GameObjects.IGameObject> gameObjects)
         {
-            throw new NotImplementedException();
+            var g = form.CreateGraphics();
+
+            foreach (var gameObject in gameObjects)
+            {
+                if (gameObject.IsVisible)
+                {
+                    g.FillRectangle(
+                        new SolidBrush(gameObject.ObjectColor),
+                        (int)gameObject.Location.X * this.CellSize,
+                        (int)gameObject.Location.Y * this.CellSize,
+                        this.CellSize,
+                        this.CellSize
+                        );
+                }
+            }
+
         }
     }
 }

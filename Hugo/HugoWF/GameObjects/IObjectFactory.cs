@@ -16,7 +16,7 @@
 
         IFriend CreateApproacher(IList<IGameObject> gameObjects);
 
-        ITarget CreateTarget(IList<IGameObject> gameObjects);
+        ITarget CreateTarget(IList<IGameObject> gameObjects, Coord location);
 
         IGameObject CreateRandomObjects(Coord minLocation, Coord maxLocation, int objectsCount, IList<IGameObject> gameObjects);
     }

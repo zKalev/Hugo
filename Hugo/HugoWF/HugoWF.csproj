@@ -44,6 +44,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GameObjects\ObjectFactory.cs" />
+    <Compile Include="GameObjects\Target.cs" />
     <Compile Include="UI\AboutForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -58,7 +60,7 @@
     </Compile>
     <Compile Include="Engine\Engine.cs" />
     <Compile Include="Engine\IEngine.cs" />
-    <Compile Include="Engine\IObjectFactory.cs" />
+    <Compile Include="GameObjects\IObjectFactory.cs" />
     <Compile Include="Exceptions\InvalidNameException.cs" />
     <Compile Include="UI\WFormDrawingEngine.cs" />
     <Compile Include="UI\GameFieldForm.cs">

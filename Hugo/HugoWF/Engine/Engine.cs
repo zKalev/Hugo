@@ -1,6 +1,5 @@
 ﻿namespace Hugo.Engine
 {
-    using System;
     using System.Collections.Generic;
     using Players;
     using GameObjects;
@@ -12,18 +11,18 @@
     {
         private static Engine engine;
 
-        private LinkedList<IPlayer> players;
-        private IList<IGameObject> gameObjects;
-
         private const string DefaultPlayerNameOne = "player1";
         private const string DefaultPlayerNameTwo = "player2";
 
+        private LinkedList<IPlayer> players;
+        private IList<IGameObject> gameObjects;
         private IList<Color> existingColors;
 
         private Engine()
         {
             this.Players = new LinkedList<IPlayer>();
             this.ExistingColors = new List<Color>();
+            this.GameObjects = new List<IGameObject>();
         }
 
         public LinkedList<IPlayer> Players
@@ -39,16 +38,16 @@
             }
         }
 
-        IList<IGameObject> GameObjects
+        public IList<IGameObject> GameObjects
         {
             get
             {
-                throw new NotImplementedException();
+                return this.gameObjects;
             }
 
             set
             {
-                throw new NotImplementedException();
+                this.gameObjects = value;
             }
         }
 
@@ -61,6 +60,11 @@
 
         }
 
+        public IObjectFactory ObjectFactory
+        {
+            get { return GameObjectFactory.GetInstance(); }
+        }
+
         public static Engine GetInstance()
         {
             if (Engine.engine == null)
@@ -69,18 +73,6 @@
             }
 
             return Engine.engine;
-        }
-
-        public IPlayer GetCurrentPlayer()
-        {
-            return this.Players.First.Value;
-        }
-
-        public void ChangeTurn()
-        {
-            IPlayer holder = this.Players.First.Value;
-            this.Players.RemoveFirst();
-            this.Players.AddLast(holder);
         }
 
         private void SetStartPositionForPlayers()
@@ -101,9 +93,9 @@
         {
             switch (this.Players.Count)
             {
-                    // TODO: Implement other cases: 1 player, between 1 and 8 players
-                    // When one player added you should add a second player and give them both the correct initial locations
-                    // When more than two players are given by the user, you shoud assign them all the correct location so that they are symetric from the target which is on the center of the board
+                // TODO: Implement other cases: 1 player, between 1 and 8 players
+                // When one player added you should add a second player and give them both the correct initial locations
+                // When more than two players are given by the user, you shoud assign them all the correct location so that they are symetric from the target which is on the center of the board
                 case 0:
                     {
                         this.Players.AddLast(new Player(
@@ -128,10 +120,14 @@
                     break;
             }
 
-            // TODO: Implement an ObjectFactory class
+            // Create a target
+            Coord targetLocation = (
+                DrawingEngine.BottomRight +
+                DrawingEngine.TopLeft +
+                new Coord(DrawingEngine.Margin, DrawingEngine.Margin) * 2) / 2;
 
-            // TODO: Create a target
-            
+            this.ObjectFactory.CreateTarget(this.GameObjects, targetLocation);
+
             // TODO: Create a random number of game objects of random types and on random locations
 
         }
@@ -144,7 +140,9 @@
 
             DrawingEngine.DrawBoardFields();
             DrawingEngine.DrawPlayers(this.Players);
+
             // TODO: Draw gameObjects
+            DrawingEngine.DrawObjects(this.GameObjects);
         }
 
         public void CreatePlayer(string name, Gender gender, Color color)
@@ -152,18 +150,16 @@
             this.Players.AddLast(new Player(name, gender, color));
         }
 
-        IList<IGameObject> IEngine.GameObjects
+        public IPlayer GetCurrentPlayer()
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            set
-            {
-                throw new NotImplementedException();
-            }
+            return this.Players.First.Value;
         }
 
-
+        public void ChangeTurn()
+        {
+            IPlayer holder = this.Players.First.Value;
+            this.Players.RemoveFirst();
+            this.Players.AddLast(holder);
+        }
     }
 }

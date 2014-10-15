@@ -3,6 +3,7 @@
     using Hugo.Helpers;
     using System;
     using System.Collections.Generic;
+    using System.Drawing;
     using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
@@ -10,10 +11,20 @@
     public abstract class GameObject : IGameObject
     {
         private Coord location;
+        private Color objectColor;
+        private bool isVisible;
 
         public GameObject(Coord location)
         {
             this.Location = location;
+            this.ObjectColor = Color.Black;
+        }
+
+        public GameObject(Coord location, Color objectColor, bool isVisible = false)
+            : this(location)
+        {
+            this.ObjectColor = objectColor;
+            this.IsVisible = isVisible;
         }
 
         public char[] Shape
@@ -49,12 +60,18 @@
         {
             get
             {
-                throw new NotImplementedException();
+                return this.isVisible;
             }
             set
             {
-                throw new NotImplementedException();
+                this.isVisible = value;
             }
+        }
+
+        public Color ObjectColor
+        {
+            get { return this.objectColor; }
+            set { this.objectColor = value; }
         }
     }
 }

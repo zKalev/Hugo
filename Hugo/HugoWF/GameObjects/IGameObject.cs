@@ -6,6 +6,7 @@
     using System.Text;
     using System.Threading.Tasks;
     using Helpers;
+    using System.Drawing;
 
     public interface IGameObject
     {
@@ -16,5 +17,7 @@
         IList<IEffect> Effects { get; set; }
 
         bool IsVisible { get; set; }
+
+        Color ObjectColor { get; set; }
     }
 }
