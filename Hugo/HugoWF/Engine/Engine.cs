@@ -128,7 +128,10 @@
                     break;
             }
 
+            // TODO: Implement an ObjectFactory class
+
             // TODO: Create a target
+            
             // TODO: Create a random number of game objects of random types and on random locations
 
         }

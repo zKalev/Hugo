@@ -19,6 +19,8 @@
 
         IDrawingEngine DrawingEngine { get; }
 
+        IObjectFactory ObjectFactory { get; }
+
         IList<Color> ExistingColors { get; }
 
         void StartGame();
