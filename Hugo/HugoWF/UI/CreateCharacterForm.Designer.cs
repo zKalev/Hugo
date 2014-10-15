@@ -102,7 +102,7 @@
             this.maleRadioButton.Text = "Male";
             this.maleRadioButton.UseVisualStyleBackColor = true;
             // 
-            // lableTitleCreateCharacter
+            // labelTitleCreateCharacter
             // 
             this.lableTitleCreateCharacter.AutoSize = true;
             this.lableTitleCreateCharacter.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -126,13 +126,6 @@
             // ColorComboBox
             // 
             this.ColorComboBox.FormattingEnabled = true;
-            this.ColorComboBox.Items.AddRange(new object[] {
-            "Green",
-            "Blue",
-            "Orange",
-            "Black",
-            "White",
-            "Red"});
             this.ColorComboBox.Location = new System.Drawing.Point(100, 184);
             this.ColorComboBox.Name = "ColorComboBox";
             this.ColorComboBox.Size = new System.Drawing.Size(143, 21);

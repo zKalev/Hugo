@@ -83,7 +83,7 @@
             this.Players.AddLast(holder);
         }
 
-        public void SetStartPositionForPlayers()
+        private void SetStartPositionForPlayers()
         {
             foreach (IPlayer p in this.Players)
             {
@@ -99,11 +99,38 @@
 
         public void StartGame()
         {
-            if (this.Players.Count == 0)
+            switch (this.Players.Count)
             {
-                this.Players.AddLast(new Player(DefaultPlayerNameOne, this.DrawingEngine.TopLeft, Gender.Male, Color.Red));
-                this.Players.AddLast(new Player(DefaultPlayerNameTwo, this.DrawingEngine.BottomRight, Gender.Female, Color.Blue));
+                    // TODO: Implement other cases: 1 player, between 1 and 8 players
+                    // When one player added you should add a second player and give them both the correct initial locations
+                    // When more than two players are given by the user, you shoud assign them all the correct location so that they are symetric from the target which is on the center of the board
+                case 0:
+                    {
+                        this.Players.AddLast(new Player(
+                            DefaultPlayerNameOne,
+                            this.DrawingEngine.TopLeft + new Coord(
+                                this.DrawingEngine.Margin,
+                                this.DrawingEngine.Margin),
+                            Gender.Male,
+                            Color.Red));
+
+                        this.Players.AddLast(new Player(
+                            DefaultPlayerNameTwo,
+                            this.DrawingEngine.BottomRight + new Coord(
+                                this.DrawingEngine.Margin,
+                                this.DrawingEngine.Margin),
+                            Gender.Female,
+                            Color.Blue));
+
+                        break;
+                    }
+                default:
+                    break;
             }
+
+            // TODO: Create a target
+            // TODO: Create a random number of game objects of random types and on random locations
+
         }
 
         public void Run()
@@ -114,6 +141,7 @@
 
             DrawingEngine.DrawBoardFields();
             DrawingEngine.DrawPlayers(this.Players);
+            // TODO: Draw gameObjects
         }
 
         public void CreatePlayer(string name, Gender gender, Color color)

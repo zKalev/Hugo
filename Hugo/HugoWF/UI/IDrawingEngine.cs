@@ -8,7 +8,10 @@
     public interface IDrawingEngine
     {
         Coord TopLeft { get; }
+
         Coord BottomRight { get; }
+
+        int Margin { get; }
 
         float CellSize { get; set; }
 
