@@ -7,7 +7,7 @@
     using System.Text;
     using System.Threading.Tasks;
 
-    public class GameObject : IGameObject
+    public abstract class GameObject : IGameObject
     {
         private Coord location;
 
@@ -45,7 +45,7 @@
             }
         }
 
-        public bool isVisible
+        public bool IsVisible
         {
             get
             {

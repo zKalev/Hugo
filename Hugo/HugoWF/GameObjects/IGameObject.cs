@@ -15,6 +15,6 @@
 
         IList<IEffect> Effects { get; set; }
 
-        bool isVisible { get; set; }
+        bool IsVisible { get; set; }
     }
 }
