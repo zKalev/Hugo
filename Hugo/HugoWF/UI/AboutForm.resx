@@ -117,4 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="textBox1.Text" xml:space="preserve">
+    <value>HUGO is a multiplayer game where all the players start the game at an equal distance from a target. The game starts by choosing the count of the players.
+	The purpose of the game is that the player reaches as fast as possible the target. 
+	Each player should answer correctly a question to win the right to move towards the target. If the answer is not correct the player stays in place until his turn comes again. 
+
+ In the game field there are randomly situated different kinds of invisible objects, enemies and bonuses that have special effects on the player that steps over them.
+When the player moves on a busy field the effect of the object that occupies the field is applied to the player.</value>
+  </data>
 </root>

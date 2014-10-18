@@ -29,42 +29,44 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.BackButton = new System.Windows.Forms.Button();
-            this.SuspendLayout();
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(4, 30);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(276, 190);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.Text = "Write something about the game";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // BackButton
-            // 
-            this.BackButton.Location = new System.Drawing.Point(205, 226);
-            this.BackButton.Name = "BackButton";
-            this.BackButton.Size = new System.Drawing.Size(75, 23);
-            this.BackButton.TabIndex = 1;
-            this.BackButton.Text = "Close";
-            this.BackButton.UseVisualStyleBackColor = true;
-            this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
-            // 
-            // About
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Controls.Add(this.BackButton);
-            this.Controls.Add(this.textBox1);
-            this.Name = "About";
-            this.Text = "About";
-            this.ResumeLayout(false);
-            this.PerformLayout();
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutForm));
+			this.textBox1 = new System.Windows.Forms.TextBox();
+			this.BackButton = new System.Windows.Forms.Button();
+			this.SuspendLayout();
+			// 
+			// textBox1
+			// 
+			this.textBox1.CausesValidation = false;
+			this.textBox1.Location = new System.Drawing.Point(12, 12);
+			this.textBox1.Multiline = true;
+			this.textBox1.Name = "textBox1";
+			this.textBox1.ReadOnly = true;
+			this.textBox1.Size = new System.Drawing.Size(296, 206);
+			this.textBox1.TabIndex = 0;
+			this.textBox1.Text = resources.GetString("textBox1.Text");
+			this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			// 
+			// BackButton
+			// 
+			this.BackButton.Location = new System.Drawing.Point(233, 224);
+			this.BackButton.Name = "BackButton";
+			this.BackButton.Size = new System.Drawing.Size(75, 23);
+			this.BackButton.TabIndex = 1;
+			this.BackButton.Text = "Close";
+			this.BackButton.UseVisualStyleBackColor = true;
+			this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
+			// 
+			// AboutForm
+			// 
+			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.ClientSize = new System.Drawing.Size(320, 253);
+			this.Controls.Add(this.BackButton);
+			this.Controls.Add(this.textBox1);
+			this.Name = "AboutForm";
+			this.Text = "About";
+			this.ResumeLayout(false);
+			this.PerformLayout();
 
         }
 
