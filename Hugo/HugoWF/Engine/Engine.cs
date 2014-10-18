@@ -139,14 +139,14 @@
 
         public void ChangeTurn()
         {
-            IPlayer holder = this.Players.First.Value;
+			IPlayer holder = GetCurrentPlayer();
             this.Players.RemoveFirst();
             this.Players.AddLast(holder);
         }
 
 		public void MoveCurrentPlayer(float x, float y)
 		{
-			IPlayer currentPlayer = Engine.GetInstance().Players.First.Value;
+			IPlayer currentPlayer = GetCurrentPlayer();
 			Coord nextStep = currentPlayer.CalculateNextStep(x, y);
 			bool isInGameField = DrawingEngine.IsInGameField(nextStep);
 
