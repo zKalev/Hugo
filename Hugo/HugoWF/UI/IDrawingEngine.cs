@@ -11,6 +11,8 @@
 
         Coord BottomRight { get; }
 
+		IList<Coord> InitialCoords { get; }
+
         int Margin { get; }
 
         float CellSize { get; set; }

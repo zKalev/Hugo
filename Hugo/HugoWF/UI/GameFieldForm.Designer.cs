@@ -28,18 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
-            // 
-            // GameFieldForm
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(924, 647);
-            this.Name = "GameFieldForm";
-            this.Text = "GameField";
-            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NavigationKey);
-            this.ResumeLayout(false);
+			this.SuspendLayout();
+			// 
+			// GameFieldForm
+			// 
+			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.BackColor = System.Drawing.SystemColors.ControlLight;
+			this.ClientSize = new System.Drawing.Size(924, 647);
+			this.Name = "GameFieldForm";
+			this.Text = "GameField";
+			this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NavigationKey);
+			this.ResumeLayout(false);
 
         }
 
