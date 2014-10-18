@@ -6,15 +6,11 @@ using System.Threading.Tasks;
 
 namespace Hugo.GameObjects.Questions
 {
-	interface IQuestion
+	interface IAnswer
 	{
-		IList<IAnswer> Answers { get; }
-
-		IAnswer CorrectAnswer { get; }
-
 		string Text { get; }
 
-		bool IsAnswerCorrect(IAnswer answer);
+		int Number { get; }
 
 	}
 }

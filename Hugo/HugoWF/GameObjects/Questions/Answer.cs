@@ -6,26 +6,23 @@ using System.Threading.Tasks;
 
 namespace Hugo.GameObjects.Questions
 {
-	class Answer
+	class Answer: IAnswer
 	{
 		private int number;
 		private string text;
 		public Answer(int number, string text)
 		{
-			this.Number = number;
-			this.Text = text;
+			this.number = number;
+			this.text = text;
 		}
 		public string Text
 		{
 			get { return text; }
-			set { text = value; }
 		}
-		
 
 		public int Number
 		{
 			get { return number; }
-			set { number = value; }
 		}
 		
 	}

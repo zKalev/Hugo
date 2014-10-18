@@ -53,7 +53,7 @@
 			this.PlayerColor.Enabled = false;
 			this.PlayerColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.PlayerColor.ForeColor = System.Drawing.SystemColors.Window;
-			this.PlayerColor.Location = new System.Drawing.Point(26, 114);
+			this.PlayerColor.Location = new System.Drawing.Point(31, 88);
 			this.PlayerColor.Name = "PlayerColor";
 			this.PlayerColor.ReadOnly = true;
 			this.PlayerColor.Size = new System.Drawing.Size(286, 32);
@@ -65,7 +65,7 @@
 			this.PlayerPoints.Enabled = false;
 			this.PlayerPoints.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.PlayerPoints.ForeColor = System.Drawing.SystemColors.Window;
-			this.PlayerPoints.Location = new System.Drawing.Point(26, 152);
+			this.PlayerPoints.Location = new System.Drawing.Point(31, 126);
 			this.PlayerPoints.Name = "PlayerPoints";
 			this.PlayerPoints.ReadOnly = true;
 			this.PlayerPoints.Size = new System.Drawing.Size(286, 32);
@@ -78,7 +78,7 @@
 			this.PlayerLabel.Enabled = false;
 			this.PlayerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.PlayerLabel.ForeColor = System.Drawing.SystemColors.Window;
-			this.PlayerLabel.Location = new System.Drawing.Point(26, 38);
+			this.PlayerLabel.Location = new System.Drawing.Point(31, 12);
 			this.PlayerLabel.Name = "PlayerLabel";
 			this.PlayerLabel.ReadOnly = true;
 			this.PlayerLabel.Size = new System.Drawing.Size(286, 32);
@@ -91,7 +91,7 @@
 			this.PlayerInfo.Enabled = false;
 			this.PlayerInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.PlayerInfo.ForeColor = System.Drawing.SystemColors.Window;
-			this.PlayerInfo.Location = new System.Drawing.Point(26, 76);
+			this.PlayerInfo.Location = new System.Drawing.Point(31, 50);
 			this.PlayerInfo.Name = "PlayerInfo";
 			this.PlayerInfo.ReadOnly = true;
 			this.PlayerInfo.Size = new System.Drawing.Size(286, 32);

@@ -54,6 +54,7 @@
     <Compile Include="GameObjects\Players\Player.cs" />
     <Compile Include="GameObjects\ObjectFactory.cs" />
     <Compile Include="GameObjects\Questions\Answer.cs" />
+    <Compile Include="GameObjects\Questions\IAnswer.cs" />
     <Compile Include="GameObjects\Questions\IQuestion.cs" />
     <Compile Include="GameObjects\Questions\Question.cs" />
     <Compile Include="GameObjects\Target.cs" />

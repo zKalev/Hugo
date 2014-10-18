@@ -9,36 +9,33 @@ namespace Hugo.GameObjects.Questions
 	class Question
 	{
 		private string text;
-		private Answer correctAnswer;
-		private IList<Answer> answers;
-		public Question(string text, Answer correctAnswer, IList<Answer> answers)
+		private IAnswer correctAnswer;
+		private IList<IAnswer> answers;
+		public Question(string text, IAnswer correctAnswer, IList<IAnswer> answers)
 		{
-			this.Text = text;
-			this.CorrectAnswer = correctAnswer;
-			this.Answers = answers;
+			this.text = text;
+			this.correctAnswer = correctAnswer;
+			this.answers = answers;
 		}
 
-		public IList<Answer> Answers
+		public IList<IAnswer> Answers
 		{
 			get { return answers; }
-			set { answers = value; }
 		}
 
-		public Answer CorrectAnswer
+		public IAnswer CorrectAnswer
 		{
 			get { return correctAnswer; }
-			set { correctAnswer = value; }
 		}
 		
 		public string Text
 		{
 			get { return text; }
-			set { text = value; }
 		}
 
-		public bool IsAnswerCorrect(Answer answer)
+		public bool IsAnswerCorrect(IAnswer answer)
 		{
-			return this.CorrectAnswer.Number == answer.Number;
+			return this.correctAnswer.Number == answer.Number;
 		}
 	}
 }
