@@ -79,7 +79,7 @@
         {
             foreach (IPlayer p in this.Players)
             {
-                p.Location = new Coord(5 * this.DrawingEngine.CellSize, 6 * this.DrawingEngine.CellSize);
+				p.Location = new Coord(5 * WFormDrawingEngine.CellSize, 6 * WFormDrawingEngine.CellSize);
             }
         }
 

@@ -9,36 +9,19 @@
 	using System.Text;
 	using System.Threading.Tasks;
 
-	public class Player : IPlayer
+	public class Player : GameObject, IPlayer
 	{
-		private char[] shape;
-		private Coord location;
 		private string name;
 		private Gender gender;
 		private int points = 20;
 		private LinkedList<Coord> path;
-		private Color color;
 
 		public Player(string name, Coord location, Gender gender, Color color)
+			: base(location, color, true)
 		{
 			this.Path = new LinkedList<Coord>();
 			this.Name = name;
 			this.Gender = gender;
-			this.Color = color;
-			this.Location = location;
-		}
-
-		public Coord Location
-		{
-			get
-			{
-				return this.location;
-			}
-
-			set
-			{
-				this.location = value;
-			}
 		}
 
 		public string Name
@@ -95,62 +78,5 @@
 			}
 		}
 
-		char[] IGameObject.Shape
-		{
-			get
-			{
-				return this.shape;
-			}
-		}
-
-		Coord IGameObject.Location
-		{
-			get
-			{
-				return this.location;
-			}
-
-			set
-			{
-				this.location = value;
-			}
-		}
-
-		public Color Color
-		{
-			get
-			{
-				return this.color;
-			}
-
-			set
-			{
-				this.color = value;
-			}
-		}
-
-		public IList<IEffect> Effects
-		{
-			get
-			{
-				throw new NotImplementedException();
-			}
-			set
-			{
-				throw new NotImplementedException();
-			}
-		}
-
-		public bool IsVisible
-		{
-			get
-			{
-				return true;
-			}
-			set
-			{
-				//not applicable
-			}
-		}
 	}
 }

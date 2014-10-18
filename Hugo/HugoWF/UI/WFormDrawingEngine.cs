@@ -23,7 +23,7 @@
 		private const int margin = 2;
 		private const int maxX = 24;
 		private const int maxY = 24;
-		private float cellSize = 20;
+		public const float CellSize = 20;
 
 		private static readonly Coord marginCoord = new Coord(margin, margin);
 		private IList<Coord> initialCoords = new List<Coord> { 
@@ -62,11 +62,6 @@
 			get { return WFormDrawingEngine.margin; }
 		}
 
-		public float CellSize
-		{
-			get { return this.cellSize; }
-			set { this.cellSize = value; }
-		}
 
 		public static IDrawingEngine GetDrawingEngine()
 		{
@@ -90,16 +85,16 @@
 					if ((x <= this.BottomRight.X && y <= this.BottomRight.Y) &&
 						(x >= (int)this.TopLeft.X && y >= (int)this.TopLeft.Y))
 					{
-						g.FillRectangle(Brushes.GhostWhite, startPos.X, startPos.Y, cellSize, cellSize);
+						g.FillRectangle(Brushes.GhostWhite, startPos.X, startPos.Y, CellSize, CellSize);
 					}
 
-					g.DrawRectangle(new Pen(Brushes.White), startPos.X, startPos.Y, cellSize, cellSize);
+					g.DrawRectangle(new Pen(Brushes.White), startPos.X, startPos.Y, CellSize, CellSize);
 
-					startPos.ChangeToDown(cellSize);
+					startPos.ChangeToDown(CellSize);
 				}
 
 				startPos.Y = 0;
-				startPos.ChangeToRight(cellSize);
+				startPos.ChangeToRight(CellSize);
 			}
 		}
 
@@ -107,14 +102,9 @@
 		{
 			Graphics g = form.CreateGraphics();
 
-			foreach (var player in players)
+			foreach (Player player in players)
 			{
-				g.FillRectangle(
-					new SolidBrush(player.Color),
-					player.Location.X * cellSize,
-					player.Location.Y * cellSize,
-					cellSize,
-					cellSize);
+				player.Draw(g, CellSize);
 			}
 		}
 
@@ -128,10 +118,10 @@
 				{
 					g.FillRectangle(
 						new SolidBrush(gameObject.Color),
-						(int)gameObject.Location.X * this.CellSize,
-						(int)gameObject.Location.Y * this.CellSize,
-						this.CellSize,
-						this.CellSize
+						(int)gameObject.Location.X * CellSize,
+						(int)gameObject.Location.Y * CellSize,
+						CellSize,
+						CellSize
 						);
 				}
 			}

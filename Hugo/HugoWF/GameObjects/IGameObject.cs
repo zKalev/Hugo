@@ -10,8 +10,6 @@
 
     public interface IGameObject
     {
-		char[] Shape { get; }
-
         Coord Location { get; set; }
 
         IList<IEffect> Effects { get; set; }
@@ -19,5 +17,7 @@
         bool IsVisible { get; set; }
 
         Color Color { get; set; }
+
+		void Draw(Graphics graphics, float cellSize);
     }
 }

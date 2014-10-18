@@ -15,8 +15,6 @@
 
         int Margin { get; }
 
-        float CellSize { get; set; }
-
         void DrawBoardFields();
 
         void DrawPlayers(IEnumerable<IPlayer> players);
