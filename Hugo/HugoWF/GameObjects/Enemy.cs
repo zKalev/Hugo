@@ -45,16 +45,5 @@
                 this.enemyDamage = value;
             }
         }
-
-		public override void Draw(Graphics graphics)
-		{
-			object obstacle = Properties.Resources.ResourceManager.GetObject("obstacle.png");
-			if (obstacle is Image)
-			{
-				Image obstacleImg = obstacle as Image;
-				Point point = new Point(Location.X, Location.Y);
-				graphics.DrawImage(obstacleImg, point);
-			}
-		}
     }
 }

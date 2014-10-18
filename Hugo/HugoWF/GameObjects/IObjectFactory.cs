@@ -10,7 +10,7 @@
 
     public interface IObjectFactory
     {
-        IEnemy CreateObstacle(IList<IGameObject> gameObjects);
+        IEnemy CreateObstacle(IList<IGameObject> gameObjects, Coord location);
 
         IEnemy CreateRepulser(IList<IGameObject> gameObjects);
 

@@ -109,7 +109,10 @@
             // Create a target
             this.ObjectFactory.CreateTarget(this.GameObjects, DrawingEngine.InitialCoords[0]);
 
-            // TODO: Create a random number of game objects of random types and on random locations
+			// TODO: Create a random number of game objects of random types and on random locations
+
+			// used for tests
+			//this.ObjectFactory.CreateObstacle(this.GameObjects, new Coord(10, 10));
 
         }
 

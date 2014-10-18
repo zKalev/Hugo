@@ -1,11 +1,12 @@
 ﻿namespace Hugo.GameObjects
 {
-    using Hugo.Helpers;
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
+	using Hugo.GameObjects.Enemies;
+	using Hugo.Helpers;
+	using System;
+	using System.Collections.Generic;
+	using System.Linq;
+	using System.Text;
+	using System.Threading.Tasks;
 
     public class GameObjectFactory : IObjectFactory
     {
@@ -25,9 +26,12 @@
             return GameObjectFactory.gameObjectFactory;
         }
 
-        public virtual IEnemy CreateObstacle(IList<IGameObject> gameObjects)
+		public virtual IEnemy CreateObstacle(IList<IGameObject> gameObjects, Coord location)
         {
-            throw new NotImplementedException();
+			IEnemy enemy = new Obstacle(location);
+			gameObjects.Add((IGameObject)enemy);
+
+			return enemy;
         }
 
         public virtual IEnemy CreateRepulser(IList<IGameObject> gameObjects)
