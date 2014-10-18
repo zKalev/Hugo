@@ -73,26 +73,42 @@
         private void MoveUp()
         {
 			Engine.GetInstance().MoveCurrentPlayer(0, -1);
+			updatePlayerInfo();
         }
 
         private void MoveLeft()
         {
 			Engine.GetInstance().MoveCurrentPlayer(-1, 0);
+			updatePlayerInfo();
         }
 
         private void MoveRigth()
         {
 			Engine.GetInstance().MoveCurrentPlayer(MovingUnit, 0);
+			updatePlayerInfo();
         }
 
 		private void MoveDown()
 		{
 			Engine.GetInstance().MoveCurrentPlayer(0, 1);
+			updatePlayerInfo();
 		}
 
 		private void GameFieldForm_Load(object sender, System.EventArgs e)
 		{
 
+		}
+
+		private void PlayerInfo_TextChanged(object sender, System.EventArgs e)
+		{
+
+		}
+
+		private void updatePlayerInfo()
+		{
+			IPlayer currentPlayer = Engine.GetInstance().GetCurrentPlayer();
+			this.PlayerInfo.BackColor = currentPlayer.Color;
+			this.PlayerInfo.Text = currentPlayer.Name;
 		}
     }
 }
