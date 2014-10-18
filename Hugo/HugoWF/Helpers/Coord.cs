@@ -2,16 +2,16 @@
 {
     public struct Coord
     {
-        public Coord(float x, float y)
+        public Coord(int x, int y)
             : this()
         {
             this.X = x;
             this.Y = y;
         }
 
-        public float X { get; set; }
+        public int X { get; set; }
 
-        public float Y { get; set; }
+        public int Y { get; set; }
 
         public static Coord operator +(Coord first, Coord second)
         {
@@ -37,7 +37,7 @@
             return multiplicationResult;
         }
 
-        public void ChangeToLeft(float step)
+        public void ChangeToLeft(int step)
         {
             this.X -= step;
             if (this.X < 0)
@@ -46,17 +46,17 @@
             }
         }
 
-        public void ChangeToRight(float step)
+        public void ChangeToRight(int step)
         {
             this.X += step;
         }
 
-        public void ChangeToDown(float step)
+        public void ChangeToDown(int step)
         {
             this.Y += step;
         }
 
-        public void ChangeToUp(float step)
+        public void ChangeToUp(int step)
         {
             this.Y -= step;
             if (this.Y < 0)

@@ -26,7 +26,7 @@
 
 		public override void Draw(Graphics graphics)
 		{
-			float cellSize = WFormDrawingEngine.CellSize;
+			int cellSize = WFormDrawingEngine.CellSize;
 			graphics.FillRectangle(new SolidBrush(this.Color), this.Location.X * cellSize, this.Location.Y * cellSize, cellSize, cellSize);
 		}
 	}

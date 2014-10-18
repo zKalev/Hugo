@@ -72,7 +72,7 @@
 
 		public virtual void Draw(Graphics graphics)
 		{
-			float cellSize = WFormDrawingEngine.CellSize;
+			int cellSize = WFormDrawingEngine.CellSize;
 			if (this.IsVisible)
 			{
 				graphics.FillEllipse(new SolidBrush(this.Color), this.Location.X * cellSize, this.Location.Y * cellSize, cellSize, cellSize);

@@ -21,6 +21,6 @@
 
 		Coord Move(Graphics graphics, Coord destination);
 
-		Coord CalculateNextStep(float x, float y);
+		Coord CalculateNextStep(int x, int y);
     }
 }

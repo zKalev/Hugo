@@ -144,7 +144,7 @@
             this.Players.AddLast(holder);
         }
 
-		public void MoveCurrentPlayer(float x, float y)
+		public void MoveCurrentPlayer(int x, int y)
 		{
 			IPlayer currentPlayer = GetCurrentPlayer();
 			Coord nextStep = currentPlayer.CalculateNextStep(x, y);

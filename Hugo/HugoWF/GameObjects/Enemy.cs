@@ -3,6 +3,7 @@
     using Hugo.Helpers;
     using Hugo.GameObjects.Players;
     using System.Linq;
+	using System.Drawing;
 
     public abstract class Enemy : GameObject, IEnemy
     {
@@ -44,5 +45,16 @@
                 this.enemyDamage = value;
             }
         }
+
+		public override void Draw(Graphics graphics)
+		{
+			object obstacle = Properties.Resources.ResourceManager.GetObject("obstacle.png");
+			if (obstacle is Image)
+			{
+				Image obstacleImg = obstacle as Image;
+				Point point = new Point(Location.X, Location.Y);
+				graphics.DrawImage(obstacleImg, point);
+			}
+		}
     }
 }

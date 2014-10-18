@@ -88,10 +88,10 @@
 			return this.Location;
 		}
 
-		public Coord CalculateNextStep(float x, float y)
+		public Coord CalculateNextStep(int x, int y)
 		{
-			float nextX = this.Location.X + x;
-			float nextY = this.Location.Y + y;
+			int nextX = this.Location.X + x;
+			int nextY = this.Location.Y + y;
 
 			return new Coord(nextX, nextY);
 		}

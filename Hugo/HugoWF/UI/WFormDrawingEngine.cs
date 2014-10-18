@@ -23,7 +23,7 @@
 		private const int margin = 2;
 		private const int maxX = 24;
 		private const int maxY = 24;
-		public const float CellSize = 20;
+		public const int CellSize = 20;
 
 		private static readonly Coord marginCoord = new Coord(margin, margin);
 		private IList<Coord> initialCoords = new List<Coord> { 
@@ -121,13 +121,13 @@
 
 		public bool IsInGameField(Coord location)
 		{
-			float x = location.X;
+			int x = location.X;
 			if (x < margin || x > maxX + margin)
 			{
 				return false;
 			}
 
-			float y = location.Y;
+			int y = location.Y;
 			if (y < margin || y > maxY + margin)
 			{
 				return false;

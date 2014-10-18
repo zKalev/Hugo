@@ -10,9 +10,9 @@
     public partial class GameFieldForm : Form
     {
 
-        private const float ElementSize = 50;
-        private const float PlayerSize = ElementSize / 2;
-        private const float MovingUnit = ElementSize / 2;
+        private const int ElementSize = 50;
+        private const int PlayerSize = ElementSize / 2;
+        private const int MovingUnit = ElementSize / 2;
 
         private const int XStartDrawingPoint = 5;
         private const int XEndDrawingPoint = 25;
