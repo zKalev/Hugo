@@ -19,7 +19,7 @@
             Engine engine = Engine.GetInstance();
             string playerName = nameTextBox.Text;
             Gender playerGender = maleRadioButton.Checked ? Gender.Male : Gender.Female;
-            Color color = ColorComboBox.BackColor;
+            Color color = InputPreviewColor.BackColor;
 
             if (engine.ExistingColors.Contains(color))
             {
@@ -45,10 +45,20 @@
             this.Hide();
         }
 
-        private void ColorLabel_Click(object sender, EventArgs e)
-        {
-            DialogResult result = this.PlayerColorDialog.ShowDialog();
-            this.ColorComboBox.BackColor = this.PlayerColorDialog.Color;
-        }
+		private void InputPreviewColor_TextChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void ButtonPickColor_Click(object sender, EventArgs e)
+		{
+			DialogResult result = this.DialogPickColor.ShowDialog();
+			// See if user pressed ok.
+			if (result == DialogResult.OK)
+			{
+				// Set form background to the selected color.
+				this.InputPreviewColor.BackColor = DialogPickColor.Color;
+			}
+		}
     }
 }
