@@ -60,5 +60,10 @@
 				this.InputPreviewColor.BackColor = DialogPickColor.Color;
 			}
 		}
+
+		private void CreateCharacterForm_Load(object sender, EventArgs e)
+		{
+
+		}
     }
 }

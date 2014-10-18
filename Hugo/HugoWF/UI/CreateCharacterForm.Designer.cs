@@ -1,5 +1,6 @@
 ﻿namespace Hugo.UI
 {
+
     partial class CreateCharacterForm
     {
         /// <summary>
@@ -151,6 +152,7 @@
 			this.InputPreviewColor.Size = new System.Drawing.Size(43, 20);
 			this.InputPreviewColor.TabIndex = 9;
 			this.InputPreviewColor.TextChanged += new System.EventHandler(this.InputPreviewColor_TextChanged);
+			this.InputPreviewColor.BackColor = Hugo.Utils.ColorUtil.GenerateRandomColor();
 			// 
 			// CreateCharacterForm
 			// 
@@ -168,6 +170,7 @@
 			this.Controls.Add(this.saveCharacterButton);
 			this.Name = "CreateCharacterForm";
 			this.Text = "CreateCharacter";
+			this.Load += new System.EventHandler(this.CreateCharacterForm_Load);
 			this.genderGroupBox.ResumeLayout(false);
 			this.genderGroupBox.PerformLayout();
 			this.ResumeLayout(false);
@@ -190,4 +193,5 @@
 		private System.Windows.Forms.Button ButtonPickColor;
 		private System.Windows.Forms.TextBox InputPreviewColor;
     }
+
 }
