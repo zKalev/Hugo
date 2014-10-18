@@ -14,7 +14,7 @@
         {
         }
 
-        public void Apply(Players.IPlayer player)
+        public void Apply(GameObjects.Players.IPlayer player)
         {
             throw new NotImplementedException();
         }

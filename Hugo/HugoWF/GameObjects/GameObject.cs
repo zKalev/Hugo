@@ -17,13 +17,13 @@
         public GameObject(Coord location)
         {
             this.Location = location;
-            this.ObjectColor = Color.Black;
+            this.Color = Color.Black;
         }
 
         public GameObject(Coord location, Color objectColor, bool isVisible = false)
             : this(location)
         {
-            this.ObjectColor = objectColor;
+            this.Color = objectColor;
             this.IsVisible = isVisible;
         }
 
@@ -68,7 +68,7 @@
             }
         }
 
-        public Color ObjectColor
+        public Color Color
         {
             get { return this.objectColor; }
             set { this.objectColor = value; }

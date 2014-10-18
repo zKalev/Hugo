@@ -2,7 +2,7 @@
 {
     using GameObjects;
     using Helpers;
-    using Players;
+    using GameObjects.Players;
     using System.Collections.Generic;
 
     public interface IDrawingEngine

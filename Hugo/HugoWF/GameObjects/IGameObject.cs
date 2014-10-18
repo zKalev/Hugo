@@ -10,7 +10,7 @@
 
     public interface IGameObject
     {
-        char[] Shape { get; }
+		char[] Shape { get; }
 
         Coord Location { get; set; }
 
@@ -18,6 +18,6 @@
 
         bool IsVisible { get; set; }
 
-        Color ObjectColor { get; set; }
+        Color Color { get; set; }
     }
 }

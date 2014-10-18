@@ -20,7 +20,7 @@
         public Target(Coord location, Color objectColor)
             : this(location)
         {
-            this.ObjectColor = objectColor;
+            this.Color = objectColor;
         }
     }
 }

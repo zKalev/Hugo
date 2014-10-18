@@ -1,7 +1,7 @@
 ﻿namespace Hugo.GameObjects.Enemies
 {
     using Hugo.Helpers;
-    using Hugo.Players;
+    using Hugo.GameObjects.Players;
     using System.Linq;
 
     public abstract class Enemy : GameObject, IEnemy

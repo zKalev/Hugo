@@ -2,7 +2,7 @@
 {
     using Hugo.Engine;
     using Hugo.Helpers;
-    using Hugo.Players;
+    using Hugo.GameObjects.Players;
     using System.Collections.Generic;
     using System.Drawing;
     using System.Windows.Forms;

@@ -6,7 +6,7 @@
     using System.Text;
     using System.Threading.Tasks;
     using GameObjects;
-    using Players;
+    using GameObjects.Players;
     using UI;
     using Hugo.Helpers;
     using System.Drawing;

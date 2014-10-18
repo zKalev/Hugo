@@ -1,7 +1,7 @@
 ﻿namespace Hugo.UI
 {
 	using Hugo.Helpers;
-	using Hugo.Players;
+	using Hugo.GameObjects.Players;
 	using System;
 	using System.Collections.Generic;
 	using System.Drawing;
@@ -127,7 +127,7 @@
 				if (gameObject.IsVisible)
 				{
 					g.FillRectangle(
-						new SolidBrush(gameObject.ObjectColor),
+						new SolidBrush(gameObject.Color),
 						(int)gameObject.Location.X * this.CellSize,
 						(int)gameObject.Location.Y * this.CellSize,
 						this.CellSize,

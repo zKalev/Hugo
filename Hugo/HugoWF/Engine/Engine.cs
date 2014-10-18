@@ -1,7 +1,7 @@
 ﻿namespace Hugo.Engine
 {
     using System.Collections.Generic;
-    using Players;
+    using GameObjects.Players;
     using GameObjects;
     using UI;
     using Helpers;
