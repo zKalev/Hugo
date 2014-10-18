@@ -17,9 +17,9 @@
 		private static readonly Coord topRight = new Coord(maxX, 0);
 		private static readonly Coord leftCenter = new Coord(0, maxY / 2);
 		private static readonly Coord bottomLeft = new Coord(0, maxY);
-		private static readonly Coord bottomCenter = new Coord(maxX, maxY / 2);
-		private static readonly Coord bottomRight = new Coord(maxY, maxX);
-		private static readonly Coord rightCenter = new Coord(maxY, maxX / 2);
+		private static readonly Coord bottomCenter = new Coord(maxX / 2, maxY);
+		private static readonly Coord bottomRight = new Coord(maxX, maxY);
+		private static readonly Coord rightCenter = new Coord(maxX, maxY / 2);
 		private const int margin = 2;
 		private const int maxX = 24;
 		private const int maxY = 24;

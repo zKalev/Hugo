@@ -49,7 +49,7 @@
 			this.saveCharacterButton.Location = new System.Drawing.Point(48, 211);
 			this.saveCharacterButton.Name = "saveCharacterButton";
 			this.saveCharacterButton.Size = new System.Drawing.Size(195, 29);
-			this.saveCharacterButton.TabIndex = 0;
+			this.saveCharacterButton.TabIndex = 1;
 			this.saveCharacterButton.Text = "Save";
 			this.saveCharacterButton.UseVisualStyleBackColor = true;
 			this.saveCharacterButton.Click += new System.EventHandler(this.SaveCharacterButton_Click);
@@ -59,7 +59,7 @@
 			this.nameTextBox.Location = new System.Drawing.Point(100, 74);
 			this.nameTextBox.Name = "nameTextBox";
 			this.nameTextBox.Size = new System.Drawing.Size(143, 20);
-			this.nameTextBox.TabIndex = 1;
+			this.nameTextBox.TabIndex = 0;
 			// 
 			// characterName
 			// 
