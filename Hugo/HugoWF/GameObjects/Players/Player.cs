@@ -13,7 +13,7 @@
 	{
 		private string name;
 		private Gender gender;
-		private int points = 20;
+		private int points = 100;
 		private LinkedList<Coord> path;
 
 		public Player(string name, Coord location, Gender gender, Color color)

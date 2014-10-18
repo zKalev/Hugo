@@ -49,7 +49,9 @@
     <Compile Include="GameObjects\Friend.cs" />
     <Compile Include="GameObjects\IEnemy.cs" />
     <Compile Include="GameObjects\IFriend.cs" />
+    <Compile Include="GameObjects\IObstacle.cs" />
     <Compile Include="GameObjects\ITarget.cs" />
+    <Compile Include="GameObjects\Obstacle.cs" />
     <Compile Include="GameObjects\Players\IPlayer.cs" />
     <Compile Include="GameObjects\Players\Player.cs" />
     <Compile Include="GameObjects\ObjectFactory.cs" />
@@ -129,6 +131,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
