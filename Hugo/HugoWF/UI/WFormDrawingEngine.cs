@@ -11,6 +11,7 @@
 	{
 		private static WFormDrawingEngine drawingEngine;
 		private Form form;
+		private static readonly Coord targetLocation = new Coord(maxX / 2, maxY / 2);
 		private static readonly Coord topLeft = new Coord();
 		private static readonly Coord topCenter = new Coord(maxX / 2, 0);
 		private static readonly Coord topRight = new Coord(maxX, 0);
@@ -26,6 +27,7 @@
 
 		private static readonly Coord marginCoord = new Coord(margin, margin);
 		private IList<Coord> initialCoords = new List<Coord> { 
+								WFormDrawingEngine.targetLocation + marginCoord,
 								WFormDrawingEngine.topLeft + marginCoord,
 								WFormDrawingEngine.bottomRight + marginCoord,
 								WFormDrawingEngine.topRight + marginCoord,

@@ -96,23 +96,17 @@
 			{
 				CreatePlayer(DefaultPlayerNameOne, Gender.Male,
 							Color.Blue);
-
 				CreatePlayer(DefaultPlayerNameTwo, Gender.Female,
 							Color.Pink);
 			}
-			else
+			else if (this.Players.Count == 1)
 			{
 				CreatePlayer(DefaultPlayerNameTwo, Gender.Female,
 							Color.Pink);
 			}		
 
             // Create a target
-            Coord targetLocation = (
-                DrawingEngine.BottomRight +
-                DrawingEngine.TopLeft +
-                new Coord(DrawingEngine.Margin, DrawingEngine.Margin) * 2) / 2;
-
-            this.ObjectFactory.CreateTarget(this.GameObjects, targetLocation);
+            this.ObjectFactory.CreateTarget(this.GameObjects, DrawingEngine.InitialCoords[0]);
 
             // TODO: Create a random number of game objects of random types and on random locations
 
@@ -133,7 +127,7 @@
 
         public void CreatePlayer(string name, Gender gender, Color color)
         {
-			Coord location = DrawingEngine.InitialCoords[this.Players.Count];
+			Coord location = DrawingEngine.InitialCoords[this.Players.Count + 1];
 			this.Players.AddLast(new Player(name, location, gender, color));
         }
 
