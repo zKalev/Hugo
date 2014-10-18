@@ -85,7 +85,7 @@
 
         private void MoveRigth()
         {
-			Engine.GetInstance().MoveCurrentPlayer(MovingUnit, 0);
+			Engine.GetInstance().MoveCurrentPlayer(1, 0);
 			updatePlayerInfo();
         }
 
