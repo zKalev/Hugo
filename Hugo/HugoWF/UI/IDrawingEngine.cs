@@ -21,5 +21,9 @@
 
         void DrawObjects(IList<IGameObject> gameObjects);
 
+		bool IsInGameField(Coord location);
+
+		void ShowMessage(string message);
+
     }
 }

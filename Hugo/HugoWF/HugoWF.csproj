@@ -45,7 +45,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GameObjects\Enemy.cs" />
+    <Compile Include="GameObjects\Friend.cs" />
+    <Compile Include="GameObjects\IEnemy.cs" />
+    <Compile Include="GameObjects\IFriend.cs" />
+    <Compile Include="GameObjects\ITarget.cs" />
+    <Compile Include="GameObjects\Players\IPlayer.cs" />
+    <Compile Include="GameObjects\Players\Player.cs" />
     <Compile Include="GameObjects\ObjectFactory.cs" />
+    <Compile Include="GameObjects\Questions\Answer.cs" />
+    <Compile Include="GameObjects\Questions\IQuestion.cs" />
+    <Compile Include="GameObjects\Questions\Question.cs" />
     <Compile Include="GameObjects\Target.cs" />
     <Compile Include="UI\AboutForm.cs">
       <SubType>Form</SubType>
@@ -71,17 +81,10 @@
       <DependentUpon>GameFieldForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GameObjects\GameObject.cs" />
-    <Compile Include="GameObjects\Enemy.cs" />
-    <Compile Include="GameObjects\IEnemy.cs" />
-    <Compile Include="GameObjects\Friend.cs" />
-    <Compile Include="GameObjects\IFriend.cs" />
     <Compile Include="GameObjects\IGameObject.cs" />
-    <Compile Include="GameObjects\ITarget.cs" />
     <Compile Include="Helpers\Coord.cs" />
     <Compile Include="Helpers\IEffect.cs" />
     <Compile Include="Helpers\Gender.cs" />
-    <Compile Include="GameObjects\Players\IPlayer.cs" />
-    <Compile Include="GameObjects\Players\Player.cs" />
     <Compile Include="UI\PlayingRulesForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,6 +146,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -6,6 +6,7 @@
     using UI;
     using Helpers;
     using System.Drawing;
+	using System.Windows.Forms;
 
     public class Engine : IEngine
     {
@@ -147,24 +148,19 @@
 		{
 			IPlayer currentPlayer = Engine.GetInstance().Players.First.Value;
 			Coord nextStep = currentPlayer.CalculateNextStep(x, y);
-			bool move = CheckField(nextStep);
-			if (move)
+			bool isInGameField = DrawingEngine.IsInGameField(nextStep);
+
+			if (isInGameField)
 			{
 				Graphics graphics = ((DrawingEngine as WFormDrawingEngine).Form).CreateGraphics();
 				currentPlayer.Move(graphics, nextStep);
+				
+				ChangeTurn();
 			}
-			ChangeTurn();
-		}
-
-
-		private bool CheckField(Coord location)
-		{
-			//TODO
-			// validate target location
-			// check for obstracles and etc.
-			// ask question
-
-			return true;
+			else
+			{
+				DrawingEngine.ShowMessage("You can't move outside the field! Try again!");
+			}
 		}
     }
 }

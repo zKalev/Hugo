@@ -118,5 +118,27 @@
 			}
 
 		}
+
+		public bool IsInGameField(Coord location)
+		{
+			float x = location.X;
+			if (x < 0 || x > maxX + margin)
+			{
+				return false;
+			}
+
+			float y = location.Y;
+			if (y < 0 || y > maxY + margin)
+			{
+				return false;
+			}
+
+			return true;
+		}
+
+		public void ShowMessage(string message)
+		{
+			MessageBox.Show(message);
+		}
 	}
 }

@@ -5,7 +5,7 @@
     using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
-    using GameObjects.Players;
+	using Hugo.GameObjects.Players;
 
     public interface IEffect
     {
