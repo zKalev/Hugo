@@ -92,10 +92,6 @@
         public void StartGame()
         {
 
-			// TODO: Implement other cases: 1 player, between 1 and 8 players
-			// When one player added you should add a second player and give them both the correct initial locations
-			// When more than two players are given by the user, you shoud assign them all the correct location so that they are symetric from the target which is on the center of the board
-
 			if (this.Players.Count == 0)
 			{
 				CreatePlayer(DefaultPlayerNameOne, Gender.Male,
@@ -103,7 +99,12 @@
 
 				CreatePlayer(DefaultPlayerNameTwo, Gender.Female,
 							Color.Pink);
-			}			
+			}
+			else
+			{
+				CreatePlayer(DefaultPlayerNameTwo, Gender.Female,
+							Color.Pink);
+			}		
 
             // Create a target
             Coord targetLocation = (
