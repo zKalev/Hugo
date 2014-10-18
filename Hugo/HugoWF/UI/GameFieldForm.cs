@@ -33,6 +33,7 @@
         {
             //LoadColors();
             InitializeComponent();
+			updatePlayerInfo();
         }
 
      private void LoadColors()
@@ -107,8 +108,24 @@
 		private void updatePlayerInfo()
 		{
 			IPlayer currentPlayer = Engine.GetInstance().GetCurrentPlayer();
-			this.PlayerInfo.BackColor = currentPlayer.Color;
+			this.PlayerColor.BackColor = currentPlayer.Color;
+			this.PlayerPoints.Text = currentPlayer.Points + "";
 			this.PlayerInfo.Text = currentPlayer.Name;
+		}
+
+		private void PlayerLabel_TextChanged(object sender, System.EventArgs e)
+		{
+
+		}
+
+		private void PlayerColor_TextChanged(object sender, System.EventArgs e)
+		{
+
+		}
+
+		private void PlayerPoints_TextChanged(object sender, System.EventArgs e)
+		{
+
 		}
     }
 }
