@@ -49,9 +49,7 @@
     <Compile Include="GameObjects\Friend.cs" />
     <Compile Include="GameObjects\IEnemy.cs" />
     <Compile Include="GameObjects\IFriend.cs" />
-    <Compile Include="GameObjects\IObstacle.cs" />
     <Compile Include="GameObjects\ITarget.cs" />
-    <Compile Include="GameObjects\Obstacle.cs" />
     <Compile Include="GameObjects\Players\IPlayer.cs" />
     <Compile Include="GameObjects\Players\Player.cs" />
     <Compile Include="GameObjects\ObjectFactory.cs" />
