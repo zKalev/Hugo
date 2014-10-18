@@ -22,10 +22,10 @@
 
         private const int FontSize = 15;
 
-        private const char StraightButtonChar = 'w';
+        private const char UpButtonChar = 'w';
         private const char LeftButtonChar = 'a';
         private const char RigthButtonChar = 'd';
-
+		private const char DownButtonChar = 's';
 
         private Dictionary<Color, Brush> colors;
 
@@ -46,98 +46,54 @@
             colors.Add(Color.White, Brushes.White);
         }
 
-        //private void GameField_Paint(object sender, PaintEventArgs e)
-        //{
-        //    Engine.GetInstance().DrawingEngine.DrawBoardFields();
-        //    Engine.GetInstance().SetStartPositionForPlayers();
-        //    //DrawPlayersOnStartPosition(e.Graphics);
-        //}
-
-        //private void DrawPlayersOnStartPosition(Graphics g)
-        //{
-        //    Engine engine = Engine.GetInstance();
-        //    LinkedList<IPlayer> players = engine.Players;
-
-        //    for (int player = 0; player < players.Count; player++)
-        //    {
-        //        IPlayer currentPlayer = players.ElementAt(player);
-        //        Brush currentPlayerColor = this.colors[currentPlayer.Color];
-
-        //        float x = 28 * MovingUnit + 1;
-        //        float y = 4 * MovingUnit + 1 + 35 * player;
-
-        //        g.FillRectangle(currentPlayerColor, x, y, PlayerSize, PlayerSize);
-
-        //        float xStartPointForPrintingName = x + 40;
-        //        PointF playerNamePrintStartPoint = new PointF(xStartPointForPrintingName, y);
-        //        Font playerNameFont = new Font(string.Empty, FontSize);
-
-        //        g.DrawString(currentPlayer.Name + " : " + currentPlayer.Points, playerNameFont, Brushes.Black, playerNamePrintStartPoint);
-
-        //        // draw player on the field
-        //        g.FillRectangle(currentPlayerColor, currentPlayer.Location.X, currentPlayer.Location.Y, PlayerSize, PlayerSize);
-        //    }
-        //}
-
-        private void NavigationKey(object sender, KeyPressEventArgs e)
+	 private void NavigationKey(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == StraightButtonChar)
+			if (e.KeyChar == UpButtonChar)
             {
-                MoveStraight();
+                MoveUp();
             }
-            else if (e.KeyChar == LeftButtonChar)
+			else if (e.KeyChar == LeftButtonChar)
             {
                 MoveLeft();
             }
-            else if (e.KeyChar == RigthButtonChar)
+			else if (e.KeyChar == RigthButtonChar)
             {
                 MoveRigth();
-            }
+			}
+			else if (e.KeyChar == DownButtonChar)
+			{
+				MoveDown();
+			}
             else
             {
                 MessageBox.Show("Unvalid key!");
             }
         }
 
-        private void MoveStraight()
+        private void MoveUp()
         {
-            IPlayer currentPlayer = Engine.GetInstance().Players.First.Value;
-            Coord currLocationOfCurrPlayer = currentPlayer.Location;
-            currLocationOfCurrPlayer.Y = currLocationOfCurrPlayer.Y - MovingUnit;
-            currentPlayer.Location = currLocationOfCurrPlayer;
-            currentPlayer.Path.AddLast(currLocationOfCurrPlayer);
-            DrawNewStep(currentPlayer.Color, currLocationOfCurrPlayer.X, currLocationOfCurrPlayer.Y);
-            Engine.GetInstance().ChangeTurn();
+			Engine.GetInstance().MoveCurrentPlayer(0, -1);
         }
 
         private void MoveLeft()
         {
-            IPlayer currentPlayer = Engine.GetInstance().Players.First.Value;
-            Coord currLocationOfCurrPlayer = currentPlayer.Location;
-            currLocationOfCurrPlayer.X = currLocationOfCurrPlayer.X - MovingUnit;
-            currentPlayer.Location = currLocationOfCurrPlayer;
-            currentPlayer.Path.AddLast(currLocationOfCurrPlayer);
-            DrawNewStep(currentPlayer.Color, currLocationOfCurrPlayer.X, currLocationOfCurrPlayer.Y);
-            Engine.GetInstance().ChangeTurn();
+			Engine.GetInstance().MoveCurrentPlayer(-1, 0);
         }
 
         private void MoveRigth()
         {
-            IPlayer currentPlayer = Engine.GetInstance().Players.First.Value;
-            Coord currLocationOfCurrPlayer = currentPlayer.Location;
-            currLocationOfCurrPlayer.X = currLocationOfCurrPlayer.X + MovingUnit;
-            currentPlayer.Location = currLocationOfCurrPlayer;
-            currentPlayer.Path.AddLast(currLocationOfCurrPlayer);
-            DrawNewStep(currentPlayer.Color, currLocationOfCurrPlayer.X, currLocationOfCurrPlayer.Y);
-            Engine.GetInstance().ChangeTurn();
+			Engine.GetInstance().MoveCurrentPlayer(MovingUnit, 0);
         }
 
-        private void DrawNewStep(Color color, float x, float y)
-        {
-            Brush curentColor = colors[color];
-            Graphics g = this.CreateGraphics();
+		private void MoveDown()
+		{
+			Engine.GetInstance().MoveCurrentPlayer(0, 1);
+		}
 
-            g.FillRectangle(curentColor, x, y, PlayerSize, PlayerSize);
-        }
+		private void GameFieldForm_Load(object sender, System.EventArgs e)
+		{
+
+		}
+
     }
 }

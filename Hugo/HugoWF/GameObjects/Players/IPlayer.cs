@@ -18,5 +18,9 @@
         int Points { get; set; }
 
         LinkedList<Coord> Path { get; set; }
+
+		Coord Move(Graphics graphics, Coord destination);
+
+		Coord CalculateNextStep(float x, float y);
     }
 }

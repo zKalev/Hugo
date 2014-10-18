@@ -142,5 +142,29 @@
             this.Players.RemoveFirst();
             this.Players.AddLast(holder);
         }
+
+		public void MoveCurrentPlayer(float x, float y)
+		{
+			IPlayer currentPlayer = Engine.GetInstance().Players.First.Value;
+			Coord nextStep = currentPlayer.CalculateNextStep(x, y);
+			bool move = CheckField(nextStep);
+			if (move)
+			{
+				Graphics graphics = ((DrawingEngine as WFormDrawingEngine).Form).CreateGraphics();
+				currentPlayer.Move(graphics, nextStep);
+			}
+			ChangeTurn();
+		}
+
+
+		private bool CheckField(Coord location)
+		{
+			//TODO
+			// validate target location
+			// check for obstracles and etc.
+			// ask question
+
+			return true;
+		}
     }
 }

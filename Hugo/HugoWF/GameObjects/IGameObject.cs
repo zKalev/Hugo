@@ -18,6 +18,6 @@
 
         Color Color { get; set; }
 
-		void Draw(Graphics graphics, float cellSize);
+		void Draw(Graphics graphics);
     }
 }

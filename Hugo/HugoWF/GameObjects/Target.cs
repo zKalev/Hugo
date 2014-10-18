@@ -7,6 +7,7 @@
 	using System.Threading.Tasks;
 	using Helpers;
 	using System.Drawing;
+	using Hugo.UI;
 
 	public class Target : GameObject, ITarget
 	{
@@ -23,8 +24,9 @@
 			this.Color = objectColor;
 		}
 
-		public override void Draw(Graphics graphics, float cellSize)
+		public override void Draw(Graphics graphics)
 		{
+			float cellSize = WFormDrawingEngine.CellSize;
 			graphics.FillRectangle(new SolidBrush(this.Color), this.Location.X * cellSize, this.Location.Y * cellSize, cellSize, cellSize);
 		}
 	}

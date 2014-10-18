@@ -1,6 +1,7 @@
 ﻿namespace Hugo.GameObjects
 {
 	using Hugo.Helpers;
+	using Hugo.UI;
 	using System;
 	using System.Collections.Generic;
 	using System.Drawing;
@@ -69,9 +70,13 @@
 			set { this.objectColor = value; }
 		}
 
-		public virtual void Draw(Graphics graphics, float cellSize)
+		public virtual void Draw(Graphics graphics)
 		{
-			graphics.FillEllipse(new SolidBrush(this.Color), this.Location.X * cellSize, this.Location.Y * cellSize, cellSize, cellSize);
+			float cellSize = WFormDrawingEngine.CellSize;
+			if (this.IsVisible)
+			{
+				graphics.FillEllipse(new SolidBrush(this.Color), this.Location.X * cellSize, this.Location.Y * cellSize, cellSize, cellSize);
+			}
 		}
 
 	}

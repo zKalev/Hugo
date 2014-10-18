@@ -38,6 +38,7 @@
 			this.ClientSize = new System.Drawing.Size(924, 647);
 			this.Name = "GameFieldForm";
 			this.Text = "GameField";
+			this.Load += new System.EventHandler(this.GameFieldForm_Load);
 			this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NavigationKey);
 			this.ResumeLayout(false);
 

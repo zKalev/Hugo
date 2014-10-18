@@ -20,6 +20,7 @@
 			: base(location, color, true)
 		{
 			this.Path = new LinkedList<Coord>();
+			this.Path.AddLast(location);
 			this.Name = name;
 			this.Gender = gender;
 		}
@@ -78,5 +79,21 @@
 			}
 		}
 
+		public Coord Move(Graphics graphics, Coord destination)
+		{
+			this.Location = destination;
+			this.Path.AddLast(this.Location);
+			Draw(graphics);
+
+			return this.Location;
+		}
+
+		public Coord CalculateNextStep(float x, float y)
+		{
+			float nextX = this.Location.X + x;
+			float nextY = this.Location.Y + y;
+
+			return new Coord(nextX, nextY);
+		}
 	}
 }

@@ -104,7 +104,7 @@
 
 			foreach (Player player in players)
 			{
-				player.Draw(g, CellSize);
+				player.Draw(g);
 			}
 		}
 
@@ -114,16 +114,7 @@
 
 			foreach (var gameObject in gameObjects)
 			{
-				if (gameObject.IsVisible)
-				{
-					g.FillRectangle(
-						new SolidBrush(gameObject.Color),
-						(int)gameObject.Location.X * CellSize,
-						(int)gameObject.Location.Y * CellSize,
-						CellSize,
-						CellSize
-						);
-				}
+				gameObject.Draw(g);
 			}
 
 		}
