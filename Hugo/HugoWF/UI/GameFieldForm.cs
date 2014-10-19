@@ -51,19 +51,19 @@
         {
 			if (e.KeyChar == UpButtonChar)
             {
-                MoveUp();
+				Move(0, -1);
             }
 			else if (e.KeyChar == LeftButtonChar)
             {
-                MoveLeft();
+				Move(-1, 0);
             }
 			else if (e.KeyChar == RigthButtonChar)
             {
-                MoveRigth();
+				Move(1, 0);
 			}
 			else if (e.KeyChar == DownButtonChar)
 			{
-				MoveDown();
+				Move(0, 1);
 			}
             else
             {
@@ -71,29 +71,27 @@
             }
         }
 
-        private void MoveUp()
-        {
-			Engine.GetInstance().MoveCurrentPlayer(0, -1);
-			updatePlayerInfo();
-        }
-
-        private void MoveLeft()
-        {
-			Engine.GetInstance().MoveCurrentPlayer(-1, 0);
-			updatePlayerInfo();
-        }
-
-        private void MoveRigth()
-        {
-			Engine.GetInstance().MoveCurrentPlayer(1, 0);
-			updatePlayerInfo();
-        }
-
-		private void MoveDown()
+		private void Move(int x, int y)
 		{
-			Engine.GetInstance().MoveCurrentPlayer(0, 1);
-			updatePlayerInfo();
+			bool canMove = Engine.GetInstance().CanMove(x, y);
+			if (canMove)
+			{
+				bool answered = answerQuestion();
+				if (answered)
+				{
+					Engine.GetInstance().MoveCurrentPlayer(x, y);
+					updatePlayerInfo();
+				}
+			}
 		}
+
+		private bool answerQuestion()
+		{
+			//TODO
+			return true;
+		}
+
+		
 
 		private void GameFieldForm_Load(object sender, System.EventArgs e)
 		{

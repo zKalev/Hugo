@@ -145,23 +145,61 @@
             this.Players.AddLast(holder);
         }
 
+		public bool CanMove(int x, int y)
+		{
+			IPlayer currentPlayer = GetCurrentPlayer();
+			Coord nextStep = currentPlayer.CalculateNextStep(x, y);
+			bool isInGameField = DrawingEngine.IsInGameField(nextStep);
+			if (isInGameField)
+			{
+				bool isFieldFree = IsFieldFree(nextStep);
+				if (isFieldFree)
+				{
+					return true;
+				}
+				else
+				{
+					DrawingEngine.ShowMessage("You can't move there! Try again!");
+
+				}
+			}
+			else
+			{
+				DrawingEngine.ShowMessage("You can't move outside the field! Try again!");
+			}
+
+			return false;
+		}
+
         public void MoveCurrentPlayer(int x, int y)
         {
-            IPlayer currentPlayer = GetCurrentPlayer();
-            Coord nextStep = currentPlayer.CalculateNextStep(x, y);
-            bool isInGameField = DrawingEngine.IsInGameField(nextStep);
-
-            if (isInGameField)
-            {
                 Graphics graphics = ((DrawingEngine as WFormDrawingEngine).Form).CreateGraphics();
+				IPlayer currentPlayer = GetCurrentPlayer();
+				Coord nextStep = currentPlayer.CalculateNextStep(x, y);
                 currentPlayer.Move(graphics, nextStep);
-
                 ChangeTurn();
-            }
-            else
-            {
-                DrawingEngine.ShowMessage("You can't move outside the field! Try again!");
-            }
+
         }
+
+
+		private bool IsFieldFree(Coord nextStep)
+		{
+			foreach (IGameObject obj in gameObjects)
+			{
+				if (obj.IsVisible && obj.Location.X == nextStep.X && obj.Location.Y == nextStep.Y)
+				{
+					return false;
+				}
+			}
+
+			foreach (IPlayer obj in players)
+			{
+				if (obj.IsVisible && obj.Location.X == nextStep.X && obj.Location.Y == nextStep.Y)
+				{
+					return false;
+				}
+			}
+			return true;
+		}
     }
 }

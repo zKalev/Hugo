@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
 			this.AdditionalInfoPanel = new System.Windows.Forms.Panel();
+			this.PlayerPointsLabel = new System.Windows.Forms.TextBox();
 			this.PlayerInfo = new System.Windows.Forms.TextBox();
 			this.PlayerLabel = new System.Windows.Forms.TextBox();
 			this.PlayerPoints = new System.Windows.Forms.TextBox();
 			this.PlayerColor = new System.Windows.Forms.TextBox();
-			this.PlayerPointsLabel = new System.Windows.Forms.TextBox();
 			this.AdditionalInfoPanel.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -50,6 +50,20 @@
 			this.AdditionalInfoPanel.Name = "AdditionalInfoPanel";
 			this.AdditionalInfoPanel.Size = new System.Drawing.Size(342, 587);
 			this.AdditionalInfoPanel.TabIndex = 0;
+			// 
+			// PlayerPointsLabel
+			// 
+			this.PlayerPointsLabel.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+			this.PlayerPointsLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.PlayerPointsLabel.Enabled = false;
+			this.PlayerPointsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.PlayerPointsLabel.ForeColor = System.Drawing.SystemColors.ControlText;
+			this.PlayerPointsLabel.Location = new System.Drawing.Point(31, 126);
+			this.PlayerPointsLabel.Name = "PlayerPointsLabel";
+			this.PlayerPointsLabel.ReadOnly = true;
+			this.PlayerPointsLabel.Size = new System.Drawing.Size(286, 25);
+			this.PlayerPointsLabel.TabIndex = 4;
+			this.PlayerPointsLabel.Text = "Player hitpoints:";
 			// 
 			// PlayerInfo
 			// 
@@ -74,7 +88,7 @@
 			this.PlayerLabel.ReadOnly = true;
 			this.PlayerLabel.Size = new System.Drawing.Size(286, 25);
 			this.PlayerLabel.TabIndex = 2;
-			this.PlayerLabel.Text = "Next player:";
+			this.PlayerLabel.Text = "Current player:";
 			this.PlayerLabel.TextChanged += new System.EventHandler(this.PlayerLabel_TextChanged);
 			// 
 			// PlayerPoints
@@ -100,20 +114,6 @@
 			this.PlayerColor.Size = new System.Drawing.Size(286, 32);
 			this.PlayerColor.TabIndex = 0;
 			this.PlayerColor.TextChanged += new System.EventHandler(this.PlayerColor_TextChanged);
-			// 
-			// PlayerPointsLabel
-			// 
-			this.PlayerPointsLabel.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-			this.PlayerPointsLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			this.PlayerPointsLabel.Enabled = false;
-			this.PlayerPointsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.PlayerPointsLabel.ForeColor = System.Drawing.SystemColors.ControlText;
-			this.PlayerPointsLabel.Location = new System.Drawing.Point(31, 126);
-			this.PlayerPointsLabel.Name = "PlayerPointsLabel";
-			this.PlayerPointsLabel.ReadOnly = true;
-			this.PlayerPointsLabel.Size = new System.Drawing.Size(286, 25);
-			this.PlayerPointsLabel.TabIndex = 4;
-			this.PlayerPointsLabel.Text = "Player hitpoints:";
 			// 
 			// GameFieldForm
 			// 

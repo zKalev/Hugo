@@ -34,9 +34,8 @@ namespace Hugo.GameObjects
                 if (stone is Image)
                 {
                     int cellSize = WFormDrawingEngine.CellSize;
-					int margin = WFormDrawingEngine.margin;
                     Image obstacleImg = stone as Image;
-					Point point = new Point((Location.X + margin) * cellSize, (Location.Y + margin) * cellSize);
+					Point point = new Point(Location.X * cellSize, Location.Y * cellSize);
                     graphics.DrawImage(obstacleImg, point);
                 }
             }

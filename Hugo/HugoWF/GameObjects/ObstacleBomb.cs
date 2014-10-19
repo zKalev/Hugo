@@ -26,9 +26,8 @@ namespace Hugo.GameObjects
                 if (bomb is Image)
                 {
                     int cellSize = WFormDrawingEngine.CellSize;
-					int margin = WFormDrawingEngine.margin;
                     Image obstacleImg = bomb as Image;
-					Point point = new Point((Location.X + margin) * cellSize, (Location.Y + margin) * cellSize);
+					Point point = new Point(Location.X * cellSize, Location.Y* cellSize);
                     graphics.DrawImage(obstacleImg, point);
                 }
             }

@@ -1,9 +1,10 @@
 ﻿namespace Hugo.GameObjects
 {
-    using Hugo.Exceptions;
-    using Hugo.Helpers;
-    using System;
-    using System.Collections.Generic;
+	using Hugo.Exceptions;
+	using Hugo.Helpers;
+	using Hugo.UI;
+	using System;
+	using System.Collections.Generic;
 
     public class GameObjectFactory : IObjectFactory
     {
@@ -68,11 +69,12 @@
 
         public virtual void CreateRandomObjects(Coord minLocation, Coord maxLocation, int objectsCount, IList<IGameObject> gameObjects)
         {
+			int margin = WFormDrawingEngine.margin;
             for (int objType = 0; objType < objectsCount; objType++)
             {
                 Coord location = new Coord(
-                    random.Next(minLocation.X, maxLocation.X),
-                    random.Next(minLocation.Y, maxLocation.Y));
+					random.Next(minLocation.X + margin, maxLocation.X + margin),
+					random.Next(minLocation.Y + margin, maxLocation.Y + margin));
 
                 int objTypesCount = 4;
 
