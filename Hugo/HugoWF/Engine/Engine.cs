@@ -111,8 +111,9 @@
 
 			// TODO: Create a random number of game objects of random types and on random locations
 
-			// used for tests
-			//this.ObjectFactory.CreateObstacle(this.GameObjects, new Coord(10, 10));
+			// used for tests!!!!
+			this.ObjectFactory.CreateBomb(this.GameObjects, new Coord(10, 10));
+			this.ObjectFactory.CreateStone(this.GameObjects, new Coord(15, 15));
 
         }
 

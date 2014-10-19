@@ -26,13 +26,21 @@
             return GameObjectFactory.gameObjectFactory;
         }
 
-		public virtual IEnemy CreateObstacle(IList<IGameObject> gameObjects, Coord location)
+		public virtual IEnemy CreateBomb(IList<IGameObject> gameObjects, Coord location)
         {
-			IEnemy enemy = new Obstacle(location);
+			IEnemy enemy = new ObstacleBomb(location);
 			gameObjects.Add((IGameObject)enemy);
 
 			return enemy;
         }
+
+		public virtual IEnemy CreateStone(IList<IGameObject> gameObjects, Coord location)
+		{
+			IEnemy enemy = new ObstacleStone(location);
+			gameObjects.Add((IGameObject)enemy);
+
+			return enemy;
+		}
 
         public virtual IEnemy CreateRepulser(IList<IGameObject> gameObjects)
         {

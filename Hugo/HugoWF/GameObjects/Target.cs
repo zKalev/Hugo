@@ -12,16 +12,15 @@
 	public class Target : GameObject, ITarget
 	{
 		public Target(Coord location)
-			: base(location)
+			: this(location, Color.Black)
 		{
-			this.IsVisible = true;
-			this.Location = location;
 		}
 
 		public Target(Coord location, Color objectColor)
-			: this(location)
+			: base(location)
 		{
 			this.Color = objectColor;
+			this.IsVisible = true;
 		}
 
 		public override void Draw(Graphics graphics)

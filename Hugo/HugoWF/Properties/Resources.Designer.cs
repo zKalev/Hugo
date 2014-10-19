@@ -63,9 +63,19 @@ namespace Hugo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap obstacle {
+        internal static System.Drawing.Bitmap bomb {
             get {
-                object obj = ResourceManager.GetObject("obstacle", resourceCulture);
+                object obj = ResourceManager.GetObject("bomb", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap stone {
+            get {
+                object obj = ResourceManager.GetObject("stone", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

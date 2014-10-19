@@ -50,7 +50,8 @@
     <Compile Include="GameObjects\IEnemy.cs" />
     <Compile Include="GameObjects\IFriend.cs" />
     <Compile Include="GameObjects\ITarget.cs" />
-    <Compile Include="GameObjects\Obstacle.cs" />
+    <Compile Include="GameObjects\ObstacleStone.cs" />
+    <Compile Include="GameObjects\ObstacleBomb.cs" />
     <Compile Include="GameObjects\Players\IPlayer.cs" />
     <Compile Include="GameObjects\Players\Player.cs" />
     <Compile Include="GameObjects\ObjectFactory.cs" />
@@ -148,7 +149,8 @@
     <Content Include="barebear.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <None Include="Resources\obstacle.png" />
+    <None Include="Resources\bomb.png" />
+    <None Include="Resources\stone.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
