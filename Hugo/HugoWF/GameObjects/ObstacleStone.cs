@@ -1,4 +1,5 @@
 ﻿using Hugo.GameObjects.Enemies;
+using Hugo.GameObjects.Players;
 using Hugo.Helpers;
 using Hugo.Properties;
 using Hugo.UI;
@@ -17,6 +18,12 @@ namespace Hugo.GameObjects
 		public ObstacleStone(Coord location):base(location)
 		{
 		}
+
+		public override void Apply(IPlayer player)
+		{
+			//TODO the stone does no damage but the player loses his turn
+		}
+
 		public override void Draw(Graphics graphics)
 		{
 			if(IsVisible){

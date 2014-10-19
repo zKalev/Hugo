@@ -20,7 +20,7 @@
         /// By default all enemies will demage 20 points. If player's  points are less than 20, he must go 2 steps back  
         /// </summary>
         /// <param name="player"></param>
-        public void Apply(IPlayer player)
+        public virtual void Apply(IPlayer player)
         {
             if (player.Points < DefautDamage)
             {
