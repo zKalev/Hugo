@@ -1,21 +1,24 @@
 ﻿namespace Hugo.GameObjects
 {
+    using Hugo.GameObjects.Enemies;
     using Hugo.GameObjects.Players;
     using Hugo.Helpers;
     using System;
     using System.Collections.Generic;
-    using System.Drawing;
     using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
 
-    public abstract class Friend : GameObject, IFriend
+    public class Repulser : Enemy
     {
-        public Friend(Coord coord)
+         public Repulser(Coord coord)
             : base(coord)
         {
         }
 
-        public abstract void ApplyEffects(IPlayer player);
+         public override void Apply(IPlayer player)
+         {
+             base.Apply(player);
+         }
     }
 }

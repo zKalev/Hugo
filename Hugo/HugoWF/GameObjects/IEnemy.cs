@@ -8,7 +8,7 @@
     using Helpers;
     using GameObjects;
 
-    public interface IEnemy : IEffect
+    public interface IEnemy :IGameObject
     {
         
     }

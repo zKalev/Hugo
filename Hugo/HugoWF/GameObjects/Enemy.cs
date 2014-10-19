@@ -3,7 +3,8 @@
     using Hugo.Helpers;
     using Hugo.GameObjects.Players;
     using System.Linq;
-	using System.Drawing;
+    using System.Drawing;
+    using System.Collections.Generic;
 
     public abstract class Enemy : GameObject, IEnemy
     {

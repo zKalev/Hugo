@@ -7,8 +7,10 @@
     using System.Threading.Tasks;
     using Helpers;
     using GameObjects;
+    using Hugo.GameObjects.Players;
 
-    public interface IFriend : IGameObject, IEffect
+    public interface IFriend : IGameObject
     {
+       void ApplyEffects(IPlayer player);
     }
 }
