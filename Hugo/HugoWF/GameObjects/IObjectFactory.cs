@@ -12,14 +12,14 @@
     {
         IEnemy CreateBomb(IList<IGameObject> gameObjects, Coord location);
 
-		IEnemy CreateStone(IList<IGameObject> gameObjects, Coord location);
+        IEnemy CreateStone(IList<IGameObject> gameObjects, Coord location);
 
-        IEnemy CreateRepulser(IList<IGameObject> gameObjects);
+        IEnemy CreateRepulser(IList<IGameObject> gameObjects, Coord location);
 
-        IFriend CreateApproacher(IList<IGameObject> gameObjects);
+        IFriend CreateApproacher(IList<IGameObject> gameObjects, Coord location);
 
         ITarget CreateTarget(IList<IGameObject> gameObjects, Coord location);
 
-        IGameObject CreateRandomObjects(Coord minLocation, Coord maxLocation, int objectsCount, IList<IGameObject> gameObjects);
+        void CreateRandomObjects(Coord minLocation, Coord maxLocation, int objectsCount, IList<IGameObject> gameObjects);
     }
 }

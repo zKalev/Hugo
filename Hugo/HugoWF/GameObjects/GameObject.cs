@@ -1,70 +1,56 @@
 ﻿namespace Hugo.GameObjects
 {
-	using Hugo.Helpers;
-	using Hugo.UI;
-	using System;
-	using System.Collections.Generic;
-	using System.Drawing;
-	using System.Linq;
-	using System.Text;
-	using System.Threading.Tasks;
+    using Hugo.Helpers;
+    using Hugo.UI;
+    using System;
+    using System.Collections.Generic;
 
-	public abstract class GameObject : IGameObject
-	{
-		private Coord location;
-		private Color objectColor;
-		private bool isVisible;
+    using System.Drawing;
 
-		public GameObject(Coord location)
-			: this(location, Color.Black, false)
-		{
-		}
+    public abstract class GameObject : IGameObject
+    {
+        private Coord location;
+        private Color objectColor;
+        private bool isVisible;
 
-		public GameObject(Coord location, Color objectColor, bool isVisible = false)
-		{
-			this.Location = location;
-			this.Color = objectColor;
-			this.IsVisible = isVisible;
-		}
+        public GameObject(Coord location)
+            : this(location, Color.Black, false)
+        {
+        }
 
-		public Coord Location
-		{
-			get { return this.location; }
-			set { this.location = value; }
-		}
+        public GameObject(Coord location, Color objectColor, bool isVisible = false)
+        {
+            this.Location = location;
+            this.Color = objectColor;
+            this.IsVisible = isVisible;
+        }
 
-		public IList<IEffect> Effects
-		{
-			get
-			{
-				throw new NotImplementedException();
-			}
-			set
-			{
-				throw new NotImplementedException();
-			}
-		}
+        public Coord Location
+        {
+            get { return this.location; }
+            set { this.location = value; }
+        }
 
-		public bool IsVisible
-		{
-			get { return this.isVisible; }
-			set { this.isVisible = value; }
-		}
+        public bool IsVisible
+        {
+            get { return this.isVisible; }
+            set { this.isVisible = value; }
+        }
 
-		public Color Color
-		{
-			get { return this.objectColor; }
-			set { this.objectColor = value; }
-		}
+        public Color Color
+        {
+            get { return this.objectColor; }
+            set { this.objectColor = value; }
+        }
 
-		public virtual void Draw(Graphics graphics)
-		{
-			int cellSize = WFormDrawingEngine.CellSize;
-			if (this.IsVisible)
-			{
-				graphics.FillRectangle(new SolidBrush(this.Color), this.Location.X * cellSize, this.Location.Y * cellSize, cellSize, cellSize);
-			}
-		}
+        public virtual void Draw(Graphics graphics)
+        {
+            int cellSize = WFormDrawingEngine.CellSize;
+            if (this.IsVisible)
+            {
+                graphics.FillRectangle(new SolidBrush(this.Color), this.Location.X * cellSize, this.Location.Y * cellSize, cellSize, cellSize);
+            }
+        }
 
-	}
+    }
 }

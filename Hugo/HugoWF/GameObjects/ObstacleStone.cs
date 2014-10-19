@@ -12,28 +12,33 @@ using System.Threading.Tasks;
 
 namespace Hugo.GameObjects
 {
-	class ObstacleStone: Enemy
-	{
+    class ObstacleStone : Enemy
+    {
 
-		public ObstacleStone(Coord location):base(location)
-		{
-		}
+        public ObstacleStone(Coord location)
+            : base(location)
+        {
+            this.IsVisible = true;
+        }
 
-		public override void Apply(IPlayer player)
-		{
-			//TODO the stone does no damage but the player loses his turn
-		}
+        public override void ApplyEffects(IPlayer player)
+        {
+            // The stone does no damage
+        }
 
-		public override void Draw(Graphics graphics)
-		{
-			object stone = Resources.stone;
-			if (stone is Image)
-			{
-				int cellSize = WFormDrawingEngine.CellSize;
-				Image obstacleImg = stone as Image;
-				Point point = new Point((Location.X + 1) * cellSize, (Location.Y + 1) * cellSize);
-				graphics.DrawImage(obstacleImg, point);
-			}
-		}
-	}
+        public override void Draw(Graphics graphics)
+        {
+            if (IsVisible)
+            {
+                object stone = Resources.stone;
+                if (stone is Image)
+                {
+                    int cellSize = WFormDrawingEngine.CellSize;
+                    Image obstacleImg = stone as Image;
+                    Point point = new Point((Location.X + 1) * cellSize, (Location.Y + 1) * cellSize);
+                    graphics.DrawImage(obstacleImg, point);
+                }
+            }
+        }
+    }
 }
