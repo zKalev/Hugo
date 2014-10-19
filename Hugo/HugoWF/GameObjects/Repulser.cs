@@ -4,21 +4,36 @@
     using Hugo.GameObjects.Players;
     using Hugo.Helpers;
     using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
 
     public class Repulser : Enemy
     {
-         public Repulser(Coord coord)
+        private Coord targetCoord;
+        protected const int DefaultBackwardSteps = 2;
+
+        public Repulser(Coord coord)
             : base(coord)
         {
         }
+        public Repulser(Coord coord, Coord targetCoord)
+            : this(coord)
+        {
+            this.TargetCoord = targetCoord;
+        }
 
-         public override void Apply(IPlayer player)
-         {
-             base.Apply(player);
-         }
+        public Coord TargetCoord
+        {
+            get { return this.targetCoord; }
+            set { this.targetCoord = value; }
+        }
+
+        public override void ApplyEffects(IPlayer player)
+        {
+            base.ApplyEffects(player);
+
+            Coord diffCoord = this.TargetCoord - player.Location;
+            int newX = diffCoord.X / Math.Abs(diffCoord.X);
+            int newY = diffCoord.Y / Math.Abs(diffCoord.Y);
+            player.Location = new Coord(newX, newY) * DefaultBackwardSteps;
+        }
     }
 }

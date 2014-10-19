@@ -21,9 +21,9 @@ namespace Hugo.GameObjects
             this.IsVisible = true;
         }
 
-        public override void Apply(IPlayer player)
+        public override void ApplyEffects(IPlayer player)
         {
-            //TODO the stone does no damage but the player loses his turn
+            // The stone does no damage
         }
 
         public override void Draw(Graphics graphics)

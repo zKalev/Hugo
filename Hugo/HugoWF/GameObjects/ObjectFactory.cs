@@ -1,12 +1,9 @@
 ﻿namespace Hugo.GameObjects
 {
-    using Hugo.GameObjects.Enemies;
+    using Hugo.Exceptions;
     using Hugo.Helpers;
     using System;
     using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
 
     public class GameObjectFactory : IObjectFactory
     {
@@ -45,7 +42,8 @@
 
         public virtual IEnemy CreateRepulser(IList<IGameObject> gameObjects, Coord location)
         {
-            IEnemy enemy = new Repulser(location);
+            Coord targetCoord = GetTargetCoordinates(gameObjects);
+            IEnemy enemy = new Repulser(location, targetCoord);
             gameObjects.Add((IGameObject)enemy);
 
             return enemy;
@@ -53,8 +51,10 @@
 
         public virtual IFriend CreateApproacher(IList<IGameObject> gameObjects, Coord location)
         {
-            IFriend approacher = new Approacher(location);
+            Coord targetCoord = GetTargetCoordinates(gameObjects);
+            IFriend approacher = new Approacher(location, targetCoord);
             gameObjects.Add(approacher);
+
             return approacher;
         }
 
@@ -97,6 +97,18 @@
             }
         }
 
-
+        private static Coord GetTargetCoordinates(IList<IGameObject> gameObjects)
+        {
+            Coord targetCoord;
+            foreach (var obj in gameObjects)
+            {
+                if (obj as ITarget != null)
+                {
+                    targetCoord = obj.Location;
+                    return targetCoord;
+                }
+            }
+            throw new TargetMissingException();
+        }
     }
 }
