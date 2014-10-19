@@ -2,6 +2,7 @@
 {
 	using Hugo.Exceptions;
 	using Hugo.Helpers;
+	using Hugo.UI;
 	using System;
 	using System.Collections.Generic;
 	using System.Drawing;
@@ -94,6 +95,15 @@
 			int nextY = this.Location.Y + y;
 
 			return new Coord(nextX, nextY);
+		}
+
+		public override void Draw(Graphics graphics)
+		{
+			int cellSize = WFormDrawingEngine.CellSize;
+			if (this.IsVisible)
+			{
+				graphics.FillEllipse(new SolidBrush(this.Color), this.Location.X * cellSize, this.Location.Y * cellSize, cellSize, cellSize);
+			}
 		}
 	}
 }

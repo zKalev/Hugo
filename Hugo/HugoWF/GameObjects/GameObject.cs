@@ -62,7 +62,7 @@
 			int cellSize = WFormDrawingEngine.CellSize;
 			if (this.IsVisible)
 			{
-				graphics.FillEllipse(new SolidBrush(this.Color), this.Location.X * cellSize, this.Location.Y * cellSize, cellSize, cellSize);
+				graphics.FillRectangle(new SolidBrush(this.Color), this.Location.X * cellSize, this.Location.Y * cellSize, cellSize, cellSize);
 			}
 		}
 
