@@ -8,6 +8,8 @@ namespace Hugo.GameObjects.Questions
 {
 	interface IAnswer
 	{
+		bool IsCorrect { get; }
+
 		string Text { get; }
 
 		int Number { get; }

@@ -10,11 +10,6 @@ namespace Hugo.GameObjects.Questions
 	{
 		IList<IAnswer> Answers { get; }
 
-		IAnswer CorrectAnswer { get; }
-
 		string Text { get; }
-
-		bool IsAnswerCorrect(IAnswer answer);
-
 	}
 }

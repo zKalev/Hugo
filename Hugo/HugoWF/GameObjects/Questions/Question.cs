@@ -11,13 +11,11 @@ namespace Hugo.GameObjects.Questions
 	class Question: GameObject, IQuestion
 	{
 		private string text;
-		private IAnswer correctAnswer;
 		private IList<IAnswer> answers;
 
-		public Question(Coord location, string text, IAnswer correctAnswer, IList<IAnswer> answers) : base(location, Color.Yellow, false)
+		public Question(Coord location, string text, IList<IAnswer> answers) : base(location, Color.Yellow, false)
 		{
 			this.text = text;
-			this.correctAnswer = correctAnswer;
 			this.answers = answers;
 		}
 
@@ -25,20 +23,10 @@ namespace Hugo.GameObjects.Questions
 		{
 			get { return answers; }
 		}
-
-		public IAnswer CorrectAnswer
-		{
-			get { return correctAnswer; }
-		}
 		
 		public string Text
 		{
 			get { return text; }
-		}
-
-		public bool IsAnswerCorrect(IAnswer answer)
-		{
-			return this.correctAnswer.Number == answer.Number;
 		}
 	}
 }

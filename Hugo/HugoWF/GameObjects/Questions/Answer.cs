@@ -6,14 +6,17 @@ using System.Threading.Tasks;
 
 namespace Hugo.GameObjects.Questions
 {
-	class Answer: IAnswer
+	class Answer : IAnswer
 	{
 		private int number;
 		private string text;
-		public Answer(int number, string text)
+		public bool IsCorrect { get; set; }
+
+		public Answer(int number, string text, bool isCorrect)
 		{
 			this.number = number;
 			this.text = text;
+			this.IsCorrect = isCorrect;
 		}
 		public string Text
 		{
@@ -24,6 +27,6 @@ namespace Hugo.GameObjects.Questions
 		{
 			get { return number; }
 		}
-		
+
 	}
 }

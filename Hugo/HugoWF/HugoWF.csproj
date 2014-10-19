@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -106,6 +109,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UI\IDrawingEngine.cs" />
     <Compile Include="Utils\ColorUtil.cs" />
+    <Compile Include="Utils\QuestionsReader.cs" />
     <EmbeddedResource Include="UI\AboutForm.resx">
       <DependentUpon>AboutForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -149,7 +153,9 @@
     <Content Include="barebear.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Questions.xlsx" />
     <None Include="Resources\bomb.png" />
+    <None Include="Resources\Questions.xlsx" />
     <None Include="Resources\stone.png" />
   </ItemGroup>
   <ItemGroup />
