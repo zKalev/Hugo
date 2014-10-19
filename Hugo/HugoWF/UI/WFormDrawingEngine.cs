@@ -20,7 +20,7 @@
 		private static readonly Coord bottomCenter = new Coord(maxX / 2, maxY);
 		private static readonly Coord bottomRight = new Coord(maxX, maxY);
 		private static readonly Coord rightCenter = new Coord(maxX, maxY / 2);
-		private const int margin = 2;
+		public const int margin = 2;
 		private const int maxX = 24;
 		private const int maxY = 24;
 		public const int CellSize = 20;
