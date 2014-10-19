@@ -18,16 +18,13 @@ namespace Hugo.GameObjects
 		}
 		public override void Draw(Graphics graphics)
 		{
-			if (IsVisible)
+			object bomb = Resources.bomb;
+			if (bomb is Image)
 			{
-				object bomb = Resources.bomb;
-				if (bomb is Image)
-				{
-					int cellSize = WFormDrawingEngine.CellSize;
-					Image obstacleImg = bomb as Image;
-					Point point = new Point((Location.X + 1) * cellSize, (Location.Y + 1) * cellSize);
-					graphics.DrawImage(obstacleImg, point);
-				}
+				int cellSize = WFormDrawingEngine.CellSize;
+				Image obstacleImg = bomb as Image;
+				Point point = new Point((Location.X + 1) * cellSize, (Location.Y + 1) * cellSize);
+				graphics.DrawImage(obstacleImg, point);
 			}
 		}
 	}

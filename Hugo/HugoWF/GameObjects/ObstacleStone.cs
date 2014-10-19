@@ -26,15 +26,13 @@ namespace Hugo.GameObjects
 
 		public override void Draw(Graphics graphics)
 		{
-			if(IsVisible){
-				object stone = Resources.stone;
-				if (stone is Image)
-				{
-					int cellSize = WFormDrawingEngine.CellSize;
-					Image obstacleImg = stone as Image;
-					Point point = new Point((Location.X + 1) * cellSize, (Location.Y + 1) * cellSize);
-					graphics.DrawImage(obstacleImg, point);
-				}
+			object stone = Resources.stone;
+			if (stone is Image)
+			{
+				int cellSize = WFormDrawingEngine.CellSize;
+				Image obstacleImg = stone as Image;
+				Point point = new Point((Location.X + 1) * cellSize, (Location.Y + 1) * cellSize);
+				graphics.DrawImage(obstacleImg, point);
 			}
 		}
 	}
