@@ -92,6 +92,8 @@
 
         public void StartGame()
         {
+            // TODO: Create a random number of game objects of random types and on random locations
+            this.ObjectFactory.CreateRandomObjects(DrawingEngine.TopLeft, DrawingEngine.BottomRight, 20, this.GameObjects);
 
 			if (this.Players.Count == 0)
 			{
@@ -111,10 +113,7 @@
 
 			// TODO: Create a random number of game objects of random types and on random locations
 
-			// used for tests!!!!
-			this.ObjectFactory.CreateBomb(this.GameObjects, new Coord(10, 10));
-			this.ObjectFactory.CreateStone(this.GameObjects, new Coord(15, 15));
-
+			
         }
 
         public void Run()
