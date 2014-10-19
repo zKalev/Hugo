@@ -114,9 +114,12 @@
 			if (steps > 1)
 			{
 				Coord previousLocation = path.ElementAt(steps - 2);
-				graphics.FillRectangle(Brushes.GhostWhite, previousLocation.X * cellSize, previousLocation.Y * cellSize, cellSize, cellSize);
+				int locationX = previousLocation.X * cellSize;
+				int locationY = previousLocation.Y * cellSize;
 
-				graphics.DrawRectangle(new Pen(Brushes.White), previousLocation.X * cellSize, previousLocation.Y * cellSize, cellSize, cellSize);
+				graphics.FillRectangle(Brushes.GhostWhite, locationX, locationY, cellSize, cellSize);
+
+				graphics.DrawRectangle(new Pen(Brushes.White), locationX, locationY, cellSize, cellSize);
 			}
 		}
 	}
