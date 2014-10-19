@@ -103,6 +103,20 @@
 			if (this.IsVisible)
 			{
 				graphics.FillEllipse(new SolidBrush(this.Color), this.Location.X * cellSize, this.Location.Y * cellSize, cellSize, cellSize);
+
+				resetPreviousLocation(graphics, cellSize);
+			}
+		}
+
+		private void resetPreviousLocation(Graphics graphics, int cellSize)
+		{
+			int steps = path.Count;
+			if (steps > 1)
+			{
+				Coord previousLocation = path.ElementAt(steps - 2);
+				graphics.FillRectangle(Brushes.GhostWhite, previousLocation.X * cellSize, previousLocation.Y * cellSize, cellSize, cellSize);
+
+				graphics.DrawRectangle(new Pen(Brushes.White), previousLocation.X * cellSize, previousLocation.Y * cellSize, cellSize, cellSize);
 			}
 		}
 	}
