@@ -16,28 +16,21 @@
 		private bool isVisible;
 
 		public GameObject(Coord location)
+			: this(location, Color.Black, false)
 		{
-			this.Location = location;
-			this.Color = Color.Black;
 		}
 
 		public GameObject(Coord location, Color objectColor, bool isVisible = false)
-			: this(location)
 		{
+			this.Location = location;
 			this.Color = objectColor;
 			this.IsVisible = isVisible;
 		}
 
 		public Coord Location
 		{
-			get
-			{
-				return this.location;
-			}
-			set
-			{
-				this.location = value;
-			}
+			get { return this.location; }
+			set { this.location = value; }
 		}
 
 		public IList<IEffect> Effects
@@ -54,14 +47,8 @@
 
 		public bool IsVisible
 		{
-			get
-			{
-				return this.isVisible;
-			}
-			set
-			{
-				this.isVisible = value;
-			}
+			get { return this.isVisible; }
+			set { this.isVisible = value; }
 		}
 
 		public Color Color

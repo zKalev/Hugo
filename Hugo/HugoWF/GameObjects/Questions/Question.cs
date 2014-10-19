@@ -1,17 +1,20 @@
-﻿using System;
+﻿using Hugo.Helpers;
+using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Hugo.GameObjects.Questions
 {
-	class Question
+	class Question: GameObject, IQuestion
 	{
 		private string text;
 		private IAnswer correctAnswer;
 		private IList<IAnswer> answers;
-		public Question(string text, IAnswer correctAnswer, IList<IAnswer> answers)
+
+		public Question(Coord location, string text, IAnswer correctAnswer, IList<IAnswer> answers) : base(location, Color.Yellow, false)
 		{
 			this.text = text;
 			this.correctAnswer = correctAnswer;
