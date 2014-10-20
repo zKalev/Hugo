@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
 			this.AdditionalInfoPanel = new System.Windows.Forms.Panel();
+			this.QuestionAnswers = new System.Windows.Forms.CheckedListBox();
+			this.QuestionBox = new System.Windows.Forms.TextBox();
 			this.PlayerPointsLabel = new System.Windows.Forms.TextBox();
 			this.PlayerInfo = new System.Windows.Forms.TextBox();
 			this.PlayerLabel = new System.Windows.Forms.TextBox();
@@ -40,6 +42,8 @@
 			// AdditionalInfoPanel
 			// 
 			this.AdditionalInfoPanel.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+			this.AdditionalInfoPanel.Controls.Add(this.QuestionAnswers);
+			this.AdditionalInfoPanel.Controls.Add(this.QuestionBox);
 			this.AdditionalInfoPanel.Controls.Add(this.PlayerPointsLabel);
 			this.AdditionalInfoPanel.Controls.Add(this.PlayerInfo);
 			this.AdditionalInfoPanel.Controls.Add(this.PlayerLabel);
@@ -50,6 +54,29 @@
 			this.AdditionalInfoPanel.Name = "AdditionalInfoPanel";
 			this.AdditionalInfoPanel.Size = new System.Drawing.Size(342, 587);
 			this.AdditionalInfoPanel.TabIndex = 0;
+			// 
+			// QuestionAnswers
+			// 
+			this.QuestionAnswers.Enabled = false;
+			this.QuestionAnswers.FormattingEnabled = true;
+			this.QuestionAnswers.Location = new System.Drawing.Point(31, 390);
+			this.QuestionAnswers.Name = "QuestionAnswers";
+			this.QuestionAnswers.ScrollAlwaysVisible = true;
+			this.QuestionAnswers.Size = new System.Drawing.Size(286, 184);
+			this.QuestionAnswers.TabIndex = 6;
+			this.QuestionAnswers.SelectedIndexChanged += new System.EventHandler(this.QuestionAnswers_SelectedIndexChanged);
+			// 
+			// QuestionBox
+			// 
+			this.QuestionBox.Enabled = false;
+			this.QuestionBox.Location = new System.Drawing.Point(31, 195);
+			this.QuestionBox.Multiline = true;
+			this.QuestionBox.Name = "QuestionBox";
+			this.QuestionBox.ReadOnly = true;
+			this.QuestionBox.ShortcutsEnabled = false;
+			this.QuestionBox.Size = new System.Drawing.Size(286, 189);
+			this.QuestionBox.TabIndex = 5;
+			this.QuestionBox.TextChanged += new System.EventHandler(this.QuestionBox_TextChanged);
 			// 
 			// PlayerPointsLabel
 			// 
@@ -140,6 +167,8 @@
 		private System.Windows.Forms.TextBox PlayerLabel;
 		private System.Windows.Forms.TextBox PlayerInfo;
 		private System.Windows.Forms.TextBox PlayerPointsLabel;
+		private System.Windows.Forms.CheckedListBox QuestionAnswers;
+		private System.Windows.Forms.TextBox QuestionBox;
 
     }
 }

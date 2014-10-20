@@ -28,5 +28,10 @@ namespace Hugo.GameObjects.Questions
 			get { return number; }
 		}
 
+		public override string ToString()
+		{
+			return this.Text;
+		}
+
 	}
 }

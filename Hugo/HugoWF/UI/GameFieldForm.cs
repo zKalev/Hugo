@@ -6,6 +6,8 @@
     using System.Collections.Generic;
     using System.Drawing;
     using System.Windows.Forms;
+	using Hugo.GameObjects.Questions;
+	using Hugo.Utils;
 
     public partial class GameFieldForm : Form
     {
@@ -51,19 +53,19 @@
         {
 			if (e.KeyChar == UpButtonChar)
             {
-				Move(0, -1);
+				MovePlayer(0, -1);
             }
 			else if (e.KeyChar == LeftButtonChar)
             {
-				Move(-1, 0);
+				MovePlayer(-1, 0);
             }
 			else if (e.KeyChar == RigthButtonChar)
             {
-				Move(1, 0);
+				MovePlayer(1, 0);
 			}
 			else if (e.KeyChar == DownButtonChar)
 			{
-				Move(0, 1);
+				MovePlayer(0, 1);
 			}
             else
             {
@@ -71,7 +73,7 @@
             }
         }
 
-		private void Move(int x, int y)
+		private void MovePlayer(int x, int y)
 		{
 			bool canMove = Engine.GetInstance().CanMove(x, y);
 			if (canMove)
@@ -87,6 +89,14 @@
 
 		private bool answerQuestion()
 		{
+			IQuestion question = QuestionsReader.Instance.getNextQuestion();
+			QuestionBox.Text = question.Text;
+			QuestionAnswers.Items.Clear();
+			IList<IAnswer> answers = question.Answers;
+			foreach(IAnswer answer in answers){
+				QuestionAnswers.Items.Add(answer);
+			}
+			
 			//TODO
 			return true;
 		}
@@ -122,6 +132,16 @@
 		}
 
 		private void PlayerPoints_TextChanged(object sender, System.EventArgs e)
+		{
+
+		}
+
+		private void QuestionBox_TextChanged(object sender, System.EventArgs e)
+		{
+
+		}
+
+		private void QuestionAnswers_SelectedIndexChanged(object sender, System.EventArgs e)
 		{
 
 		}

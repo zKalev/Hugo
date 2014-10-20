@@ -36,7 +36,7 @@ namespace Hugo.Utils
 
 		public IQuestion getNextQuestion()
 		{
-			if (lastQuestionNumber > questions.Count)
+			if (lastQuestionNumber >= questions.Count - 1)
 			{
 				// start from the beginning
 				lastQuestionNumber = -1;
