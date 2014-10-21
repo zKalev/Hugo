@@ -1,26 +1,27 @@
 ﻿namespace Hugo.UI
 {
-    partial class GameFieldForm
-    {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
-        private System.ComponentModel.IContainer components = null;
+	partial class GameFieldForm
+	{
+		/// <summary>
+		/// Required designer variable.
+		/// </summary>
+		private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+		/// <summary>
+		/// Clean up any resources being used.
+		/// </summary>
+		/// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+		protected override void Dispose(bool disposing)
+		{
+			if (disposing && (components != null))
+			{
+				components.Dispose();
+			}
+			base.Dispose(disposing);
+		}
 
-        #region Windows Form Designer generated code
+		#region Windows Form Designer generated code
+
 
         /// <summary>
         /// Required method for Designer support - do not modify
@@ -211,9 +212,9 @@
             this.AdditionalInfoPanel.PerformLayout();
             this.ResumeLayout(false);
 
-        }
+		}
 
-        #endregion
+		#endregion
 
 		private System.Windows.Forms.Panel AdditionalInfoPanel;
 		private System.Windows.Forms.TextBox PlayerColor;
@@ -221,6 +222,7 @@
 		private System.Windows.Forms.TextBox PlayerLabel;
 		private System.Windows.Forms.TextBox PlayerInfo;
 		private System.Windows.Forms.TextBox PlayerPointsLabel;
+
         private System.Windows.Forms.TextBox Question;
         private System.Windows.Forms.Button AnswerA;
         private System.Windows.Forms.Button AnswerC;
@@ -229,5 +231,5 @@
         private System.Windows.Forms.Button AnswerE;
         private System.ComponentModel.BackgroundWorker backgroundWorker;
 
-    }
+	}
 }

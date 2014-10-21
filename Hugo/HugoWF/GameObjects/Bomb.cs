@@ -1,5 +1,4 @@
 ﻿using Hugo.GameObjects.Enemies;
-using Hugo.GameObjects.Players;
 using Hugo.Helpers;
 using Hugo.Properties;
 using Hugo.UI;
@@ -12,30 +11,23 @@ using System.Threading.Tasks;
 
 namespace Hugo.GameObjects
 {
-    class ObstacleStone : Enemy
+    class Bomb : Enemy
     {
-
-        public ObstacleStone(Coord location)
+        public Bomb(Coord location)
             : base(location)
         {
             this.IsVisible = true;
         }
-
-        public override void ApplyEffects(IPlayer player)
-        {
-            // The stone does no damage
-        }
-
         public override void Draw(Graphics graphics)
         {
             if (IsVisible)
             {
-                object stone = Resources.stone;
-                if (stone is Image)
+                object bomb = Resources.bomb;
+                if (bomb is Image)
                 {
                     int cellSize = WFormDrawingEngine.CellSize;
-                    Image obstacleImg = stone as Image;
-					Point point = new Point(Location.X * cellSize, Location.Y * cellSize);
+                    Image obstacleImg = bomb as Image;
+                    Point point = new Point(Location.X * cellSize, Location.Y * cellSize);
                     graphics.DrawImage(obstacleImg, point);
                 }
             }

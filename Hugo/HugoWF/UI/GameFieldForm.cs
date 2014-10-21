@@ -1,3 +1,4 @@
+
 ﻿namespace Hugo.UI
 {
     using Hugo.Engine;
@@ -49,19 +50,9 @@
         {
             InitializeComponent();
             updatePlayerInfo();
-            this.KeyPreview = true;
+            
         }
 
-        private void LoadColors()
-        {
-            colors = new Dictionary<Color, Brush>();
-            colors.Add(Color.Black, Brushes.Black);
-            colors.Add(Color.Blue, Brushes.Blue);
-            colors.Add(Color.Green, Brushes.Green);
-            colors.Add(Color.Orange, Brushes.Orange);
-            colors.Add(Color.Red, Brushes.Red);
-            colors.Add(Color.White, Brushes.White);
-        }
 
         private void NavigationKey(object sender, KeyPressEventArgs e)
         {
@@ -345,3 +336,4 @@
 
     }
 }
+
