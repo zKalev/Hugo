@@ -39,30 +39,15 @@
         private QuestionsReader questionReader = QuestionsReader.Instance;
         private int x;
         private int y;
-        //private readonly ManualResetEvent mre = new ManualResetEvent(false);
-        //EventWaitHandle ewh =  new EventWaitHandle(false, EventResetMode.ManualReset);
-
-        private Dictionary<Color, Brush> colors;
-
+       
 
         public GameFieldForm()
         {
             InitializeComponent();
             updatePlayerInfo();
-            this.KeyPreview = true;
+            
         }
-
-        private void LoadColors()
-        {
-            colors = new Dictionary<Color, Brush>();
-            colors.Add(Color.Black, Brushes.Black);
-            colors.Add(Color.Blue, Brushes.Blue);
-            colors.Add(Color.Green, Brushes.Green);
-            colors.Add(Color.Orange, Brushes.Orange);
-            colors.Add(Color.Red, Brushes.Red);
-            colors.Add(Color.White, Brushes.White);
-        }
-
+        
         private void NavigationKey(object sender, KeyPressEventArgs e)
         {
 
@@ -121,8 +106,6 @@
              this.AnswerE.Visible = true;
             this.Question.Visible = true;
         }
-
-      
 
         private void DrawQuestion()
         {
@@ -191,8 +174,14 @@
             AnswerA.TabIndex = 0;
             MessageBox.Show(currentAnswer + "---corect---" + this.corectAnswer);
             this.KeyPreview = true;
+        }
 
-
+        private void updatePlayerInfo()
+        {
+            IPlayer currentPlayer = Engine.GetInstance().GetCurrentPlayer();
+            this.PlayerColor.BackColor = currentPlayer.Color;
+            this.PlayerPoints.Text = currentPlayer.Points + "";
+            this.PlayerInfo.Text = currentPlayer.Name;
         }
         private void ClearQuestune()
         {
@@ -310,13 +299,7 @@
 
         }
 
-        private void updatePlayerInfo()
-        {
-            IPlayer currentPlayer = Engine.GetInstance().GetCurrentPlayer();
-            this.PlayerColor.BackColor = currentPlayer.Color;
-            this.PlayerPoints.Text = currentPlayer.Points + "";
-            this.PlayerInfo.Text = currentPlayer.Name;
-        }
+       
 
         private void PlayerLabel_TextChanged(object sender, System.EventArgs e)
         {
