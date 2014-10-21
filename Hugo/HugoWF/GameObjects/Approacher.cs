@@ -33,7 +33,7 @@
             Coord diffCoord = player.Location - this.TargetCoord;
             int newX = diffCoord.X / Math.Abs(diffCoord.X);
             int newY = diffCoord.Y / Math.Abs(diffCoord.Y);
-            player.Location = new Coord(newX, newY) * DefaultForwardSteps;
+            player.Location += new Coord(newX, newY) * (-DefaultForwardSteps);
         }
     }
 }

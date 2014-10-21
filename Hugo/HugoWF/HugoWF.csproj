@@ -54,8 +54,8 @@
     <Compile Include="GameObjects\IEnemy.cs" />
     <Compile Include="GameObjects\IFriend.cs" />
     <Compile Include="GameObjects\ITarget.cs" />
-    <Compile Include="GameObjects\ObstacleStone.cs" />
-    <Compile Include="GameObjects\ObstacleBomb.cs" />
+    <Compile Include="GameObjects\Obstacle.cs" />
+    <Compile Include="GameObjects\Bomb.cs" />
     <Compile Include="GameObjects\Players\IPlayer.cs" />
     <Compile Include="GameObjects\Players\Player.cs" />
     <Compile Include="GameObjects\ObjectFactory.cs" />
@@ -64,6 +64,7 @@
     <Compile Include="GameObjects\Questions\IQuestion.cs" />
     <Compile Include="GameObjects\Questions\Question.cs" />
     <Compile Include="GameObjects\Repulser.cs" />
+    <Compile Include="GameObjects\Stone.cs" />
     <Compile Include="GameObjects\Target.cs" />
     <Compile Include="Exceptions\TargetMissingException.cs" />
     <Compile Include="UI\AboutForm.cs">
@@ -114,9 +115,11 @@
     <Compile Include="Utils\QuestionsReader.cs" />
     <EmbeddedResource Include="UI\AboutForm.resx">
       <DependentUpon>AboutForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\CreateCharacterForm.resx">
       <DependentUpon>CreateCharacterForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\GameFieldForm.resx">
       <DependentUpon>GameFieldForm.cs</DependentUpon>

@@ -14,7 +14,7 @@
 
         public virtual void ApplyEffects(IPlayer player)
         {
-            player.Points = player.Points - DefaultHelp;
+            player.Points = player.Points + DefaultHelp;
         }
     }
 }
