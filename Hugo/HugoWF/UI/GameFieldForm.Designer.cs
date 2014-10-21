@@ -66,64 +66,75 @@
             // 
             // AnswerE
             // 
+            this.AnswerE.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.AnswerE.Enabled = false;
             this.AnswerE.ForeColor = System.Drawing.SystemColors.MenuText;
             this.AnswerE.Location = new System.Drawing.Point(6, 442);
             this.AnswerE.Name = "AnswerE";
             this.AnswerE.Size = new System.Drawing.Size(362, 23);
             this.AnswerE.TabIndex = 10;
-            this.AnswerE.UseVisualStyleBackColor = true;
+            this.AnswerE.UseVisualStyleBackColor = false;
             this.AnswerE.Click += new System.EventHandler(this.AnswerA_Click);
             // 
             // AnswerD
             // 
+            this.AnswerD.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.AnswerD.Enabled = false;
             this.AnswerD.ForeColor = System.Drawing.SystemColors.MenuText;
             this.AnswerD.Location = new System.Drawing.Point(3, 413);
             this.AnswerD.Name = "AnswerD";
             this.AnswerD.Size = new System.Drawing.Size(362, 23);
             this.AnswerD.TabIndex = 9;
-            this.AnswerD.UseVisualStyleBackColor = true;
+            this.AnswerD.UseVisualStyleBackColor = false;
             this.AnswerD.Click += new System.EventHandler(this.AnswerA_Click);
             // 
             // AnswerB
             // 
+            this.AnswerB.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.AnswerB.Enabled = false;
             this.AnswerB.ForeColor = System.Drawing.SystemColors.MenuText;
             this.AnswerB.Location = new System.Drawing.Point(3, 355);
             this.AnswerB.Name = "AnswerB";
             this.AnswerB.Size = new System.Drawing.Size(362, 23);
             this.AnswerB.TabIndex = 8;
-            this.AnswerB.UseVisualStyleBackColor = true;
+            this.AnswerB.UseVisualStyleBackColor = false;
             this.AnswerB.Click += new System.EventHandler(this.AnswerA_Click);
             // 
             // AnswerC
             // 
+            this.AnswerC.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.AnswerC.Enabled = false;
+            this.AnswerC.FlatAppearance.BorderSize = 0;
             this.AnswerC.ForeColor = System.Drawing.SystemColors.MenuText;
             this.AnswerC.Location = new System.Drawing.Point(3, 384);
             this.AnswerC.Name = "AnswerC";
             this.AnswerC.Size = new System.Drawing.Size(362, 23);
             this.AnswerC.TabIndex = 7;
-            this.AnswerC.UseVisualStyleBackColor = true;
+            this.AnswerC.UseVisualStyleBackColor = false;
             this.AnswerC.Click += new System.EventHandler(this.AnswerA_Click);
             // 
             // AnswerA
             // 
+            this.AnswerA.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.AnswerA.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.AnswerA.CausesValidation = false;
             this.AnswerA.DialogResult = System.Windows.Forms.DialogResult.Yes;
             this.AnswerA.Enabled = false;
+            this.AnswerA.FlatAppearance.BorderColor = System.Drawing.Color.PaleTurquoise;
+            this.AnswerA.FlatAppearance.BorderSize = 0;
             this.AnswerA.ForeColor = System.Drawing.SystemColors.MenuText;
             this.AnswerA.Location = new System.Drawing.Point(3, 330);
             this.AnswerA.Name = "AnswerA";
             this.AnswerA.Size = new System.Drawing.Size(362, 23);
             this.AnswerA.TabIndex = 6;
             this.AnswerA.TabStop = false;
-            this.AnswerA.UseVisualStyleBackColor = true;
+            this.AnswerA.UseVisualStyleBackColor = false;
             this.AnswerA.Click += new System.EventHandler(this.AnswerA_Click);
             // 
             // Question
             // 
+            this.Question.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.Question.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Question.Enabled = false;
             this.Question.Location = new System.Drawing.Point(3, 283);
             this.Question.Multiline = true;
@@ -131,6 +142,7 @@
             this.Question.ReadOnly = true;
             this.Question.Size = new System.Drawing.Size(365, 40);
             this.Question.TabIndex = 5;
+            this.Question.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // PlayerPointsLabel
             // 
