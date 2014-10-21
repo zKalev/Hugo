@@ -86,8 +86,7 @@
             bool canMove = Engine.GetInstance().CanMove(x, y);
             if (canMove)
             {
-                Thread t = new Thread(new ThreadStart(DrawQuestion));
-                t.Start();
+                DrawQuestion();
                 EnableQuestionAnswerButton();
             }
         }
@@ -110,6 +109,7 @@
         private void DrawQuestion()
         {
             IQuestion currentQuestion = questionReader.getNextQuestion();
+            
             this.SetQuestionText(currentQuestion.Text);
             IList<IAnswer> answers = currentQuestion.Answers;
             this.SetAnswerAText(answers[0].Text);
@@ -172,7 +172,7 @@
 
             ClearQuestune();
             AnswerA.TabIndex = 0;
-            MessageBox.Show(currentAnswer + "---corect---" + this.corectAnswer);
+            MessageBox.Show("Correct answer: "+this.corectAnswer );
             this.KeyPreview = true;
         }
 
