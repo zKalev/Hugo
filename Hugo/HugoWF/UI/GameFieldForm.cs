@@ -167,7 +167,7 @@
              {
                  Engine.GetInstance().ChangeTurn();
                  updatePlayerInfo();
-                 MessageBox.Show("Sory  the correct answer is: " + this.corectAnswer);
+                 MessageBox.Show("Sorry the correct answer is: " + this.corectAnswer);
              }
 
              ClearQuestune();
