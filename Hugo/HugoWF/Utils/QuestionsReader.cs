@@ -109,12 +109,15 @@ namespace Hugo.Utils
 					if (sheet != null)
 					{
 						Marshal.ReleaseComObject(sheet);
+
 					}
 
 					if (workbook != null)
 					{
 						Marshal.ReleaseComObject(workbook);
-					}
+                       // workbook.RunAutoMacros(XlRunAutoMacro.xlAutoClose);
+
+                    }
 				}
 			}
 		}
