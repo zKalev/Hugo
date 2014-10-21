@@ -33,9 +33,7 @@
         private const char RigthButtonChar = 'd';
         private const char DownButtonChar = 's';
 
-        
         private string corectAnswer;
-        private bool isCurrentAnswerCorrect;
 
         private QuestionsReader questionReader = QuestionsReader.Instance;
         private int x;
@@ -158,10 +156,7 @@
             string currentAnswer = rowButtonValue.Substring(startPositionForCorrectAswer).Trim();
             if (this.corectAnswer.Equals(currentAnswer))
             {
-                this.isCurrentAnswerCorrect = true;
-            }
-            if (isCurrentAnswerCorrect)
-            {
+             
                 Engine.GetInstance().MoveCurrentPlayer(this.x, this.y);
                 updatePlayerInfo();
                 MessageBox.Show("Youuu good you!");
