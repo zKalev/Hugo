@@ -282,39 +282,7 @@
                 this.AnswerE.Text = text;
             }
         }
-
         //------------- End methods  to set value in multithreading enviaronment-----
-
-        private void GameFieldForm_Load(object sender, System.EventArgs e)
-        {
-
-        }
-
-        private void PlayerInfo_TextChanged(object sender, System.EventArgs e)
-        {
-
-        }
-
-       
-
-        private void PlayerLabel_TextChanged(object sender, System.EventArgs e)
-        {
-
-        }
-
-        private void PlayerColor_TextChanged(object sender, System.EventArgs e)
-        {
-
-        }
-
-        private void PlayerPoints_TextChanged(object sender, System.EventArgs e)
-        {
-        }
-
-        private void AdditionalInfoPanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }
 

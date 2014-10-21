@@ -63,7 +63,6 @@
             this.AdditionalInfoPanel.Name = "AdditionalInfoPanel";
             this.AdditionalInfoPanel.Size = new System.Drawing.Size(368, 587);
             this.AdditionalInfoPanel.TabIndex = 0;
-            this.AdditionalInfoPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.AdditionalInfoPanel_Paint);
             // 
             // AnswerE
             // 
@@ -171,7 +170,6 @@
             this.PlayerLabel.Size = new System.Drawing.Size(286, 25);
             this.PlayerLabel.TabIndex = 2;
             this.PlayerLabel.Text = "Current player:";
-            this.PlayerLabel.TextChanged += new System.EventHandler(this.PlayerLabel_TextChanged);
             // 
             // PlayerPoints
             // 
@@ -183,7 +181,6 @@
             this.PlayerPoints.ReadOnly = true;
             this.PlayerPoints.Size = new System.Drawing.Size(286, 32);
             this.PlayerPoints.TabIndex = 1;
-            this.PlayerPoints.TextChanged += new System.EventHandler(this.PlayerPoints_TextChanged);
             // 
             // PlayerColor
             // 
@@ -195,7 +192,6 @@
             this.PlayerColor.ReadOnly = true;
             this.PlayerColor.Size = new System.Drawing.Size(286, 32);
             this.PlayerColor.TabIndex = 0;
-            this.PlayerColor.TextChanged += new System.EventHandler(this.PlayerColor_TextChanged);
             // 
             // GameFieldForm
             // 
@@ -206,7 +202,6 @@
             this.Controls.Add(this.AdditionalInfoPanel);
             this.Name = "GameFieldForm";
             this.Text = "GameField";
-            this.Load += new System.EventHandler(this.GameFieldForm_Load);
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NavigationKey);
             this.AdditionalInfoPanel.ResumeLayout(false);
             this.AdditionalInfoPanel.PerformLayout();
