@@ -1,3 +1,4 @@
+
 ﻿namespace Hugo.UI
 {
     using Hugo.Engine;
@@ -47,7 +48,7 @@
             updatePlayerInfo();
             
         }
-        
+
         private void NavigationKey(object sender, KeyPressEventArgs e)
         {
 
@@ -319,12 +320,6 @@
         {
 
         }
-       
-
-        private void backgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
-        {
-           // Monitor.PulseAll(this);
-        }
-
     }
 }
+

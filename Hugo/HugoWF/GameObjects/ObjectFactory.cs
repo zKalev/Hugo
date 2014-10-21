@@ -1,10 +1,10 @@
 ﻿namespace Hugo.GameObjects
 {
-	using Hugo.Exceptions;
-	using Hugo.Helpers;
-	using Hugo.UI;
-	using System;
-	using System.Collections.Generic;
+    using Hugo.Exceptions;
+    using Hugo.Helpers;
+    using Hugo.UI;
+    using System;
+    using System.Collections.Generic;
 
     public class GameObjectFactory : IObjectFactory
     {
@@ -27,7 +27,7 @@
 
         public virtual IEnemy CreateBomb(IList<IGameObject> gameObjects, Coord location)
         {
-            IEnemy enemy = new ObstacleBomb(location);
+            IEnemy enemy = new Bomb(location);
             gameObjects.Add((IGameObject)enemy);
 
             return enemy;
@@ -35,7 +35,7 @@
 
         public virtual IEnemy CreateStone(IList<IGameObject> gameObjects, Coord location)
         {
-            IEnemy enemy = new ObstacleStone(location);
+            IEnemy enemy = new Stone(location);
             gameObjects.Add((IGameObject)enemy);
 
             return enemy;
@@ -69,12 +69,12 @@
 
         public virtual void CreateRandomObjects(Coord minLocation, Coord maxLocation, int objectsCount, IList<IGameObject> gameObjects)
         {
-			int margin = WFormDrawingEngine.margin;
+            int margin = WFormDrawingEngine.margin;
             for (int objType = 0; objType < objectsCount; objType++)
             {
                 Coord location = new Coord(
-					random.Next(minLocation.X + margin, maxLocation.X + margin),
-					random.Next(minLocation.Y + margin, maxLocation.Y + margin));
+                    random.Next(minLocation.X + margin, maxLocation.X + margin),
+                    random.Next(minLocation.Y + margin, maxLocation.Y + margin));
 
                 int objTypesCount = 4;
 

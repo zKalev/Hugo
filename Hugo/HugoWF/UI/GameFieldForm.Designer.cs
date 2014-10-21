@@ -1,26 +1,27 @@
 ﻿namespace Hugo.UI
 {
-    partial class GameFieldForm
-    {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
-        private System.ComponentModel.IContainer components = null;
+	partial class GameFieldForm
+	{
+		/// <summary>
+		/// Required designer variable.
+		/// </summary>
+		private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+		/// <summary>
+		/// Clean up any resources being used.
+		/// </summary>
+		/// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+		protected override void Dispose(bool disposing)
+		{
+			if (disposing && (components != null))
+			{
+				components.Dispose();
+			}
+			base.Dispose(disposing);
+		}
 
-        #region Windows Form Designer generated code
+		#region Windows Form Designer generated code
+
 
         /// <summary>
         /// Required method for Designer support - do not modify
@@ -40,7 +41,6 @@
             this.PlayerLabel = new System.Windows.Forms.TextBox();
             this.PlayerPoints = new System.Windows.Forms.TextBox();
             this.PlayerColor = new System.Windows.Forms.TextBox();
-            this.backgroundWorker = new System.ComponentModel.BackgroundWorker();
             this.AdditionalInfoPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,6 +68,7 @@
             // AnswerE
             // 
             this.AnswerE.Enabled = false;
+            this.AnswerE.ForeColor = System.Drawing.SystemColors.MenuText;
             this.AnswerE.Location = new System.Drawing.Point(6, 442);
             this.AnswerE.Name = "AnswerE";
             this.AnswerE.Size = new System.Drawing.Size(362, 23);
@@ -78,6 +79,7 @@
             // AnswerD
             // 
             this.AnswerD.Enabled = false;
+            this.AnswerD.ForeColor = System.Drawing.SystemColors.MenuText;
             this.AnswerD.Location = new System.Drawing.Point(3, 413);
             this.AnswerD.Name = "AnswerD";
             this.AnswerD.Size = new System.Drawing.Size(362, 23);
@@ -88,6 +90,7 @@
             // AnswerB
             // 
             this.AnswerB.Enabled = false;
+            this.AnswerB.ForeColor = System.Drawing.SystemColors.MenuText;
             this.AnswerB.Location = new System.Drawing.Point(3, 355);
             this.AnswerB.Name = "AnswerB";
             this.AnswerB.Size = new System.Drawing.Size(362, 23);
@@ -98,6 +101,7 @@
             // AnswerC
             // 
             this.AnswerC.Enabled = false;
+            this.AnswerC.ForeColor = System.Drawing.SystemColors.MenuText;
             this.AnswerC.Location = new System.Drawing.Point(3, 384);
             this.AnswerC.Name = "AnswerC";
             this.AnswerC.Size = new System.Drawing.Size(362, 23);
@@ -110,6 +114,7 @@
             this.AnswerA.CausesValidation = false;
             this.AnswerA.DialogResult = System.Windows.Forms.DialogResult.Yes;
             this.AnswerA.Enabled = false;
+            this.AnswerA.ForeColor = System.Drawing.SystemColors.MenuText;
             this.AnswerA.Location = new System.Drawing.Point(3, 330);
             this.AnswerA.Name = "AnswerA";
             this.AnswerA.Size = new System.Drawing.Size(362, 23);
@@ -192,10 +197,6 @@
             this.PlayerColor.TabIndex = 0;
             this.PlayerColor.TextChanged += new System.EventHandler(this.PlayerColor_TextChanged);
             // 
-            // backgroundWorker
-            // 
-            this.backgroundWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker_RunWorkerCompleted);
-            // 
             // GameFieldForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -211,9 +212,9 @@
             this.AdditionalInfoPanel.PerformLayout();
             this.ResumeLayout(false);
 
-        }
+		}
 
-        #endregion
+		#endregion
 
 		private System.Windows.Forms.Panel AdditionalInfoPanel;
 		private System.Windows.Forms.TextBox PlayerColor;
@@ -221,13 +222,13 @@
 		private System.Windows.Forms.TextBox PlayerLabel;
 		private System.Windows.Forms.TextBox PlayerInfo;
 		private System.Windows.Forms.TextBox PlayerPointsLabel;
+
         private System.Windows.Forms.TextBox Question;
         private System.Windows.Forms.Button AnswerA;
         private System.Windows.Forms.Button AnswerC;
         private System.Windows.Forms.Button AnswerD;
         private System.Windows.Forms.Button AnswerB;
         private System.Windows.Forms.Button AnswerE;
-        private System.ComponentModel.BackgroundWorker backgroundWorker;
 
-    }
+	}
 }
