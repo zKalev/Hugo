@@ -160,7 +160,6 @@
     </Content>
     <None Include="Questions.xlsx" />
     <None Include="Resources\bomb.png" />
-    <None Include="Resources\Questions.xlsx" />
     <None Include="Resources\stone.png" />
   </ItemGroup>
   <ItemGroup />
