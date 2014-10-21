@@ -40,11 +40,7 @@
         private QuestionsReader questionReader = QuestionsReader.Instance;
         private int x;
         private int y;
-        //private readonly ManualResetEvent mre = new ManualResetEvent(false);
-        //EventWaitHandle ewh =  new EventWaitHandle(false, EventResetMode.ManualReset);
-
-        private Dictionary<Color, Brush> colors;
-
+       
 
         public GameFieldForm()
         {
@@ -52,7 +48,6 @@
             updatePlayerInfo();
             
         }
-
 
         private void NavigationKey(object sender, KeyPressEventArgs e)
         {
@@ -92,8 +87,7 @@
             bool canMove = Engine.GetInstance().CanMove(x, y);
             if (canMove)
             {
-                Thread t = new Thread(new ThreadStart(DrawQuestion));
-                t.Start();
+                DrawQuestion();
                 EnableQuestionAnswerButton();
             }
         }
@@ -113,11 +107,10 @@
             this.Question.Visible = true;
         }
 
-      
-
         private void DrawQuestion()
         {
             IQuestion currentQuestion = questionReader.getNextQuestion();
+            
             this.SetQuestionText(currentQuestion.Text);
             IList<IAnswer> answers = currentQuestion.Answers;
             this.SetAnswerAText(answers[0].Text);
@@ -180,10 +173,16 @@
 
             ClearQuestune();
             AnswerA.TabIndex = 0;
-            MessageBox.Show(currentAnswer + "---corect---" + this.corectAnswer);
+            MessageBox.Show("Correct answer: "+this.corectAnswer );
             this.KeyPreview = true;
+        }
 
-
+        private void updatePlayerInfo()
+        {
+            IPlayer currentPlayer = Engine.GetInstance().GetCurrentPlayer();
+            this.PlayerColor.BackColor = currentPlayer.Color;
+            this.PlayerPoints.Text = currentPlayer.Points + "";
+            this.PlayerInfo.Text = currentPlayer.Name;
         }
         private void ClearQuestune()
         {
@@ -301,13 +300,7 @@
 
         }
 
-        private void updatePlayerInfo()
-        {
-            IPlayer currentPlayer = Engine.GetInstance().GetCurrentPlayer();
-            this.PlayerColor.BackColor = currentPlayer.Color;
-            this.PlayerPoints.Text = currentPlayer.Points + "";
-            this.PlayerInfo.Text = currentPlayer.Name;
-        }
+       
 
         private void PlayerLabel_TextChanged(object sender, System.EventArgs e)
         {
@@ -327,13 +320,6 @@
         {
 
         }
-       
-
-        private void backgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
-        {
-           // Monitor.PulseAll(this);
-        }
-
     }
 }
 
