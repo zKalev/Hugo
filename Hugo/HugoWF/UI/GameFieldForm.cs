@@ -15,19 +15,6 @@
 
      public partial class GameFieldForm : Form
      {
-
-         private const int ElementSize = 50;
-         private const int PlayerSize = ElementSize / 2;
-         private const int MovingUnit = ElementSize / 2;
-
-         private const int XStartDrawingPoint = 5;
-         private const int XEndDrawingPoint = 25;
-
-         private const int YEndDrawingPoint = 23;
-         private const int YStartDrawingPoint = 2;
-
-         private const int FontSize = 15;
-
          private const char UpButtonChar = 'w';
          private const char LeftButtonChar = 'a';
          private const char RigthButtonChar = 'd';
@@ -196,6 +183,11 @@
              this.AnswerC.Hide();
              this.AnswerD.Hide();
              this.AnswerE.Hide();
+         }
+
+         private void PlayerColor_TextChanged(object sender, EventArgs e)
+         {
+
          }
      }
  }

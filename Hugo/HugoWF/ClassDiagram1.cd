@@ -1,2 +1,285 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ClassDiagram /> 
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Hugo.HugoGame" Collapsed="true">
+    <Position X="22" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>HugoGame.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Hugo.Engine.Engine" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="16.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAwAACEEIoAABCAAAAAAUAAgFAAgAAkAIAAAAAQACAI=</HashCode>
+      <FileName>Engine\Engine.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Hugo.Exceptions.InvalidNameException" Collapsed="true">
+    <Position X="16.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exceptions\InvalidNameException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Hugo.Exceptions.TargetMissingException" Collapsed="true">
+    <Position X="20.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exceptions\TargetMissingException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Hugo.GameObjects.Approacher" Collapsed="true">
+    <Position X="0.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAAAAAAAAAAACAAAAAAABAAAgAAAAA=</HashCode>
+      <FileName>GameObjects\Approacher.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Hugo.GameObjects.Bomb" Collapsed="true">
+    <Position X="14.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameObjects\Bomb.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Hugo.GameObjects.Friend" Collapsed="true">
+    <Position X="0.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>GameObjects\Friend.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Hugo.GameObjects.GameObject" Collapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAEgAAABIAAAACAAAAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>GameObjects\GameObject.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Hugo.GameObjects.GameObjectFactory" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="20.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAIAIAAAAAAkAAQBAAAAAAAAAQAAAgCAAA=</HashCode>
+      <FileName>GameObjects\ObjectFactory.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Hugo.GameObjects.Obstacle" Collapsed="true">
+    <Position X="9.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameObjects\Obstacle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Hugo.GameObjects.Repulser" Collapsed="true">
+    <Position X="12" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAAAAAAAAAAACAEAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>GameObjects\Repulser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Hugo.GameObjects.Stone" Collapsed="true">
+    <Position X="9.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameObjects\Stone.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Hugo.GameObjects.Target" Collapsed="true">
+    <Position X="5.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameObjects\Target.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Hugo.GameObjects.Enemies.Enemy" Collapsed="true">
+    <Position X="12" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameObjects\Enemy.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Hugo.GameObjects.Players.Player" Collapsed="true">
+    <Position X="3" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAIAAggKAAAACgAQAAAAUAAAAAABAAAAAAAA=</HashCode>
+      <FileName>GameObjects\Players\Player.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Hugo.GameObjects.Questions.Answer" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="18.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAAEAEAAAAAAAAAAAAAIAAIACAAAAAA=</HashCode>
+      <FileName>GameObjects\Questions\Answer.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Hugo.GameObjects.Questions.Question" Collapsed="true">
+    <Position X="7.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAABAAAAIQAAACAAAAAA=</HashCode>
+      <FileName>GameObjects\Questions\Question.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Hugo.Properties.Resources" Collapsed="true">
+    <Position X="16.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAACBEAAAAQAQAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Hugo.Properties.Settings" Collapsed="true">
+    <Position X="18.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Hugo.UI.AboutForm" Collapsed="true">
+    <Position X="16.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAACBAAACAAAAAAAAEAAAACAAAAA=</HashCode>
+      <FileName>UI\AboutForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Hugo.UI.CreateCharacterForm" Collapsed="true">
+    <Position X="22" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAEAgACAgAAEBAAGJABACAAAAEBAkAAAAACAAQAA=</HashCode>
+      <FileName>UI\CreateCharacterForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Hugo.UI.GameFieldForm" Collapsed="true">
+    <Position X="18.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>SAQAAAAgICAAEBgBAACEKgAGgBQAAABMQAhgMBIAwDk=</HashCode>
+      <FileName>UI\GameFieldForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Hugo.UI.MainMenuForm" Collapsed="true">
+    <Position X="18.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAQAACAEUAEAAACCAAAiAAAAAIAAAQAAAAIAIAA=</HashCode>
+      <FileName>UI\MainMenuForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Hugo.UI.PlayingRulesForm" Collapsed="true">
+    <Position X="20.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACQAAAAAAACBAAACAAAAAAAAAAAABCAAAAA=</HashCode>
+      <FileName>UI\PlayingRulesForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Hugo.UI.WFormDrawingEngine" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="22" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CwkKEQgCAAAAABAAAEAAAgAAAUYAAAEAgAAAADMAGAA=</HashCode>
+      <FileName>UI\WFormDrawingEngine.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Hugo.Utils.ColorUtil" Collapsed="true">
+    <Position X="20.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Utils\ColorUtil.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Hugo.Utils.QuestionsReader" Collapsed="true">
+    <Position X="22" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAAAAAAAAAAAAARQAAAAQAAAAAAIAAA=</HashCode>
+      <FileName>Utils\QuestionsReader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="Hugo.Helpers.Coord" Collapsed="true">
+    <Position X="16.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAgAYAUAAAAAAAAAACAAAAEAAAAAYAA=</HashCode>
+      <FileName>Helpers\Coord.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Interface Name="Hugo.Engine.IEngine" Collapsed="true">
+    <Position X="20.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAEEAgAAACAAAAAAAAAgAAAgAAgAAAAAAAAACAA=</HashCode>
+      <FileName>Engine\IEngine.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Hugo.GameObjects.IEnemy" Collapsed="true">
+    <Position X="0.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameObjects\IEnemy.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Hugo.GameObjects.IFriend" Collapsed="true">
+    <Position X="2.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameObjects\IFriend.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Hugo.GameObjects.IGameObject" Collapsed="true">
+    <Position X="3.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEgAAAAIAAAAAAAAAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>GameObjects\IGameObject.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Hugo.GameObjects.IObjectFactory" Collapsed="true">
+    <Position X="22" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAIAAAAAAEAAQAAAAAAAAAAAAAAgCAAA=</HashCode>
+      <FileName>GameObjects\IObjectFactory.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Hugo.GameObjects.ITarget" Collapsed="true">
+    <Position X="5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameObjects\ITarget.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Hugo.GameObjects.Players.IPlayer" Collapsed="true">
+    <Position X="7.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAgAKAAAAAAAQAAAAAAAAAAABAAAAAAAA=</HashCode>
+      <FileName>GameObjects\Players\IPlayer.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Hugo.GameObjects.Questions.IAnswer" Collapsed="true">
+    <Position X="16.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAIACAAAAAA=</HashCode>
+      <FileName>GameObjects\Questions\IAnswer.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Hugo.GameObjects.Questions.IQuestion" Collapsed="true">
+    <Position X="16.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAACAAAAAA=</HashCode>
+      <FileName>GameObjects\Questions\IQuestion.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Hugo.UI.IDrawingEngine" Collapsed="true">
+    <Position X="18.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgACAAgCAAAAABAAAEAAAgAAAAQAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>UI\IDrawingEngine.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="Hugo.Helpers.Gender" Collapsed="true">
+    <Position X="16.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>Helpers\Gender.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
