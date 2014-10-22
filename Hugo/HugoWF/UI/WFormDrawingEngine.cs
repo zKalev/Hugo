@@ -1,6 +1,6 @@
 ﻿namespace Hugo.UI
 {
-	using Hugo.Helpers;
+	using Hugo.Utils;
 	using Hugo.GameObjects.Players;
 	using System;
 	using System.Collections.Generic;

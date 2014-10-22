@@ -8,7 +8,7 @@
     using GameObjects;
 	using Hugo.GameObjects.Players;
     using UI;
-    using Hugo.Helpers;
+    using Hugo.Utils;
     using System.Drawing;
 
     public interface IEngine

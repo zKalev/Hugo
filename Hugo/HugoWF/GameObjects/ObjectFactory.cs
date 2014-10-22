@@ -1,7 +1,7 @@
 ﻿namespace Hugo.GameObjects
 {
     using Hugo.Exceptions;
-    using Hugo.Helpers;
+    using Hugo.Utils;
     using Hugo.UI;
     using System;
     using System.Collections.Generic;

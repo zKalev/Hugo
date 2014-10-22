@@ -1,5 +1,5 @@
 ﻿using Hugo.GameObjects.Enemies;
-using Hugo.Helpers;
+using Hugo.Utils;
 using Hugo.Properties;
 using Hugo.UI;
 using System;
@@ -16,7 +16,6 @@ namespace Hugo.GameObjects
         public Bomb(Coord location)
             : base(location)
         {
-            this.IsVisible = true;
         }
         public override void Draw(Graphics graphics)
         {

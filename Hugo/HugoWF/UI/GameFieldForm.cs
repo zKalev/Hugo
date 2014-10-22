@@ -2,7 +2,7 @@
 ﻿namespace Hugo.UI
  {
      using Hugo.Engine;
-     using Hugo.Helpers;
+     using Hugo.Utils;
      using Hugo.GameObjects.Players;
      using System.Collections.Generic;
      using System.Drawing;
@@ -21,7 +21,7 @@
          private const char DownButtonChar = 's';
 
          private string corectAnswer;
-
+         private IPlayer currentPlayer = null;
 
          private int x;
          private int y;
@@ -31,33 +31,32 @@
          {
              InitializeComponent();
              updatePlayerInfo();
-
+             this.currentPlayer = null;
          }
 
          private void NavigationKey(object sender, KeyPressEventArgs e)
          {
-
              if (e.KeyChar == UpButtonChar)
              {
-                 StartDrawingQuestionIfMoveIsPossible(0, -1);
+                 StartDrawingQuestionIfNotDrawn(0, -1);
                  this.x = 0;
                  this.y = -1;
              }
              else if (e.KeyChar == LeftButtonChar)
              {
-                 StartDrawingQuestionIfMoveIsPossible(-1, 0);
+                 StartDrawingQuestionIfNotDrawn(-1, 0);
                  this.x = -1;
                  this.y = 0;
              }
              else if (e.KeyChar == RigthButtonChar)
              {
-                 StartDrawingQuestionIfMoveIsPossible(1, 0);
+                 StartDrawingQuestionIfNotDrawn(1, 0);
                  this.x = 1;
                  this.y = 0;
              }
              else if (e.KeyChar == DownButtonChar)
              {
-                 StartDrawingQuestionIfMoveIsPossible(0, 1);
+                 StartDrawingQuestionIfNotDrawn(0, 1);
                  this.x = 0;
                  this.y = 1;
              }
@@ -65,12 +64,14 @@
              {
                  MessageBox.Show("Unvalid key!");
              }
+
+             this.currentPlayer = Engine.GetInstance().GetCurrentPlayer();
          }
 
-         private void StartDrawingQuestionIfMoveIsPossible(int x, int y)
+         private void StartDrawingQuestionIfNotDrawn(int x, int y)
          {
              bool canMove = Engine.GetInstance().CanMove(x, y);
-             if (canMove)
+             if (this.currentPlayer != Engine.GetInstance().GetCurrentPlayer())
              {
                  DrawQuestion();
                  EnableQuestionAnswerButton();
@@ -84,11 +85,13 @@
              AnswerC.Enabled = true;
              AnswerD.Enabled = true;
              AnswerE.Enabled = true;
+
              this.AnswerA.Visible = true;
              this.AnswerB.Visible = true;
              this.AnswerC.Visible = true;
              this.AnswerD.Visible = true;
              this.AnswerE.Visible = true;
+
              this.Question.Visible = true;
          }
 
@@ -147,7 +150,7 @@
              {
                  Engine.GetInstance().MoveCurrentPlayer(this.x, this.y);
                  updatePlayerInfo();
-                 MessageBox.Show("Youuu good you!");
+                 // MessageBox.Show("Youuu good you!");
 
              }
              else

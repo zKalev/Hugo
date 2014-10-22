@@ -29,6 +29,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PlayingRulesForm));
             this.HowToPlayText = new System.Windows.Forms.TextBox();
             this.BackButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -43,7 +44,7 @@
             this.HowToPlayText.ReadOnly = true;
             this.HowToPlayText.Size = new System.Drawing.Size(281, 197);
             this.HowToPlayText.TabIndex = 0;
-            this.HowToPlayText.Text = "   This wondow should explains to player how to play.";
+            this.HowToPlayText.Text = resources.GetString("HowToPlayText.Text");
             this.HowToPlayText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.HowToPlayText.TextChanged += new System.EventHandler(this.HowToPlayText_TextChanged);
             // 
@@ -57,14 +58,14 @@
             this.BackButton.UseVisualStyleBackColor = true;
             this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
             // 
-            // HowToPlay
+            // PlayingRulesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.Controls.Add(this.BackButton);
             this.Controls.Add(this.HowToPlayText);
-            this.Name = "HowToPlay";
+            this.Name = "PlayingRulesForm";
             this.Text = "HowToPlay";
             this.ResumeLayout(false);
             this.PerformLayout();

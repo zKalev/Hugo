@@ -197,7 +197,7 @@
       <FileName>Utils\QuestionsReader.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Struct Name="Hugo.Helpers.Coord" Collapsed="true">
+  <Struct Name="Hugo.Utils.Coord" Collapsed="true">
     <Position X="16.75" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>IAAAAAAAAAAAAAgAYAUAAAAAAAAAACAAAAEAAAAAYAA=</HashCode>
@@ -274,7 +274,7 @@
       <FileName>UI\IDrawingEngine.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Enum Name="Hugo.Helpers.Gender" Collapsed="true">
+  <Enum Name="Hugo.Utils.Gender" Collapsed="true">
     <Position X="16.75" Y="7.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAA=</HashCode>

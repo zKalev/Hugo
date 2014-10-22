@@ -1,4 +1,4 @@
-﻿namespace Hugo.Helpers
+﻿namespace Hugo.Utils
 {
     public struct Coord
     {

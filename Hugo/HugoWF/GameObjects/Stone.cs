@@ -1,6 +1,6 @@
 ﻿namespace Hugo.GameObjects
 {
-    using Hugo.Helpers;
+    using Hugo.Utils;
     using Hugo.Properties;
     using Hugo.UI;
     using System.Drawing;

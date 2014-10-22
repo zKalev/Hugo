@@ -4,7 +4,7 @@
     using Hugo.Exceptions;
     using System;
     using System.Windows.Forms;
-    using Hugo.Helpers;
+    using Hugo.Utils;
     using System.Drawing;
 
     public partial class CreateCharacterForm : Form

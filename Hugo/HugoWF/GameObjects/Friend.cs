@@ -1,7 +1,7 @@
 ﻿namespace Hugo.GameObjects
 {
     using Hugo.GameObjects.Players;
-    using Hugo.Helpers;
+    using Hugo.Utils;
 
     public abstract class Friend : GameObject, IFriend
     {

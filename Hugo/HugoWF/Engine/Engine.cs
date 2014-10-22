@@ -4,9 +4,8 @@
     using GameObjects.Players;
     using GameObjects;
     using UI;
-    using Helpers;
+    using Utils;
     using System.Drawing;
-    using System.Windows.Forms;
 
     public class Engine : IEngine
     {
@@ -98,8 +97,8 @@
             // Create a target
             this.ObjectFactory.CreateTarget(this.GameObjects, DrawingEngine.InitialCoords[0]);
 
-            // TODO: Create a random number of game objects of random types and on random locations
-            this.ObjectFactory.CreateRandomObjects(DrawingEngine.TopLeft, DrawingEngine.BottomRight, 20, this.GameObjects);
+            // Create a random number of game objects of random types and on random locations
+            this.ObjectFactory.CreateRandomObjects(DrawingEngine.TopLeft, DrawingEngine.BottomRight, 30, this.GameObjects);
 
             if (this.Players.Count == 0)
             {
@@ -187,6 +186,8 @@
             IGameObject gameObject = GetObjectOnNextStep(nextStep);
             if (gameObject != null)
             {
+                DrawingEngine.ShowMessage("You have just met an object!");
+
                 if (gameObject is Obstacle)
                 {
                     (gameObject as IEnemy).ApplyEffects(GetCurrentPlayer());
@@ -195,14 +196,16 @@
                 else if (gameObject is IEnemy)
                 {
                     (gameObject as IEnemy).ApplyEffects(GetCurrentPlayer());
-                    DrawingEngine.DrawPlayers(this.Players);
                     return true;
                 }
                 else if (gameObject is IFriend)
                 {
                     (gameObject as IFriend).ApplyEffects(GetCurrentPlayer());
-                    DrawingEngine.DrawPlayers(this.Players);
                     return true;
+                }
+                else if (gameObject is ITarget)
+                {
+                    DrawingEngine.ShowMessage(GetCurrentPlayer().Name + " wins the game! Start a new game!");
                 }
 
                 return false;

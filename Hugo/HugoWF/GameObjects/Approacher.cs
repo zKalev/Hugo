@@ -1,7 +1,7 @@
 ﻿namespace Hugo.GameObjects
 {
     using Hugo.GameObjects.Players;
-    using Hugo.Helpers;
+    using Hugo.Utils;
     using System;
 
     public class Approacher : Friend

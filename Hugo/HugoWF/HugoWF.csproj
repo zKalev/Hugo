@@ -92,8 +92,8 @@
     </Compile>
     <Compile Include="GameObjects\GameObject.cs" />
     <Compile Include="GameObjects\IGameObject.cs" />
-    <Compile Include="Helpers\Coord.cs" />
-    <Compile Include="Helpers\Gender.cs" />
+    <Compile Include="Utils\Coord.cs" />
+    <Compile Include="Utils\Gender.cs" />
     <Compile Include="UI\PlayingRulesForm.cs">
       <SubType>Form</SubType>
     </Compile>

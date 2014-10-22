@@ -1,6 +1,6 @@
 ﻿namespace Hugo.GameObjects.Enemies
 {
-    using Hugo.Helpers;
+    using Hugo.Utils;
     using Hugo.GameObjects.Players;
     using System.Linq;
     using System.Drawing;

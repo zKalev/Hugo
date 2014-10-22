@@ -2,7 +2,7 @@
 {
     using Hugo.GameObjects.Enemies;
     using Hugo.GameObjects.Players;
-    using Hugo.Helpers;
+    using Hugo.Utils;
     using System;
 
     public class Repulser : Enemy

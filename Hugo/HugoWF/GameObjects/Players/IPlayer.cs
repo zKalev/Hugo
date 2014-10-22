@@ -1,6 +1,6 @@
 ﻿namespace Hugo.GameObjects.Players
 {
-    using Helpers;
+    using Utils;
     using System;
     using System.Collections.Generic;
     using System.Drawing;

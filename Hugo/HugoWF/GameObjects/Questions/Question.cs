@@ -1,4 +1,4 @@
-﻿using Hugo.Helpers;
+﻿using Hugo.Utils;
 using System;
 using System.Collections.Generic;
 using System.Drawing;

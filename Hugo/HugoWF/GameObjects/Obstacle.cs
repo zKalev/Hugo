@@ -1,6 +1,6 @@
 ﻿using Hugo.GameObjects.Enemies;
 using Hugo.GameObjects.Players;
-using Hugo.Helpers;
+using Hugo.Utils;
 using Hugo.Properties;
 using Hugo.UI;
 using System;
